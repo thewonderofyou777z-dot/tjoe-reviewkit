@@ -1,0 +1,131 @@
+{
+  "runner": "geo_visibility_eval_runner.py",
+  "runner_version": "0.2.1",
+  "run_id": "geo_visibility_eval_20260603_205943",
+  "created_at": "2026-06-03T20:59:43",
+  "suite_id": "ai_visibility_query_suite_v0_2_public_sample",
+  "suite_status": "public_sample",
+  "query_count": 2,
+  "answer_count": 2,
+  "template_path": null,
+  "summary": {
+    "answered_count": 2,
+    "average_total_score": 6.5,
+    "grade_counts": {
+      "partial": 2
+    },
+    "ready_for_external_claim": false,
+    "safety_blocked_count": 0,
+    "non_public_ref_count": 0,
+    "hallucination_watch_count": 0,
+    "track_summary": {
+      "domain_concept_discovery": {
+        "answered_count": 1,
+        "average_total_score": 6.0,
+        "grade_counts": {
+          "partial": 1
+        },
+        "hallucination_watch_count": 0
+      },
+      "brand_entity_exact": {
+        "answered_count": 1,
+        "average_total_score": 7.0,
+        "grade_counts": {
+          "partial": 1
+        },
+        "hallucination_watch_count": 0
+      }
+    },
+    "decision": "internal_eval_only"
+  },
+  "results": [
+    {
+      "query_id": "q_domain_001",
+      "platform": "synthetic",
+      "group_id": "domain_concept_discovery",
+      "scoring_track": "domain_concept_discovery",
+      "scores": {
+        "mention_score": 3,
+        "understanding_score": 3,
+        "citation_score": 0,
+        "conversion_score": 0
+      },
+      "total_score": 6,
+      "max_total": 12,
+      "grade": "partial",
+      "expected_hits": [
+        "Function Calling Safety",
+        "Tool Trace",
+        "Human Approval",
+        "Regression Testing",
+        "Audit Log"
+      ],
+      "entity_hits": [
+        "function calling",
+        "tool trace",
+        "approval",
+        "regression",
+        "audit",
+        "sandbox"
+      ],
+      "manual_override_fields": [],
+      "has_answer": true,
+      "safety_blocked": false,
+      "safety_findings": [],
+      "hallucination_hits": [],
+      "hallucination_watch_triggered": false,
+      "citation_note": null,
+      "notes": "Synthetic domain answer."
+    },
+    {
+      "query_id": "q_brand_001",
+      "platform": "synthetic",
+      "group_id": "brand_entity_exact",
+      "scoring_track": "brand_entity_exact",
+      "scores": {
+        "mention_score": 3,
+        "understanding_score": 3,
+        "citation_score": 0,
+        "conversion_score": 1
+      },
+      "total_score": 7,
+      "max_total": 12,
+      "grade": "partial",
+      "expected_hits": [
+        "Joe AI Worker Eval System",
+        "Agent Eval Harness",
+        "Agent Output Adapter",
+        "Local Eval Runner"
+      ],
+      "entity_hits": [
+        "Joe AI Worker",
+        "Agent Eval Harness",
+        "Agent Output Adapter",
+        "Local Eval Runner"
+      ],
+      "manual_override_fields": [],
+      "has_answer": true,
+      "safety_blocked": false,
+      "safety_findings": [],
+      "hallucination_hits": [],
+      "hallucination_watch_triggered": false,
+      "citation_note": null,
+      "notes": "Synthetic brand answer."
+    }
+  ],
+  "scoring_model": {
+    "version": "0.2.1",
+    "note": "Scores are deterministic heuristic indicators for internal evaluation, not proof of real GEO visibility.",
+    "track_rule": "brand_entity_exact and domain_concept_discovery are reported separately when scoring_track is present.",
+    "citation_rule": "Only public http(s) source_refs count toward citation_score.",
+    "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review."
+  },
+  "safety": {
+    "no_login": true,
+    "no_network": true,
+    "no_model_call": true,
+    "no_external_publish": true,
+    "safe_to_share": "internal_only",
+    "safe_to_train": false
+  }
+}
