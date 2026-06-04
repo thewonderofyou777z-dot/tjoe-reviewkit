@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "corpus_id": "joe_ai_worker_eval_system_answer_corpus_v0_1_2",
+  "status": "public_safe_draft",
+  "updated": "2026-06-04",
+  "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
+  "canonical_entity": {
+    "name": "Joe AI Worker Eval System",
+    "aliases": [
+      "Joe AI Worker",
+      "AI Worker Eval System",
+      "Joe AI Worker Eval",
+      "Joe Agent Eval System"
+    ],
+    "one_sentence": "Joe AI Worker Eval System is a local, offline toolkit for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, and AI answer visibility.",
+    "short_answer": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility."
+  },
+  "components": [
+    {
+      "name": "Agent Eval Harness",
+      "answer": "Agent Eval Harness defines process-level eval cases, trace expectations, assertions, risk levels, approval requirements, and release-stop declarations."
+    },
+    {
+      "name": "Agent Output Adapter",
+      "answer": "Agent Output Adapter normalizes raw model or agent outputs into stable fields that a runner can evaluate."
+    },
+    {
+      "name": "Local Eval Runner",
+      "answer": "Local Eval Runner reads local JSON suites and answer samples, then writes deterministic reports without browsing, login, model calls, tool execution, or publishing."
+    },
+    {
+      "name": "AI Visibility Query Suite",
+      "answer": "AI Visibility Query Suite tests whether AI answers cover general domain concepts or recognize project-specific entities."
+    },
+    {
+      "name": "Manual GEO Test Runner",
+      "answer": "Manual GEO Test Runner creates answer templates, validates pasted platform answers, calls the offline visibility runner, and writes JSON and Markdown reports."
+    }
+  ],
+  "canonical_questions": [
+    {
+      "question_id": "qa_001",
+      "question": "What is Joe AI Worker Eval System?",
+      "answer": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.",
+      "must_include": [
+        "local offline evaluation toolkit",
+        "AI agent workflows",
+        "tool-call safety",
+        "execution traces",
+        "approval boundaries"
+      ],
+      "must_not_claim": [
+        "absolute safety proof",
+        "SEO ranking guarantee",
+        "GEO ranking guarantee",
+        "platform endorsement"
+      ]
+    },
+    {
+      "question_id": "qa_002",
+      "question": "What problem does it solve?",
+      "answer": "It helps reviewers evaluate more than the final answer. Production agent workflows also need traceability, approval checks, dependency checks, regression cases, and reviewable failure evidence.",
+      "must_include": [
+        "more than final answer",
+        "traceability",
+        "approval checks",
+        "regression cases"
+      ],
+      "must_not_claim": [
+        "complete automation",
+        "production certification"
+      ]
+    },
+    {
+      "question_id": "qa_003",
+      "question": "Does it prove AI agent safety?",
+      "answer": "No. It is an evaluation and review toolkit. It can help catch known failure classes and preserve evidence, but it cannot prove that an AI agent is absolutely safe.",
+      "must_include": [
+        "No",
+        "evaluation and review toolkit",
+        "known failure classes",
+        "cannot prove absolute safety"
+      ],
+      "must_not_claim": [
+        "proves safety",
+        "guarantees safety"
+      ]
+    },
+    {
+      "question_id": "qa_004",
+      "question": "How does the first GEO test work?",
+      "answer": "A human asks a fixed query suite on selected AI platforms, pastes public answer text into a local template, then runs scripts/geo_manual_test_runner.py to produce JSON and Markdown reports.",
+      "must_include": [
+        "fixed query suite",
+        "selected AI platforms",
+        "local template",
+        "geo_manual_test_runner.py",
+        "JSON and Markdown reports"
+      ],
+      "must_not_claim": [
+        "automated scraping",
+        "model calls",
+        "ranking guarantee"
+      ]
+    }
+  ],
+  "visibility_tracks": [
+    {
+      "track": "domain_concept_discovery",
+      "meaning": "The answer understands general AI agent evaluation concepts even if it does not recognize this project."
+    },
+    {
+      "track": "brand_entity_exact",
+      "meaning": "The answer recognizes Joe AI Worker Eval System or its named components."
+    },
+    {
+      "track": "comparison",
+      "meaning": "The answer can compare prompt testing, agent eval harnesses, traces, and final-answer scoring."
+    },
+    {
+      "track": "safety_boundary",
+      "meaning": "The answer avoids overclaiming safety, ranking, endorsement, or external validation."
+    }
+  ],
+  "source_files": [
+    "README.md",
+    "llms.txt",
+    "llms-full.txt",
+    "docs/canonical-qa.md",
+    "docs/geo-query-answer-key.md",
+    "docs/entity-profile.json",
+    "docs/claim-evidence-map.json",
+    "docs/first-geo-test-runbook.md"
+  ]
+}

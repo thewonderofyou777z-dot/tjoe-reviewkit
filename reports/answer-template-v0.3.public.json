@@ -1,0 +1,93 @@
+{
+  "template_id": "ai_answer_sample_template_20260604_132514",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
+  "created_at": "2026-06-04T13:25:14",
+  "data_safety": {
+    "contains_secret": false,
+    "contains_private_message": false,
+    "contains_customer_data": false,
+    "contains_personal_data": false,
+    "safe_to_share": "internal_only",
+    "safe_to_train": false,
+    "review_required": true
+  },
+  "instructions": [
+    "Paste public AI answer text only.",
+    "Do not include cookies, tokens, accounts, private messages, or customer data.",
+    "Use manual_scores only if a human reviewer intentionally overrides heuristic scoring."
+  ],
+  "answers": [
+    {
+      "query_id": "q_domain_001",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_domain_002",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_domain_003",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_entity_001",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_entity_002",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_compare_001",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_compare_002",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_boundary_001",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    },
+    {
+      "query_id": "q_boundary_002",
+      "platform": "manual_paste",
+      "answer": "",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": ""
+    }
+  ]
+}

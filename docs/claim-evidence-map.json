@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "map_id": "joe_ai_worker_claim_evidence_map_v0_1_2",
+  "last_synced_with_readme": "v0.1.2-geo-readiness-draft",
+  "last_updated": "2026-06-04",
+  "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
+  "claims": [
+    {
+      "claim_id": "claim_tool_call_safety_checks",
+      "claim": "The system can represent checks for dangerous or forbidden agent actions.",
+      "claim_type": "capability",
+      "evidence_doc": "agent_eval/agent-eval-cases-v0.1.json",
+      "evidence_section": "case_forbidden_write",
+      "evidence_summary": "The synthetic case expects high-risk write behavior to require approval and stop release."
+    },
+    {
+      "claim_id": "claim_trace_preservation",
+      "claim": "The system models trace preservation and process-level eval expectations.",
+      "claim_type": "capability",
+      "evidence_doc": "docs/agent-eval-harness-guide.md",
+      "evidence_section": "Core Fields",
+      "evidence_summary": "The guide describes process traces, assertions, risk, approval requirements, and release-stop declarations."
+    },
+    {
+      "claim_id": "claim_reproducible_reports",
+      "claim": "The system can produce reproducible synthetic evaluation reports from local JSON files.",
+      "claim_type": "capability",
+      "evidence_doc": "agent_eval/synthetic-eval-report-v0.1.json",
+      "evidence_section": "summary",
+      "evidence_summary": "The synthetic report records deterministic case outcomes and failure classes."
+    },
+    {
+      "claim_id": "claim_answer_visibility_scoring",
+      "claim": "AI answers can be evaluated for domain concept coverage and project entity recognition.",
+      "claim_type": "capability",
+      "evidence_doc": "scripts/geo_visibility_eval_runner.py",
+      "evidence_section": "heuristic_scores and summarize",
+      "evidence_summary": "The runner calculates deterministic heuristic scores and reports track-level summaries."
+    },
+    {
+      "claim_id": "claim_dual_track_visibility",
+      "claim": "The visibility suite separates general domain concept discovery from brand or entity recognition.",
+      "claim_type": "method",
+      "evidence_doc": "examples/ai-visibility-query-suite-v0.3.public.json",
+      "evidence_section": "query_groups",
+      "evidence_summary": "The suite defines separate groups and scoring tracks for domain, entity, comparison, and safety-boundary queries."
+    },
+    {
+      "claim_id": "claim_offline_boundary",
+      "claim": "The runner does not browse, log in, call models, execute tools, or publish.",
+      "claim_type": "boundary",
+      "evidence_doc": "scripts/geo_visibility_eval_runner.py",
+      "evidence_section": "module docstring and safety report",
+      "evidence_summary": "The runner declares and reports no-login, no-network, no-model-call, and no-external-publish boundaries."
+    },
+    {
+      "claim_id": "claim_no_ranking_guarantee",
+      "claim": "The project does not guarantee SEO or GEO rankings.",
+      "claim_type": "boundary",
+      "evidence_doc": "README.md",
+      "evidence_section": "说明 and 这个项目不是什么",
+      "evidence_summary": "The README states that the project is not an SEO ranking tool or GEO ranking guarantee."
+    }
+  ]
+}

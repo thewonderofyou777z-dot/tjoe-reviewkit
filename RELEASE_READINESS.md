@@ -1,10 +1,13 @@
 # Release Readiness
 
-Status: ready for public draft release.
+Status: ready for GEO readiness draft release.
 
-Date: 2026-06-03  
+Date: 2026-06-04  
 Package: `joe-ai-worker-eval-system`  
-Release target: `v0.1.1-public-draft`
+Release target: `v0.1.2-geo-readiness-draft`
+
+Published commit: `d21af4f20671088ce3374b212fd4c4bfb71c779e`  
+Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm`
 
 ## Scope
 
@@ -19,6 +22,24 @@ It includes:
 - synthetic reports
 - a details page
 - an Agent Eval Harness guide
+- an English canonical summary
+- `llms.txt`
+- `llms-full.txt`
+- an AI answer card
+- canonical Q&A
+- a machine-readable answer corpus
+- a query answer key
+- a GEO evaluation rubric
+- an entity profile
+- a claim-evidence map
+- a manual GEO test plan
+- a GitHub publish guide for web-upload fallback
+- an API-based GitHub publish runbook and script
+- a remote GEO readiness verifier
+- a first GEO test runbook
+- a manual GEO answer collection runner
+- a v0.3 public answer collection template
+- a GitHub Actions smoke workflow
 - FAQ schema draft
 - contribution, security, release, and license documents
 
@@ -43,7 +64,7 @@ Result:
 - P0 verification: passed
 - remaining blockers: none
 - ready_to_share_publicly: yes
-- recommended release label: `v0.1.1-public-draft`
+- recommended release label: `v0.1.2-geo-readiness-draft`
 
 ## Final Checks
 
@@ -55,8 +76,12 @@ Final checks passed:
 - JSON validation passed for `agent_eval/synthetic-eval-report-v0.1.json`
 - JSON validation passed for `docs/faq.schema.json`
 - JSON validation passed for the public visibility query suite and answer samples
+- JSON validation passed for `docs/entity-profile.json`
+- JSON validation passed for `docs/claim-evidence-map.json`
+- JSON validation passed for `examples/ai-visibility-query-suite-v0.3.public.json`
 - synthetic GEO runner smoke test passed with `--ci-smoke`
 - Agent Eval Harness consistency check passed
+- CI workflow syntax and runner py_compile checks passed locally
 - package file list contains no generated `__pycache__`
 - public safety scan found only documentation warnings and runner regex patterns, not actual secrets
 
@@ -70,7 +95,7 @@ Final checks passed:
 
 ## Suggested Public Upload
 
-If uploading through the GitHub web UI, upload the package contents rather than only a zip archive so GitHub can render `README.md`.
+The current public draft has been uploaded to GitHub. If uploading future releases through the GitHub web UI, upload the package contents rather than only a zip archive so GitHub can render `README.md`.
 
 Do not upload:
 

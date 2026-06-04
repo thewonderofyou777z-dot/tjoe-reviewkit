@@ -21,7 +21,7 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.2.public.json"
+DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
 VERSION = "0.2.1"

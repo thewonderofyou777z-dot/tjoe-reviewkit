@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "joe_ai_worker_eval_system_entity_profile_v0_1_2",
+  "last_synced_with_readme": "v0.1.2-geo-readiness-draft",
+  "last_updated": "2026-06-04",
+  "canonical_name": "Joe AI Worker Eval System",
+  "aliases": [
+    "Joe AI Worker",
+    "AI Worker Eval System",
+    "Joe AI Worker Eval",
+    "Joe Agent Eval System"
+  ],
+  "category": "local offline AI agent workflow evaluation toolkit",
+  "description": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It checks tool-call safety, trace preservation, approval boundaries, output normalization, regression cases, and AI answer visibility using public-safe synthetic examples.",
+  "primary_problem": "AI agent demos often inspect only final answers, while production workflows need process traces, approval boundaries, regression tests, and known failure cases.",
+  "components": [
+    {
+      "name": "Agent Eval Harness",
+      "role": "Defines eval cases, trace expectations, assertions, risk levels, approval requirements, and release-stop declarations."
+    },
+    {
+      "name": "Agent Output Adapter",
+      "role": "Normalizes raw model or agent outputs into stable fields that an eval runner can check."
+    },
+    {
+      "name": "Local Eval Runner",
+      "role": "Runs deterministic offline reports from local JSON files without model calls, browser automation, login, tool execution, or publishing."
+    },
+    {
+      "name": "AI Visibility Query Suite",
+      "role": "Tests whether AI answers cover domain concepts or recognize project-specific entities."
+    },
+    {
+      "name": "Claim Watch",
+      "role": "Flags configured suspicious claim terms for human review; it is not a general hallucination detector."
+    },
+    {
+      "name": "Rejected Cases",
+      "role": "Captures unsafe, overconfident, or hallucinated behavior as negative examples."
+    }
+  ],
+  "what_it_is_not": [
+    "SEO ranking tool",
+    "GEO ranking guarantee",
+    "legal or compliance certification system",
+    "proof that an AI agent is safe",
+    "industry-wide benchmark",
+    "agent execution framework"
+  ],
+  "safety_boundaries": [
+    "offline only",
+    "no login",
+    "no browsing",
+    "no model calls",
+    "no tool execution",
+    "no external publishing",
+    "public-safe synthetic examples only",
+    "human review required for real answer samples and high-risk claims"
+  ],
+  "canonical_files": [
+    "README.md",
+    "llms.txt",
+    "docs/details.md",
+    "docs/ai-answer-card.md",
+    "docs/geo-test-plan.md",
+    "docs/agent-eval-harness-guide.md",
+    "agent_eval/agent-eval-cases-v0.1.json",
+    "examples/ai-visibility-query-suite-v0.3.public.json",
+    "scripts/geo_visibility_eval_runner.py"
+  ],
+  "github_url": "https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm",
+  "version": "v0.1.2-geo-readiness-draft",
+  "disclaimer": "This profile defines a public-safe draft project entity. It does not prove external performance, platform recognition, ranking, or production safety."
+}

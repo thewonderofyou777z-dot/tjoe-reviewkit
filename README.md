@@ -2,6 +2,8 @@
 
 一个本地运行的 AI Agent 工作流评估工具。
 
+> **English summary:** Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It checks whether tool calls are safe, traces are preserved, approval boundaries are respected, and AI answers cover domain concepts or recognize project-specific entities. It does not prove absolute safety, guarantee rankings, or execute agents. For the Chinese description, see below.
+
 它的目标很简单：  
 不是看 AI 最后回答得漂不漂亮，而是检查一个 Agent 工作流到底 **能不能追踪、能不能复盘、能不能做回归测试**。
 
@@ -48,7 +50,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.1-public-draft` |
+| Release | `v0.1.2-geo-readiness-draft` |
 | Runner | `geo_visibility_eval_runner.py v0.2.1` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -64,7 +66,7 @@
 ```bash
 mkdir -p reports
 python3 scripts/geo_visibility_eval_runner.py \
-  --suite examples/ai-visibility-query-suite-v0.2.public.json \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
   --answers examples/sample-answers.synthetic.json \
   --output reports/example-report.synthetic.json \
   --overwrite --ci-smoke
@@ -157,10 +159,30 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 完整说明见：
 
 - [`docs/details.md`](docs/details.md)
+- [`docs/ai-answer-card.md`](docs/ai-answer-card.md)
+- [`docs/geo-test-plan.md`](docs/geo-test-plan.md)
 
 Agent Eval Harness 说明见：
 
 - [`docs/agent-eval-harness-guide.md`](docs/agent-eval-harness-guide.md)
+
+机器可读入口：
+
+- [`llms.txt`](llms.txt)
+- [`llms-full.txt`](llms-full.txt)
+- [`docs/canonical-qa.md`](docs/canonical-qa.md)
+- [`docs/answer-corpus.json`](docs/answer-corpus.json)
+- [`docs/geo-query-answer-key.md`](docs/geo-query-answer-key.md)
+- [`docs/geo-evaluation-rubric.md`](docs/geo-evaluation-rubric.md)
+- [`docs/entity-profile.json`](docs/entity-profile.json)
+- [`docs/claim-evidence-map.json`](docs/claim-evidence-map.json)
+
+发布辅助：
+
+- [`docs/github-publish-guide.md`](docs/github-publish-guide.md)
+- [`docs/api-publish-runbook.md`](docs/api-publish-runbook.md)
+- [`docs/post-upload-verification.md`](docs/post-upload-verification.md)
+- [`docs/first-geo-test-runbook.md`](docs/first-geo-test-runbook.md)
 
 ---
 
@@ -222,10 +244,17 @@ Runner 只读取本地 JSON 文件。
 接下来计划：
 
 - 增加公开安全版 Agent Eval Harness 示例。已在 `v0.1.1-public-draft` 完成
+- 增加 GEO readiness 入口文件、answer card、entity profile 和测试计划。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加 GitHub 网页上传指南和 v0.3 答案采集模板。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加手动 GEO 测试 runner 和首轮测试 runbook。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加 `llms-full.txt`、canonical Q&A 和 query answer key。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加 token 发布脚本和发布 runbook。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加上传后远端 GEO readiness 验证脚本。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加机器可读 answer corpus 和 GEO evaluation rubric。已在 `v0.1.2-geo-readiness-draft` 完成
 - 增加标准化输出样例
 - 支持 Markdown 报告
 - 增加更多公开样例回答
-- 增加 GitHub Actions smoke test
+- 增加 GitHub Actions smoke test。已在 `v0.1.2-geo-readiness-draft` 完成
 
 ---
 

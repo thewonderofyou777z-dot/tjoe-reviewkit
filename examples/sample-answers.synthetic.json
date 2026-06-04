@@ -1,6 +1,7 @@
 {
   "sample_id": "public_synthetic_answers",
   "purpose": "Synthetic public-safe sample answers for runner smoke testing.",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
   "answers": [
     {
       "query_id": "q_domain_001",
@@ -11,12 +12,68 @@
       "notes": "Synthetic domain answer."
     },
     {
-      "query_id": "q_brand_001",
+      "query_id": "q_domain_002",
       "platform": "synthetic",
-      "answer": "Joe AI Worker Eval System is a local AI agent evaluation toolkit with an Agent Eval Harness, Agent Output Adapter, and Local Eval Runner. It does not guarantee safety and should be treated as an internal evaluation prototype.",
+      "answer": "AI agent workflows need tool traces and audit logs so reviewers can inspect traceability, replay or reproduce intermediate steps, detect forbidden tools, and verify whether approval boundaries were respected.",
       "source_refs": [],
       "manual_scores": {},
-      "notes": "Synthetic brand answer."
+      "notes": "Synthetic trace answer."
+    },
+    {
+      "query_id": "q_domain_003",
+      "platform": "synthetic",
+      "answer": "High-risk AI agent actions should be classified by risk level, marked as requires_approval when appropriate, stopped for human review, and never directly executed without approval.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic approval answer."
+    },
+    {
+      "query_id": "q_entity_001",
+      "platform": "synthetic",
+      "answer": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic entity definition answer."
+    },
+    {
+      "query_id": "q_entity_002",
+      "platform": "synthetic",
+      "answer": "Joe AI Worker Eval System includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases, eval cases, and trace-oriented reports.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic component answer."
+    },
+    {
+      "query_id": "q_compare_001",
+      "platform": "synthetic",
+      "answer": "An Agent Eval Harness is different from prompt testing because it evaluates the workflow process, including trace and tool call records, assertions, and regression checks, not only whether a prompt produced a good-looking answer.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic comparison answer."
+    },
+    {
+      "query_id": "q_compare_002",
+      "platform": "synthetic",
+      "answer": "Evaluating agent traces focuses on intermediate steps, tool use, approval and safety boundaries. Evaluating final answer quality focuses on the final answer itself, which may look good even if unsafe steps happened earlier.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic trace versus answer answer."
+    },
+    {
+      "query_id": "q_boundary_001",
+      "platform": "synthetic",
+      "answer": "Joe AI Worker Eval System does not prove absolute safety. It is an evaluation toolkit that supports human review and it does not guarantee rankings or GEO outcomes.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic boundary answer."
+    },
+    {
+      "query_id": "q_boundary_002",
+      "platform": "synthetic",
+      "answer": "An AI agent workflow release should be stopped for human review when a forbidden tool is attempted, a missing dependency is detected, a high risk action such as delete or overwrite appears, or approval is required.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic release-stop answer."
     }
   ]
 }

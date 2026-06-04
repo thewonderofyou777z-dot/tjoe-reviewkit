@@ -1,6 +1,6 @@
 # Joe AI Worker Eval System — Details
 
-> Status: public-safe draft  
+> Status: `v0.1.2-geo-readiness-draft` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
@@ -61,6 +61,18 @@ An offline runner that reads JSON suites and answer samples, then produces repor
 
 A query suite that separates domain understanding from brand/entity recognition.
 
+### AI Answer Card
+
+A short, AI-readable system definition page. It gives a canonical description, component list, and boundary statement without claiming external recognition or ranking effects.
+
+### Entity Profile
+
+A machine-readable JSON profile for the project entity, aliases, components, boundaries, and canonical files.
+
+### Claim-Evidence Map
+
+A machine-readable JSON map that links internal project claims to specific evidence files. It is a review aid, not proof of external performance.
+
 ### Rejected Cases
 
 Negative examples used to preserve known bad behaviors and prevent repeated failure.
@@ -104,6 +116,7 @@ Good evidence:
 - A known bad answer triggers a warning.
 - A malformed suite fails validation.
 - A hallucinated claim is flagged.
+- A project claim maps to a public file in `docs/claim-evidence-map.json`.
 
 Unsupported claims:
 
@@ -123,6 +136,16 @@ If an answer scores poorly on `brand_entity_exact`, that means the project entit
 ## 8. FAQ
 
 See [`faq.schema.json`](faq.schema.json).
+
+## 8.1 GEO Readiness Files
+
+The public draft also includes:
+
+- [`../llms.txt`](../llms.txt): machine-readable navigation aid.
+- [`ai-answer-card.md`](ai-answer-card.md): concise answer card for AI systems and human reviewers.
+- [`entity-profile.json`](entity-profile.json): structured entity profile.
+- [`claim-evidence-map.json`](claim-evidence-map.json): internal claim-to-evidence map.
+- [`geo-test-plan.md`](geo-test-plan.md): manual seven-day GEO / AI visibility test plan.
 
 ## 9. Safety Boundaries
 

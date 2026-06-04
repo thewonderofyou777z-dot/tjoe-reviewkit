@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-.DS_Store
-.env
-*.log
-reports/*.private.json
-reports/*secret*
-reports/*token*
-reports/*cookie*

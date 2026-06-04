@@ -1,0 +1,44 @@
+# Joe AI Worker Eval System
+
+Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, reproducible regression cases, and AI answer visibility. It is designed as a public-safe draft for evaluating workflow behavior and answer coverage, not as a guarantee of AI safety, SEO ranking, GEO ranking, or platform recognition.
+
+This document is a machine-readable navigation aid, not an endorsement. Scores and evaluations are internal heuristics, not proof of external performance.
+
+## Key Files
+
+- README.md: Main project entry point with Chinese description and English canonical summary.
+- llms-full.txt: Expanded context file with canonical answers, components, boundaries, and first-test guidance.
+- docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.
+- docs/ai-answer-card.md: Short answer card for AI systems and human reviewers.
+- docs/canonical-qa.md: Stable Q&A for AI assistants and manual reviewers.
+- docs/answer-corpus.json: Machine-readable canonical answer corpus.
+- docs/geo-query-answer-key.md: Query-level expected answer elements for v0.3 visibility tests.
+- docs/geo-evaluation-rubric.md: Human review rubric for interpreting first-round answers.
+- docs/geo-test-plan.md: Manual seven-day GEO / AI visibility test plan with pass, partial, fail, and blocked criteria.
+- docs/entity-profile.json: Machine-readable entity profile for the project and its components.
+- docs/claim-evidence-map.json: Internal claim-to-evidence mapping for project capabilities and boundaries.
+- docs/agent-eval-harness-guide.md: Guide for process-level Agent Eval Harness examples.
+- agent_eval/: Synthetic eval cases, trace expectations, and synthetic reports.
+- examples/ai-visibility-query-suite-v0.3.public.json: Public-safe query suite for answer visibility testing.
+- examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
+- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish.
+- scripts/geo_manual_test_runner.py: Offline helper for pasted platform answers and Markdown reports.
+
+## Purpose
+
+The project separates process evaluation from answer evaluation. Agent Eval Harness checks whether workflow traces, approvals, forbidden actions, and release-stop declarations are represented. GEO / AI Visibility Runner checks whether AI answers cover relevant domain concepts or recognize project-specific entities.
+
+## What It Is Not
+
+- It is not an SEO ranking tool.
+- It is not a GEO ranking guarantee.
+- It is not a legal or compliance certification system.
+- It is not proof that an AI agent is safe.
+- It is not an industry-wide benchmark.
+- It does not execute agents or call external AI platforms.
+
+## Public Repository
+
+Canonical public repository: https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm
+
+Last updated: 2026-06-04
