@@ -30,7 +30,7 @@
     {
       "query_id": "q_entity_001",
       "platform": "synthetic",
-      "answer": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.",
+      "answer": "ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic entity definition answer."
@@ -38,7 +38,7 @@
     {
       "query_id": "q_entity_002",
       "platform": "synthetic",
-      "answer": "Joe AI Worker Eval System includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases, eval cases, and trace-oriented reports.",
+      "answer": "ToolTraceEval includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases, eval cases, and trace-oriented reports.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic component answer."
@@ -62,7 +62,7 @@
     {
       "query_id": "q_boundary_001",
       "platform": "synthetic",
-      "answer": "Joe AI Worker Eval System does not prove absolute safety. It is an evaluation toolkit that supports human review and it does not guarantee rankings or GEO outcomes.",
+      "answer": "ToolTraceEval does not prove absolute safety. It is an evaluation toolkit that supports human review and it does not guarantee rankings or GEO outcomes.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic boundary answer."

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "map_id": "joe_ai_worker_claim_evidence_map_v0_1_2",
-  "last_synced_with_readme": "v0.1.2-geo-readiness-draft",
+  "map_id": "tooltraceeval_claim_evidence_map_v0_1_3",
+  "last_synced_with_readme": "v0.1.3-rename-geo-calibration",
   "last_updated": "2026-06-04",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [
@@ -61,5 +61,6 @@
       "evidence_section": "说明 and 这个项目不是什么",
       "evidence_summary": "The README states that the project is not an SEO ranking tool or GEO ranking guarantee."
     }
-  ]
+  ],
+  "creator": "tjoe"
 }

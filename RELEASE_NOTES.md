@@ -1,45 +1,32 @@
 # Release Notes
 
-## v0.1.2-geo-readiness-draft
+## v0.1.3-rename-geo-calibration
 
-Adds public-safe GEO readiness assets so AI systems and human reviewers have clearer entity, claim, and testing signals.
+Renames the public project identity to **ToolTraceEval**, adds `tjoe` as the creator/maintainer identity, and preserves the first Doubao GEO manual sample as internal evidence.
 
 ### Added
 
-- `llms.txt`
-- `llms-full.txt`
-- `docs/ai-answer-card.md`
-- `docs/canonical-qa.md`
-- `docs/answer-corpus.json`
-- `docs/geo-query-answer-key.md`
-- `docs/geo-evaluation-rubric.md`
-- `docs/entity-profile.json`
-- `docs/claim-evidence-map.json`
-- `docs/geo-test-plan.md`
-- `docs/github-publish-guide.md`
-- `docs/api-publish-runbook.md`
-- `docs/post-upload-verification.md`
-- `docs/first-geo-test-runbook.md`
-- `examples/ai-visibility-query-suite-v0.3.public.json`
-- `reports/answer-template-v0.3.public.json`
-- `reports/template-only-report-v0.3.public.json`
-- `scripts/geo_manual_test_runner.py`
-- `scripts/publish_to_github.py`
-- `scripts/verify_remote_geo_readiness.py`
-- `.github/workflows/ci.yml`
+- `examples/ai-visibility-query-suite-v0.3.1-calibrated-local.json`
+- `reports/geo-first-test-copy-pack-v0.3.md`
+- `reports/geo-manual-answers-2026-06-04-doubao.json`
+- `reports/geo-manual-report-2026-06-04-doubao.json`
+- `reports/geo-manual-report-2026-06-04-doubao.md`
+- `reports/geo-manual-report-2026-06-04-doubao-calibrated.json`
+- `reports/geo-manual-report-2026-06-04-doubao-calibrated.md`
+- `reports/geo-first-manual-sample-review-2026-06-04.md`
 
 ### Updated
 
-- `README.md` now includes an English canonical summary at the top.
-- `scripts/geo_visibility_eval_runner.py` now defaults to the v0.3 public query suite.
-- `examples/sample-answers.synthetic.json` now includes synthetic answers for the v0.3 query suite.
-- `docs/details.md` now references the GEO readiness files.
+- Public-facing name changed from the internal tjoe AI worker workflow wording to `ToolTraceEval`.
+- `README.md`, `llms.txt`, `llms-full.txt`, answer corpus, entity profile, FAQ, query suites, and GEO docs now use the new canonical name.
+- `tjoe` is recorded as the creator/maintainer identity.
+- The local calibrated query suite expands boundary aliases and removes one false-positive hallucination watch phrase observed in the Doubao sample.
 
 ### Notes
 
-- These files improve AI readability, entity clarity, and manual GEO test readiness.
-- They do not claim platform recognition, ranking improvement, production safety, or external validation.
-- The v0.3 suite is still synthetic and public-safe.
+- `ToolTraceEval` is easier for AI systems to parse than the previous internal name.
+- The Doubao sample is a visibility observation, not public external validation.
+- The calibrated v0.3.1 suite remains local until more platform samples confirm the same scoring pattern.
 
 ### Validation
 

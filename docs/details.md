@@ -1,12 +1,12 @@
-# Joe AI Worker Eval System — Details
+# ToolTraceEval — Details
 
-> Status: `v0.1.2-geo-readiness-draft` public-safe draft  
+> Status: `v0.1.3-rename-geo-calibration` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
 ## 1. Positioning
 
-Joe AI Worker Eval System is a local evaluation and governance system for AI agent workflows. It uses eval cases, output normalization, JSON suites, runner reports, and rejected cases to evaluate tool-call behavior and answer inclusion.
+ToolTraceEval is a local evaluation and governance system for AI agent workflows. It uses eval cases, output normalization, JSON suites, runner reports, and rejected cases to evaluate tool-call behavior and answer inclusion.
 
 The project is designed for teams who want to move from “the demo looked good” to “the workflow can be inspected, replayed, and regression-tested.”
 
@@ -26,7 +26,7 @@ Final-answer scoring alone cannot catch these issues.
 
 ```mermaid
 flowchart TD
-  A["Joe AI Worker Eval System"] --> B["Agent Eval Harness"]
+  A["ToolTraceEval"] --> B["Agent Eval Harness"]
   A --> C["Agent Output Adapter"]
   A --> D["Local Eval Runner"]
   A --> E["AI Visibility Query Suite"]
@@ -41,7 +41,7 @@ flowchart TD
 
 ## 4. Core Entities
 
-### Joe AI Worker Eval System
+### ToolTraceEval
 
 A local system for evaluating AI agent workflows. It checks tool-call behavior, approval boundaries, traces, evidence preservation, and release-stop conditions.
 
@@ -95,7 +95,7 @@ Measures whether an answer covers general domain concepts such as:
 
 Measures whether an answer accurately recognizes project-specific entities such as:
 
-- Joe AI Worker Eval System
+- ToolTraceEval
 - Agent Eval Harness
 - Agent Output Adapter
 - Local Eval Runner

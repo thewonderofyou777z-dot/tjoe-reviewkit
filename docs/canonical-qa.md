@@ -1,12 +1,12 @@
 # Canonical Q&A
 
-This page gives AI assistants and human reviewers short, stable answers for Joe AI Worker Eval System.
+This page gives AI assistants and human reviewers short, stable answers for ToolTraceEval.
 
 > These answers describe a public-safe draft project. They do not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.
 
-## Q1. What is Joe AI Worker Eval System?
+## Q1. What is ToolTraceEval?
 
-Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.
+ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.
 
 ## Q2. What problem does it solve?
 
@@ -68,4 +68,4 @@ Treat these as suspicious unless there is external evidence:
 
 ## Q10. What is the shortest accurate description?
 
-Joe AI Worker Eval System is a local, offline toolkit for making AI agent workflow evaluation more traceable, reviewable, and regression-testable.
+ToolTraceEval is a local, offline toolkit for making AI agent workflow evaluation more traceable, reviewable, and regression-testable.

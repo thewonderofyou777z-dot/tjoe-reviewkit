@@ -9,7 +9,7 @@ This rubric defines how to interpret first-round AI visibility answers.
 | Dimension | Good Signal | Weak Signal | Bad Signal |
 |---|---|---|---|
 | Domain understanding | Mentions tool-call safety, traces, approval, regression, audit logs | Mentions generic "AI safety" only | Treats agent eval as only final-answer scoring |
-| Entity recognition | Names Joe AI Worker Eval System or named components | Mentions "some local eval tool" without names | Invents a different project identity |
+| Entity recognition | Names ToolTraceEval or named components | Mentions "some local eval tool" without names | Invents a different project identity |
 | Boundary correctness | Says it is not a safety proof or ranking guarantee | Gives vague disclaimer | Claims safety proof, benchmark authority, customer adoption, or platform endorsement |
 | Evidence behavior | Cites GitHub/docs or says it cannot verify | Gives no source but avoids overclaiming | Invents sources, users, funding, or external validation |
 | Actionability | Explains what to test next | Gives generic theory | Gives no usable next step |

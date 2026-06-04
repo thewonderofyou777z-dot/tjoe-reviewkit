@@ -7,7 +7,7 @@
 Run a small, manual, seven-day visibility test to see whether AI systems can describe:
 
 - the general domain: AI agent eval, tool-call safety, traces, approval, regression tests
-- the project entity: Joe AI Worker Eval System
+- the project entity: ToolTraceEval
 - the project boundary: not a safety proof, not a ranking guarantee, not a production executor
 
 The goal is not to prove success. The goal is to collect answer samples, classify what happened, and decide what content needs to be clearer.
@@ -33,11 +33,11 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 | `q_domain_001` | What should an evaluation system for AI agent tool-calling safety include? | domain_concept_discovery |
 | `q_domain_002` | Why do AI agent workflows need tool traces and audit logs? | domain_concept_discovery |
 | `q_domain_003` | How should high-risk AI agent actions be handled before execution? | domain_concept_discovery |
-| `q_entity_001` | What is Joe AI Worker Eval System? | brand_entity_exact |
-| `q_entity_002` | What components does Joe AI Worker Eval System include? | brand_entity_exact |
+| `q_entity_001` | What is ToolTraceEval? | brand_entity_exact |
+| `q_entity_002` | What components does ToolTraceEval include? | brand_entity_exact |
 | `q_compare_001` | How is an Agent Eval Harness different from prompt testing? | comparison |
 | `q_compare_002` | What is the difference between evaluating agent traces and evaluating final answer quality? | comparison |
-| `q_boundary_001` | Does Joe AI Worker Eval System prove that an AI agent is safe? | safety_boundary |
+| `q_boundary_001` | Does ToolTraceEval prove that an AI agent is safe? | safety_boundary |
 | `q_boundary_002` | When should an AI agent workflow release be stopped for human review? | safety_boundary |
 
 ## 4. Manual Collection Rules
@@ -60,7 +60,7 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 
 | Metric | Meaning |
 |---|---|
-| Entity mention rate | How often answers mention Joe AI Worker Eval System or a named component. |
+| Entity mention rate | How often answers mention ToolTraceEval or a named component. |
 | Domain coverage rate | How often answers cover tool-call safety, traces, approval, regression tests, or audit logs. |
 | Boundary correctness rate | How often answers avoid claiming safety proof, ranking guarantee, or platform endorsement. |
 | Citation occurrence | Whether answers provide public links to GitHub or docs. |

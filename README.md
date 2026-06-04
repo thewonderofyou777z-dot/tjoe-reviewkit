@@ -1,8 +1,12 @@
-# Joe AI Worker Eval System
+# ToolTraceEval
 
 一个本地运行的 AI Agent 工作流评估工具。
 
-> **English summary:** Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It checks whether tool calls are safe, traces are preserved, approval boundaries are respected, and AI answers cover domain concepts or recognize project-specific entities. It does not prove absolute safety, guarantee rankings, or execute agents. For the Chinese description, see below.
+> **English summary:** ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It checks whether tool calls are safe, traces are preserved, approval boundaries are respected, and AI answers cover domain concepts or recognize project-specific entities. It does not prove absolute safety, guarantee rankings, or execute agents. For the Chinese description, see below.
+
+**Creator / Maintainer:** `tjoe`  
+**Public name:** `ToolTraceEval`  
+**Internal origin:** evolved from tjoe's local AI worker eval workflow.
 
 它的目标很简单：  
 不是看 AI 最后回答得漂不漂亮，而是检查一个 Agent 工作流到底 **能不能追踪、能不能复盘、能不能做回归测试**。
@@ -50,7 +54,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.2-geo-readiness-draft` |
+| Release | `v0.1.3-rename-geo-calibration` |
 | Runner | `geo_visibility_eval_runner.py v0.2.1` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -137,7 +141,7 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 | 评估轨道 | 测什么 | 不代表什么 |
 |---|---|---|
 | `domain_concept_discovery` | AI 是否理解工具调用、安全审批、回归测试、审计日志等通用概念 | 不代表它认识这个项目 |
-| `brand_entity_exact` | AI 是否准确识别 Joe AI Worker Eval System 这类具体项目实体 | 不代表它真的具备领域深度 |
+| `brand_entity_exact` | AI 是否准确识别 ToolTraceEval 这类具体项目实体 | 不代表它真的具备领域深度 |
 
 ---
 
@@ -151,6 +155,14 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 - 项目实体有没有被正确提到
 - 有没有出现需要人工复核的可疑说法
 - 输出是否适合公开分享
+
+首轮真实手工样本来自豆包，结果只作为内部 GEO 观察信号：
+
+- 原始报告：[`reports/geo-manual-report-2026-06-04-doubao.md`](reports/geo-manual-report-2026-06-04-doubao.md)
+- 校准报告：[`reports/geo-manual-report-2026-06-04-doubao-calibrated.md`](reports/geo-manual-report-2026-06-04-doubao-calibrated.md)
+- 复盘：[`reports/geo-first-manual-sample-review-2026-06-04.md`](reports/geo-first-manual-sample-review-2026-06-04.md)
+
+这不代表外部验证成功，只说明第一轮可重复采样链路已经跑通。
 
 ---
 
@@ -244,17 +256,17 @@ Runner 只读取本地 JSON 文件。
 接下来计划：
 
 - 增加公开安全版 Agent Eval Harness 示例。已在 `v0.1.1-public-draft` 完成
-- 增加 GEO readiness 入口文件、answer card、entity profile 和测试计划。已在 `v0.1.2-geo-readiness-draft` 完成
-- 增加 GitHub 网页上传指南和 v0.3 答案采集模板。已在 `v0.1.2-geo-readiness-draft` 完成
-- 增加手动 GEO 测试 runner 和首轮测试 runbook。已在 `v0.1.2-geo-readiness-draft` 完成
-- 增加 `llms-full.txt`、canonical Q&A 和 query answer key。已在 `v0.1.2-geo-readiness-draft` 完成
-- 增加 token 发布脚本和发布 runbook。已在 `v0.1.2-geo-readiness-draft` 完成
-- 增加上传后远端 GEO readiness 验证脚本。已在 `v0.1.2-geo-readiness-draft` 完成
-- 增加机器可读 answer corpus 和 GEO evaluation rubric。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加 GEO readiness 入口文件、answer card、entity profile 和测试计划。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加 GitHub 网页上传指南和 v0.3 答案采集模板。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加手动 GEO 测试 runner 和首轮测试 runbook。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加 `llms-full.txt`、canonical Q&A 和 query answer key。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加 token 发布脚本和发布 runbook。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加上传后远端 GEO readiness 验证脚本。已在 `v0.1.3-rename-geo-calibration` 完成
+- 增加机器可读 answer corpus 和 GEO evaluation rubric。已在 `v0.1.3-rename-geo-calibration` 完成
 - 增加标准化输出样例
 - 支持 Markdown 报告
 - 增加更多公开样例回答
-- 增加 GitHub Actions smoke test。已在 `v0.1.2-geo-readiness-draft` 完成
+- 增加 GitHub Actions smoke test。已在 `v0.1.3-rename-geo-calibration` 完成
 
 ---
 

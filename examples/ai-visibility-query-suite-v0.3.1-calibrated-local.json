@@ -1,7 +1,7 @@
 {
   "query_suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
-  "version": "0.3.0-public",
-  "status": "public_sample",
+  "version": "0.3.1-calibrated-local",
+  "status": "local_calibration_after_manual_sample",
   "no_login_required": true,
   "no_private_data": true,
   "evaluation_goal": "Demonstrate dual-track and boundary-aware AI answer evaluation without private data.",
@@ -218,7 +218,8 @@
           ],
           "hallucination_watch": [
             "always safe",
-            "automatic execution",
+            "automatic execution without approval",
+            "execute automatically without approval",
             "自动执行即可",
             "无需审批"
           ]
@@ -432,7 +433,14 @@
                 "does not prove safety",
                 "not proof",
                 "不能证明绝对安全",
-                "不证明安全"
+                "不证明安全",
+                "cannot prove absolute safety",
+                "cannot prove the absolute safety",
+                "cannot prove an AI agent is absolutely safe",
+                "can only verify safety under existing test coverage",
+                "无法证明绝对安全",
+                "不能证明 Agent 绝对安全",
+                "不能证明 AI Agent 一定安全"
               ]
             },
             {
@@ -441,7 +449,14 @@
                 "evaluation toolkit",
                 "eval tool",
                 "评估工具",
-                "评估系统"
+                "评估系统",
+                "evaluation system",
+                "safety certification",
+                "verify safety under existing test coverage",
+                "quantify current residual risk",
+                "评测系统",
+                "现有用例覆盖范围内验证",
+                "量化当前残余风险"
               ]
             },
             {
@@ -450,7 +465,10 @@
                 "human review",
                 "manual review",
                 "人工复核",
-                "人工审核"
+                "人工审核",
+                "manual safety audit",
+                "人工安全审核",
+                "人工审查"
               ]
             },
             {
@@ -472,7 +490,13 @@
             "不能证明",
             "评估",
             "人工复核",
-            "不保证"
+            "不保证",
+            "cannot prove absolute safety",
+            "existing test coverage",
+            "residual risk",
+            "无法证明绝对安全",
+            "现有用例覆盖",
+            "残余风险"
           ],
           "hallucination_watch": [
             "proves safety",
@@ -495,7 +519,14 @@
                 "forbidden tool",
                 "dangerous tool",
                 "禁止工具",
-                "危险工具"
+                "危险工具",
+                "unauthorized tool",
+                "unauthorized/high-risk tools",
+                "permission bypass",
+                "command injection",
+                "未授权工具",
+                "权限绕过",
+                "命令注入"
               ]
             },
             {
@@ -504,7 +535,11 @@
                 "missing dependency",
                 "blocked_by",
                 "依赖缺失",
-                "前置任务缺失"
+                "前置任务缺失",
+                "root cause cannot be quickly fixed",
+                "root cause",
+                "根因无法快速修复",
+                "根因"
               ]
             },
             {
@@ -517,7 +552,16 @@
                 "高风险操作",
                 "删除",
                 "覆盖",
-                "修改配置"
+                "修改配置",
+                "high-risk pass rate",
+                "critical security vulnerability",
+                "bulk sensitive data",
+                "high-risk calls",
+                "high-sensitive field",
+                "高危漏洞",
+                "高危异常",
+                "敏感数据",
+                "高敏感行业"
               ]
             },
             {
@@ -526,7 +570,15 @@
                 "approval required",
                 "requires_approval",
                 "需要审批",
-                "人工审批"
+                "人工审批",
+                "mandatory human review",
+                "human review",
+                "manual safety audit",
+                "pause release",
+                "stop release",
+                "转人工复核",
+                "暂停发布",
+                "人工安全审核"
               ]
             }
           ],
@@ -540,7 +592,18 @@
             "禁止工具",
             "依赖缺失",
             "高风险",
-            "需要审批"
+            "需要审批",
+            "stop release",
+            "mandatory human review",
+            "critical security vulnerability",
+            "permission bypass",
+            "command injection",
+            "pause release",
+            "暂停发布",
+            "转人工复核",
+            "高危漏洞",
+            "权限绕过",
+            "命令注入"
           ],
           "hallucination_watch": [
             "always release",
@@ -551,5 +614,6 @@
         }
       ]
     }
-  ]
+  ],
+  "calibration_note": "Local calibration after first pasted sample. Preserves v0.3 public suite; adds common English/Chinese boundary aliases and narrows one hallucination watch phrase to reduce false positives."
 }

@@ -55,15 +55,15 @@
         {
           "query_id": "q_brand_001",
           "scoring_track": "brand_entity_exact",
-          "en": "What is Joe AI Worker Eval System?",
+          "en": "What is ToolTraceEval?",
           "expected_answer_elements": [
-            "Joe AI Worker Eval System",
+            "ToolTraceEval",
             "Agent Eval Harness",
             "Agent Output Adapter",
             "Local Eval Runner"
           ],
           "track_terms": [
-            "Joe AI Worker",
+            "ToolTraceEval",
             "Agent Eval Harness",
             "Agent Output Adapter",
             "Local Eval Runner"

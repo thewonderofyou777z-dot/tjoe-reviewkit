@@ -1,14 +1,14 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "name": "Joe AI Worker Eval System FAQ",
+  "name": "ToolTraceEval FAQ",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Joe AI Worker Eval System?",
+      "name": "What is ToolTraceEval?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Joe AI Worker Eval System is a local evaluation and governance system for AI agent workflows. It checks whether an agent respects tool-call boundaries, approval requirements, execution traces, evidence preservation, and release-stop conditions."
+        "text": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It checks whether an agent respects tool-call boundaries, approval requirements, execution traces, evidence preservation, and release-stop conditions."
       }
     },
     {

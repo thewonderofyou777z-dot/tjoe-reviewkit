@@ -3,7 +3,7 @@
 - Runner: `geo_visibility_eval_runner.py`
 - Runner version: `0.2.1`
 - Suite: `ai_visibility_query_suite_v0_3_public_geo_readiness`
-- Created at: `2026-06-04T19:49:26`
+- Created at: `2026-06-04T13:39:34`
 - Query count: `9`
 - Answer count: `9`
 - Decision: `internal_eval_only`
@@ -33,7 +33,7 @@
 | q_domain_001 | synthetic | domain_concept_discovery | partial | 6/12 | Function Calling Safety, Tool Trace, Human Approval, Regression Testing, Audit Log | - |
 | q_domain_002 | synthetic | domain_concept_discovery | partial | 6/12 | Traceability, Replay, Forbidden Tool Detection | - |
 | q_domain_003 | synthetic | domain_concept_discovery | partial | 6/12 | Risk Classification, Requires Approval, Stop or Review | - |
-| q_entity_001 | synthetic | brand_entity_exact | partial | 7/12 | Joe AI Worker Eval System, Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite | - |
+| q_entity_001 | synthetic | brand_entity_exact | partial | 7/12 | ToolTraceEval, Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite | - |
 | q_entity_002 | synthetic | brand_entity_exact | partial | 7/12 | Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases | - |
 | q_compare_001 | synthetic | comparison | partial | 6/12 | Trace and Tool Calls, Assertions, Regression | - |
 | q_compare_002 | synthetic | comparison | partial | 6/12 | Intermediate Steps, Tool Use, Final Answer | - |

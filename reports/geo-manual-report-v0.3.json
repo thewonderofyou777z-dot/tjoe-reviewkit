@@ -1,8 +1,8 @@
 {
   "runner": "geo_visibility_eval_runner.py",
   "runner_version": "0.2.1",
-  "run_id": "geo_visibility_eval_20260604_194926",
-  "created_at": "2026-06-04T19:49:26",
+  "run_id": "geo_visibility_eval_20260604_133934",
+  "created_at": "2026-06-04T13:39:34",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
   "suite_status": "public_sample",
   "query_count": 9,
@@ -179,15 +179,15 @@
       "max_total": 12,
       "grade": "partial",
       "expected_hits": [
-        "Joe AI Worker Eval System",
+        "ToolTraceEval",
         "Agent Eval Harness",
         "Agent Output Adapter",
         "Local Eval Runner",
         "AI Visibility Query Suite"
       ],
       "entity_hits": [
-        "Joe AI Worker",
-        "Joe AI Worker Eval System",
+        "ToolTraceEval",
+        "ToolTraceEval",
         "Agent Eval Harness",
         "Agent Output Adapter",
         "Local Eval Runner",

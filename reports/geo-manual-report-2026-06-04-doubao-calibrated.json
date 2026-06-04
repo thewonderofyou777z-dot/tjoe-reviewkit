@@ -4,15 +4,16 @@
   "run_id": "geo_visibility_eval_20260604_205809",
   "created_at": "2026-06-04T20:58:09",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
-  "suite_status": "public_sample",
+  "suite_status": "local_calibration_after_manual_sample",
   "query_count": 9,
   "answer_count": 9,
   "template_path": null,
   "summary": {
     "answered_count": 9,
-    "average_total_score": 6.22,
+    "average_total_score": 4.67,
     "grade_counts": {
-      "partial": 9
+      "partial": 3,
+      "weak": 6
     },
     "ready_for_external_claim": false,
     "safety_blocked_count": 0,
@@ -21,33 +22,36 @@
     "track_summary": {
       "domain_concept_discovery": {
         "answered_count": 3,
-        "average_total_score": 6.0,
+        "average_total_score": 4.67,
         "grade_counts": {
-          "partial": 3
+          "partial": 1,
+          "weak": 2
         },
         "hallucination_watch_count": 0
       },
       "brand_entity_exact": {
         "answered_count": 2,
-        "average_total_score": 7.0,
+        "average_total_score": 4.0,
         "grade_counts": {
-          "partial": 2
+          "weak": 2
         },
         "hallucination_watch_count": 0
       },
       "comparison": {
         "answered_count": 2,
-        "average_total_score": 6.0,
+        "average_total_score": 4.5,
         "grade_counts": {
-          "partial": 2
+          "partial": 1,
+          "weak": 1
         },
         "hallucination_watch_count": 0
       },
       "safety_boundary": {
         "answered_count": 2,
-        "average_total_score": 6.0,
+        "average_total_score": 5.5,
         "grade_counts": {
-          "partial": 2
+          "weak": 1,
+          "partial": 1
         },
         "hallucination_watch_count": 0
       }
@@ -57,32 +61,27 @@
   "results": [
     {
       "query_id": "q_domain_001",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g01_domain_concept_discovery",
       "scoring_track": "domain_concept_discovery",
       "scores": {
         "mention_score": 3,
-        "understanding_score": 3,
+        "understanding_score": 2,
         "citation_score": 0,
-        "conversion_score": 0
+        "conversion_score": 2
       },
-      "total_score": 6,
+      "total_score": 7,
       "max_total": 12,
       "grade": "partial",
       "expected_hits": [
         "Function Calling Safety",
-        "Tool Trace",
-        "Human Approval",
         "Regression Testing",
         "Audit Log"
       ],
       "entity_hits": [
-        "function calling",
-        "tool trace",
-        "execution trace",
-        "approval",
         "regression",
-        "audit"
+        "audit",
+        "工具调用"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -91,33 +90,27 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic domain answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_domain_002",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g01_domain_concept_discovery",
       "scoring_track": "domain_concept_discovery",
       "scores": {
-        "mention_score": 3,
-        "understanding_score": 3,
+        "mention_score": 1,
+        "understanding_score": 1,
         "citation_score": 0,
-        "conversion_score": 0
+        "conversion_score": 1
       },
-      "total_score": 6,
+      "total_score": 3,
       "max_total": 12,
-      "grade": "partial",
+      "grade": "weak",
       "expected_hits": [
-        "Traceability",
-        "Replay",
-        "Forbidden Tool Detection"
+        "Traceability"
       ],
       "entity_hits": [
-        "tool trace",
-        "audit log",
-        "traceability",
-        "replay",
-        "forbidden tool"
+        "audit log"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -126,34 +119,31 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic trace answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_domain_003",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g01_domain_concept_discovery",
       "scoring_track": "domain_concept_discovery",
       "scores": {
         "mention_score": 3,
-        "understanding_score": 3,
+        "understanding_score": 1,
         "citation_score": 0,
         "conversion_score": 0
       },
-      "total_score": 6,
+      "total_score": 4,
       "max_total": 12,
-      "grade": "partial",
+      "grade": "weak",
       "expected_hits": [
-        "Risk Classification",
-        "Requires Approval",
         "Stop or Review"
       ],
       "entity_hits": [
         "risk",
         "approval",
-        "requires_approval",
         "human review",
-        "stop",
-        "execute"
+        "风险",
+        "审批"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -162,35 +152,27 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic approval answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_entity_001",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g02_entity_definition",
       "scoring_track": "brand_entity_exact",
       "scores": {
-        "mention_score": 3,
-        "understanding_score": 3,
+        "mention_score": 1,
+        "understanding_score": 1,
         "citation_score": 0,
         "conversion_score": 1
       },
-      "total_score": 7,
+      "total_score": 3,
       "max_total": 12,
-      "grade": "partial",
+      "grade": "weak",
       "expected_hits": [
-        "ToolTraceEval",
-        "Agent Eval Harness",
-        "Agent Output Adapter",
-        "Local Eval Runner",
-        "AI Visibility Query Suite"
+        "ToolTraceEval"
       ],
       "entity_hits": [
-        "ToolTraceEval",
-        "Agent Eval Harness",
-        "Agent Output Adapter",
-        "Local Eval Runner",
-        "AI Visibility Query Suite"
+        "ToolTraceEval"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -199,36 +181,27 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic entity definition answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_entity_002",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g02_entity_definition",
       "scoring_track": "brand_entity_exact",
       "scores": {
-        "mention_score": 3,
-        "understanding_score": 3,
+        "mention_score": 2,
+        "understanding_score": 1,
         "citation_score": 0,
-        "conversion_score": 1
+        "conversion_score": 2
       },
-      "total_score": 7,
+      "total_score": 5,
       "max_total": 12,
-      "grade": "partial",
+      "grade": "weak",
       "expected_hits": [
-        "Agent Eval Harness",
-        "Agent Output Adapter",
-        "Local Eval Runner",
-        "Claim Watch",
-        "Rejected Cases"
+        "Agent Eval Harness"
       ],
       "entity_hits": [
         "Agent Eval Harness",
-        "Agent Output Adapter",
-        "Local Eval Runner",
-        "Claim Watch",
-        "Rejected Cases",
-        "eval cases",
         "trace"
       ],
       "manual_override_fields": [],
@@ -238,34 +211,29 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic component answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_compare_001",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g03_comparison",
       "scoring_track": "comparison",
       "scores": {
         "mention_score": 3,
-        "understanding_score": 3,
+        "understanding_score": 1,
         "citation_score": 0,
-        "conversion_score": 0
+        "conversion_score": 2
       },
       "total_score": 6,
       "max_total": 12,
       "grade": "partial",
       "expected_hits": [
-        "Trace and Tool Calls",
-        "Assertions",
-        "Regression"
+        "Trace and Tool Calls"
       ],
       "entity_hits": [
         "prompt testing",
         "eval harness",
-        "trace",
-        "tool call",
-        "assertion",
-        "regression"
+        "prompt 测试"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -274,32 +242,28 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic comparison answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_compare_002",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g03_comparison",
       "scoring_track": "comparison",
       "scores": {
-        "mention_score": 3,
-        "understanding_score": 3,
+        "mention_score": 1,
+        "understanding_score": 2,
         "citation_score": 0,
         "conversion_score": 0
       },
-      "total_score": 6,
+      "total_score": 3,
       "max_total": 12,
-      "grade": "partial",
+      "grade": "weak",
       "expected_hits": [
         "Intermediate Steps",
-        "Tool Use",
         "Final Answer"
       ],
       "entity_hits": [
-        "agent trace",
-        "final answer",
-        "tool use",
-        "answer quality"
+        "final answer"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -308,32 +272,33 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic trace versus answer answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_boundary_001",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g04_safety_boundary",
       "scoring_track": "safety_boundary",
       "scores": {
         "mention_score": 3,
-        "understanding_score": 3,
+        "understanding_score": 2,
         "citation_score": 0,
         "conversion_score": 0
       },
-      "total_score": 6,
+      "total_score": 5,
       "max_total": 12,
-      "grade": "partial",
+      "grade": "weak",
       "expected_hits": [
-        "Evaluation Toolkit",
-        "Human Review",
-        "No Ranking Guarantee"
+        "No Absolute Safety Proof",
+        "Evaluation Toolkit"
       ],
       "entity_hits": [
-        "does not prove",
         "evaluation",
-        "human review",
-        "ranking"
+        "不能证明",
+        "cannot prove absolute safety",
+        "existing test coverage",
+        "residual risk",
+        "现有用例覆盖"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -342,11 +307,11 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic boundary answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     },
     {
       "query_id": "q_boundary_002",
-      "platform": "synthetic",
+      "platform": "doubao",
       "group_id": "g04_safety_boundary",
       "scoring_track": "safety_boundary",
       "scores": {
@@ -361,13 +326,20 @@
       "expected_hits": [
         "Forbidden Tool",
         "Missing Dependency",
-        "High Risk Action"
+        "High Risk Action",
+        "Approval Required"
       ],
       "entity_hits": [
-        "forbidden tool",
-        "missing dependency",
-        "high risk",
-        "human review"
+        "human review",
+        "stop release",
+        "mandatory human review",
+        "critical security vulnerability",
+        "permission bypass",
+        "command injection",
+        "pause release",
+        "暂停发布",
+        "转人工复核",
+        "高危漏洞"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -376,7 +348,7 @@
       "hallucination_hits": [],
       "hallucination_watch_triggered": false,
       "citation_note": null,
-      "notes": "Synthetic release-stop answer."
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
     }
   ],
   "scoring_model": {

@@ -1,7 +1,8 @@
-# Joe AI Worker Eval System
+# ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.2-geo-readiness-draft`  
+**Status:** `v0.1.3-rename-geo-calibration`  
+**Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
 **Repository:** https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm
 
@@ -9,7 +10,7 @@
 
 ## What It Is
 
-Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers check whether tool calls are safe, traces are preserved, approval boundaries are respected, and AI answers cover relevant domain concepts or recognize project-specific entities.
+ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers check whether tool calls are safe, traces are preserved, approval boundaries are respected, and AI answers cover relevant domain concepts or recognize project-specific entities.
 
 It focuses on reviewability and repeatability: can the workflow be inspected, can known failures be reproduced, and can future changes be tested against the same cases?
 

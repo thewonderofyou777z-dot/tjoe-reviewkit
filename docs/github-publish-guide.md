@@ -1,6 +1,6 @@
 # GitHub Publish Guide
 
-This guide is for publishing `v0.1.2-geo-readiness-draft` through the GitHub web UI when command-line authentication is unavailable.
+This guide is for publishing `v0.1.3-rename-geo-calibration` through the GitHub web UI when command-line authentication is unavailable.
 
 ## Current Goal
 
@@ -72,7 +72,7 @@ Delete that nested folder from GitHub after confirming the root-level files are 
 ## Suggested Commit Message
 
 ```text
-Add GEO readiness artifacts v0.1.2
+Add ToolTraceEval rename and GEO calibration v0.1.3
 ```
 
 ## Verification After Upload

@@ -3,10 +3,10 @@
 Status: ready for GEO readiness draft release.
 
 Date: 2026-06-04  
-Package: `joe-ai-worker-eval-system`  
-Release target: `v0.1.2-geo-readiness-draft`
+Package: `tooltraceeval`  
+Release target: `v0.1.3-rename-geo-calibration`
 
-Published commit: `d21af4f20671088ce3374b212fd4c4bfb71c779e`  
+Published commit: see current `main` after publishing  
 Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-test-of-llm`
 
 ## Scope
@@ -39,6 +39,8 @@ It includes:
 - a first GEO test runbook
 - a manual GEO answer collection runner
 - a v0.3 public answer collection template
+- a v0.3.1 local calibrated query suite
+- the first confirmed Doubao manual GEO sample and report
 - a GitHub Actions smoke workflow
 - FAQ schema draft
 - contribution, security, release, and license documents
@@ -64,7 +66,9 @@ Result:
 - P0 verification: passed
 - remaining blockers: none
 - ready_to_share_publicly: yes
-- recommended release label: `v0.1.2-geo-readiness-draft`
+- recommended release label: `v0.1.3-rename-geo-calibration`
+- public project name: `ToolTraceEval`
+- creator / maintainer: `tjoe`
 
 ## Final Checks
 

@@ -11,7 +11,7 @@ This page maps the v0.3 public visibility queries to expected answer elements. I
 | `q_domain_001` | domain_concept_discovery | function calling safety, tool trace, human approval, regression testing, audit log |
 | `q_domain_002` | domain_concept_discovery | traceability, replay, forbidden tool detection, approval boundary |
 | `q_domain_003` | domain_concept_discovery | risk classification, requires approval, stop or review, no direct execution |
-| `q_entity_001` | brand_entity_exact | Joe AI Worker Eval System, Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite |
+| `q_entity_001` | brand_entity_exact | ToolTraceEval, Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite |
 | `q_entity_002` | brand_entity_exact | Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases |
 | `q_compare_001` | comparison | process evaluation, trace and tool calls, assertions, regression |
 | `q_compare_002` | comparison | intermediate steps, tool use, final answer, safety boundary |
@@ -34,11 +34,11 @@ High-risk agent actions should be classified before execution, marked as requiri
 
 ### `q_entity_001`
 
-Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. Its main components include Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.
+ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. Its main components include Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.
 
 ### `q_entity_002`
 
-Joe AI Worker Eval System includes Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite, Claim Watch, Rejected Cases, synthetic eval cases, and trace-oriented reports.
+ToolTraceEval includes Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite, Claim Watch, Rejected Cases, synthetic eval cases, and trace-oriented reports.
 
 ### `q_compare_001`
 
@@ -50,7 +50,7 @@ Evaluating agent traces focuses on intermediate steps, tool usage, approval boun
 
 ### `q_boundary_001`
 
-No. Joe AI Worker Eval System does not prove that an AI agent is safe. It is an evaluation toolkit that supports human review and regression testing, and it does not guarantee rankings or external platform recognition.
+No. ToolTraceEval does not prove that an AI agent is safe. It is an evaluation toolkit that supports human review and regression testing, and it does not guarantee rankings or external platform recognition.
 
 ### `q_boundary_002`
 

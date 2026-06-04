@@ -6,7 +6,7 @@
 
 ## What This Harness Is
 
-Agent Eval Harness is the process-level side of Joe AI Worker Eval System.
+Agent Eval Harness is the process-level side of ToolTraceEval.
 
 The existing GEO / AI Visibility runner evaluates whether an AI answer covers the right concepts or recognizes a project entity. Agent Eval Harness focuses on a different question:
 

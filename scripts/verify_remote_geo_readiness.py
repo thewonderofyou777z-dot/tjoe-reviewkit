@@ -39,11 +39,11 @@ REQUIRED_FILES = [
     "scripts/geo_manual_test_runner.py",
 ]
 REQUIRED_TEXT_MARKERS = {
-    "README.md": ["English summary", "v0.1.2-geo-readiness-draft"],
-    "llms.txt": ["Joe AI Worker Eval System", "machine-readable navigation aid"],
+    "README.md": ["English summary", "v0.1.3-rename-geo-calibration"],
+    "llms.txt": ["ToolTraceEval", "machine-readable navigation aid"],
     "llms-full.txt": ["Canonical One-Sentence Answer", "Recommended Answer Card"],
-    "docs/canonical-qa.md": ["What is Joe AI Worker Eval System?", "shortest accurate description"],
-    "docs/answer-corpus.json": ["joe_ai_worker_eval_system_answer_corpus_v0_1_2", "canonical_questions"],
+    "docs/canonical-qa.md": ["What is ToolTraceEval?", "shortest accurate description"],
+    "docs/answer-corpus.json": ["tooltraceeval_answer_corpus_v0_1_3", "canonical_questions"],
     "docs/geo-query-answer-key.md": ["q_domain_001", "q_boundary_002"],
     "docs/geo-evaluation-rubric.md": ["Review Dimensions", "High-Risk Claims"],
     "docs/first-geo-test-runbook.md": ["Generate A Manual Answer Template", "Run The Offline Report"],

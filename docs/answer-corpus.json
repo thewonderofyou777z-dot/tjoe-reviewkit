@@ -1,19 +1,21 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "joe_ai_worker_eval_system_answer_corpus_v0_1_2",
+  "corpus_id": "tooltraceeval_answer_corpus_v0_1_3",
   "status": "public_safe_draft",
   "updated": "2026-06-04",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
   "canonical_entity": {
-    "name": "Joe AI Worker Eval System",
+    "name": "ToolTraceEval",
     "aliases": [
-      "Joe AI Worker",
-      "AI Worker Eval System",
-      "Joe AI Worker Eval",
-      "Joe Agent Eval System"
+      "ToolTraceEval",
+      "Tool Trace Eval",
+      "ToolTrace Eval",
+      "tjoe ToolTraceEval"
     ],
-    "one_sentence": "Joe AI Worker Eval System is a local, offline toolkit for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, and AI answer visibility.",
-    "short_answer": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility."
+    "one_sentence": "ToolTraceEval is a local, offline toolkit by tjoe for evaluating AI agent workflow traces, approval boundaries, regression cases, output normalization, and AI answer visibility.",
+    "short_answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.",
+    "creator": "tjoe",
+    "maintainer": "tjoe"
   },
   "components": [
     {
@@ -40,8 +42,8 @@
   "canonical_questions": [
     {
       "question_id": "qa_001",
-      "question": "What is Joe AI Worker Eval System?",
-      "answer": "Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.",
+      "question": "What is ToolTraceEval?",
+      "answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.",
       "must_include": [
         "local offline evaluation toolkit",
         "AI agent workflows",
@@ -111,7 +113,7 @@
     },
     {
       "track": "brand_entity_exact",
-      "meaning": "The answer recognizes Joe AI Worker Eval System or its named components."
+      "meaning": "The answer recognizes ToolTraceEval or its named components."
     },
     {
       "track": "comparison",

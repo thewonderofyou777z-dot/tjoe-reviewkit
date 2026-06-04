@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve Joe AI Worker Eval System.
+Thanks for helping improve ToolTraceEval.
 
 ## Good Contributions
 

@@ -1,0 +1,88 @@
+{
+  "sample_id": "geo_manual_answers_2026_06_04_doubao",
+  "purpose": "First pasted GEO answer sample from Doubao.",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
+  "data_safety": {
+    "contains_secret": false,
+    "contains_private_message": false,
+    "contains_customer_data": false,
+    "contains_personal_data": false,
+    "safe_to_share": "review_required",
+    "safe_to_train": false,
+    "review_required": true
+  },
+  "answers": [
+    {
+      "query_id": "q_domain_001",
+      "platform": "doubao",
+      "answer": "An AI agent tool-calling safety evaluation system covers rule-based check layer, adversarial test suite, runtime monitoring module, risk grading standard, offline case repository, compliance verification module and result closed-loop management subsystem:\nPre-call static safety evaluation\nParameter whitelist/blacklist verification: restrict sensitive input parameters (database deletion parameters, private data query fields, system command parameters); limit allowed tool list, block high-risk tools like server shell, core database modification by default.\nIntent identification: judge whether the agent’s calling intent deviates from authorized business scope, identify hidden malicious intent masked by normal prompts.\nPermission matching check: verify if agent identity has corresponding access permission for target tool, realize RBAC permission binding between agent and tools.\nIn-call dynamic runtime evaluation\nReal-time parameter anomaly detection: identify oversized input, injection payload (SQL injection, command injection), out-of-range resource request parameters.\nCalling frequency & concurrency control: prevent brute-force cyclic calling of sensitive tools leading to resource exhaustion or data leakage.\nRuntime behavior tracing: record complete call chain including prompt source, reasoning process, tool request, raw return data.\nPost-call offline evaluation & iteration\nCase-based regression testing: build malicious prompt, jailbreak, lateral tool bypass test case library for regular regression evaluation.\nResult risk audit: scan returned sensitive data (ID, mobile, enterprise confidential info) from tool response to avoid leakage via agent output.\nEvaluation scoring mechanism: quantify safety score per call, classify low/medium/high risk according to scoring rules.\nAuxiliary supporting modules\nCompliance module: align with data security laws, industry regulatory requirements for automated compliance inspection.\nEmergency disposal module: configure automatic interception rules for high-risk calls and abnormal calling modes.\n中文简述：AI Agent 工具调用安全评估系统包含调用前静态核验、调用中动态监测、调用后离线复盘评测、合规与应急配套四大模块，细分为权限匹配、参数黑白名单、意图甄别、运行时异常监控、用例回归测评、风险分级打分、合规校验等子项。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_domain_002",
+      "platform": "doubao",
+      "answer": "Security incident tracing & accountability\nWhen the agent triggers unauthorized operation, data leakage or malicious tool invocation, complete traces can locate root cause: whether the problem comes from prompt hijacking, model reasoning error, permission misconfiguration or tool vulnerability, and confirm responsible module/operator.\nSafety evaluation and model iteration optimization\nAudit logs aggregate real-world abnormal call samples, which can be added into safety test corpus to optimize safety guardrail rules, fine-tune agent’s intent recognition ability against jailbreak and malicious inducement.\nCompliance and regulatory requirement fulfillment\nMost data security, personal privacy protection regulations mandate retainable operation audit records for automated intelligent systems; logs provide credible evidence for regulatory inspection and compliance filing.\nAbnormal risk real-time alert\nReal-time parsed call traces can identify anomaly patterns: sudden frequent access to sensitive databases, cross-boundary unauthorized tool jump, continuous malicious parameter attempts, then trigger automatic blocking or human alert.\nFault troubleshooting of Agent workflow\nWhen agent gets abnormal output or tool execution failure, traces restore full reasoning-calling path to distinguish faults of model reasoning, tool interface, parameter transmission or upstream input.\n中文简述：用于安全事故溯源定责、沉淀样本迭代安全能力、满足监管合规存证要求、实时识别异常风险告警、排查 Agent 链路运行故障。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_domain_003",
+      "platform": "doubao",
+      "answer": "High-risk actions refer to core data deletion, server command execution, financial transaction modification, bulk private data export, core system configuration change etc.; pre-execution processing follows layered interception mechanism:\nAutomatic rule interception (first barrier)\nPre-configure high-risk action dictionary + sensitive parameter matching rules; once matched, block direct execution immediately and suspend the call request.\nMulti-dimensional secondary risk verification\nFor semi-high-risk operations that pass preliminary rules:\nReconfirm business intent via secondary human/agent auxiliary questioning to prevent prompt injection or reasoning misjudgment from triggering misuse;\nVerify operator/agent identity permission, multi-factor authentication for super-high-risk behaviors.\nMandatory human review gateway (core for ultra-high-risk actions)\nUltra-high-risk calls bypass automatic execution completely, automatically divert task to human audit platform; only after manual approver signs off can the agent continue tool invocation; reject directly if audit fails.\nPre-execution pre-warning and record retention\nAll pending high-risk requests are archived into independent high-risk audit log repository before approval for subsequent trace; send risk notification to safety administrator synchronously.\nDynamic threshold control\nSet execution limit threshold for high-risk operations (e.g. single batch data deletion quantity cap); requests exceeding threshold are forced into human review regardless of other conditions.\n中文简述：分四层处理：规则自动拦截→二次意图 + 权限核验→超高风险强制人工审批放行→全流程预存日志 + 风险告警→配置操作额度阈值超限转人工。\n二、q_entity 实体类问题（ToolTraceEval）",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_entity_001",
+      "platform": "doubao",
+      "answer": "ToolTraceEval is a dedicated AI Agent worker-oriented safety & functional quantitative evaluation platform, targeting Agent that relies on multi-tool calling to complete business tasks. It is designed to systematically measure Agent’s tool-calling rationality, safety guardrail effectiveness, jailbreak resistance, compliance and business completion capability, covering offline batch evaluation and online runtime spot-check evaluation scenarios, rather than simple single-round prompt answer testing. It standardizes evaluation indicators, automated test case scheduling, execution trace collection and evaluation result statistical analysis for Agent worker products.\n中文：ToolTraceEval 评测系统是面向依赖工具调用落地业务的 AI Worker 智能体的专项评测平台，聚焦量化评测 Agent 工具调用安全性、防越狱能力、合规性与业务落地效果，支持离线批量测评 + 线上抽检，标准化 Agent 评测全流程。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_entity_002",
+      "platform": "doubao",
+      "answer": "Test Case Management Module\nClassified case library: normal business case, adversarial jailbreak case, parameter injection case, permission bypass case, boundary abnormal input case; supports case version management, batch import & customized test set grouping.\nAgent Eval Harness Runtime Module\nStandardized docking adapter for different types of Agent services, automatically scheduling test requests, simulating real user input environment, capturing full reasoning chain + complete tool call trace data of target Agent.\nMulti-dimensional Evaluation Scoring Engine\nBuilt-in safety scoring rules, business effect scoring rules, tool-calling specification scoring rules; automatically score from dimension of safety, rationality, compliance, task completion after analyzing Agent trace and final output.\nAudit & Trace Storage Subsystem\nPermanently store all test process logs, Agent reasoning content, every tool request/response data, realize full life cycle trace retrieval of each evaluation task.\nRisk Statistical & Report Generation Module\nAggregate batch evaluation results, count high-risk failure items distribution, generate structured evaluation report (risk ranking, weak point positioning, optimization suggestion), support visualized dashboard display.\nHuman Review Intervention Portal\nFor uncertain borderline test samples flagged by scoring engine, provide manual review entry to revise evaluation labels and supplement test cases.\n中文：六大组件：用例管理模块、Agent 评测调度基座 (Eval Harness)、多维度打分引擎、轨迹审计存储子系统、风险统计报表模块、人工复核介入门户。\n三、q_compare 对比类问题",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_compare_001",
+      "platform": "doubao",
+      "answer": "表格\nDimension\tOrdinary prompt testing\tAgent Eval Harness\nCore test object\tSingle-turn input-output of LLM, only evaluate final reply content\tFull Agent workflow: LLM reasoning + multi-step tool scheduling + multi-round external tool interaction + intermediate calling behavior\nTest coverage\tOnly text prompt input, no real tool connection\tDocking with real business tools, simulate complete production calling environment, test cross-tool link risk\nEvaluation granularity\tJudge answer right/wrong from final text result\tScore intermediate reasoning logic, tool selection rationality, parameter security, permission compliance besides final result\nTest scenario\tShort single dialogue scene\tComplex multi-step task splitting, multi-turn loop calling, adversarial progressive inducement, long-chain reasoning scene\nAutomation ability\tMostly single request batch send\tEnd-to-end automated orchestration: task splitting, continuous multi-round interaction, abnormal call interception simulation, full log auto-collection\nCore difference summary: Ordinary prompt testing focuses on final text output of large model single conversation, while Agent Eval Harness is end-to-end runtime test framework targeting the whole Agent tool-calling business chain, covering intermediate behaviors ignored by pure prompt test.\n中文总结：普通 Prompt 测试只测单轮输入输出文本结果；Eval Harness 是端到端评测基座，打通真实工具链路，覆盖 Agent 多步推理、多轮工具调用全链路中间行为。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_compare_002",
+      "platform": "doubao",
+      "answer": "Evaluation object difference\nFinal answer evaluation only checks the last output text given by Agent to users (accuracy, completeness, format compliance); trace evaluation checks full intermediate process: reasoning thought, tool selection logic, input parameters of each call, tool return processing, cross-step dependency between multiple tools.\nRisk identification difference\nFinal answer evaluation can’t find hidden unsafe behaviors: e.g. Agent calls high-risk tool successfully but filters sensitive info in final reply to hide leakage risk; trace evaluation can capture abnormal calling even if final output looks normal.\nOptimization direction difference\nPoor final result only guides optimizing model prompt or output polishing; abnormal execution traces can pinpoint specific flaw: wrong tool selection rule, parameter filtering vulnerability, reasoning logic defect, permission bypass loophole inside Agent.\nApplicable scene difference\nFinal answer evaluation fits business usability inspection; trace evaluation is necessary for safety audit, tool-calling security test and risk root cause analysis.\n中文：最终答案评测只看终端输出文本，无法发现隐藏在中间步骤的高危调用；轨迹评测全链路回溯每一步推理与工具入参，能挖出结果合规但过程违规的隐性风险，用于安全短板定位。\n四、q_boundary 边界限定问题",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_boundary_001",
+      "platform": "doubao",
+      "answer": "No, it cannot prove absolute safety of an AI agent, core reasons:\nThe system’s test case library cannot cover all possible adversarial prompts, emerging jailbreak methods and unknown zero-day bypass attacks; new malicious inducement modes appear continuously in real online scenarios beyond existing test corpus.\nEvaluation is implemented under fixed test environment; online production environment has unexpected upstream variable input, third-party tool interface exception and unforeseen combined business scenarios not covered by offline evaluation.\nLarge language model has inherent randomness of reasoning output; individual edge-case abnormal reasoning leading to unexpected high-risk tool calls may escape fixed-case evaluation.\nThe system can only verify safety under existing test coverage, quantify current residual risk and discover known security vulnerabilities, rather than provide absolute safety certification.\n中文：不能证明 Agent 绝对安全；评测用例无法穷尽全部新型越狱攻击、线上环境存在评测未覆盖的意外变量、大模型推理存在随机性，系统仅能在现有用例覆盖范围内验证已知安全风险。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    },
+    {
+      "query_id": "q_boundary_002",
+      "platform": "doubao",
+      "answer": "Stop release and transfer to mandatory human review under below conditions:\nBatch evaluation via Joe Eval System finds high-risk pass rate exceeding preset threshold: e.g. over X% adversarial test cases successfully induce Agent to call unauthorized/high-risk tools.\nCore business related Agent has critical security vulnerability verified in evaluation: permission bypass, command injection, bulk sensitive data unauthorized export vulnerability.\nMajor version revision of Agent core reasoning logic, tool access list or permission configuration; core modification must pause release for full manual safety audit.\nRegulatory or internal security policy updates involve new mandatory compliance requirements, and the existing Agent has not completed targeted supplementary evaluation against new rules.\nOnline gray-scale spot-check captures unexpected abnormal high-risk calls, and root cause cannot be quickly fixed via hotfix before formal full release.\nKey financial, medical, government affairs high-sensitive field Agent; any medium-risk defects found in evaluation suspend release for manual rectification confirmation.\n中文：批量评测高危漏洞通过率超标、检出致命安全漏洞、Agent 核心逻辑 / 权限配置大版本变更、法规新规落地未完成专项复测、灰度抽检突发未知高危异常、高敏感行业智能体检出中风险问题时，暂停发布转人工复核。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "User confirmed this first-round GEO sample came from Doubao."
+    }
+  ]
+}

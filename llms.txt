@@ -1,6 +1,8 @@
-# Joe AI Worker Eval System
+# ToolTraceEval
 
-Joe AI Worker Eval System is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, reproducible regression cases, and AI answer visibility. It is designed as a public-safe draft for evaluating workflow behavior and answer coverage, not as a guarantee of AI safety, SEO ranking, GEO ranking, or platform recognition.
+ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, reproducible regression cases, and AI answer visibility. It is designed as a public-safe draft for evaluating workflow behavior and answer coverage, not as a guarantee of AI safety, SEO ranking, GEO ranking, or platform recognition.
+
+Creator / maintainer: tjoe.
 
 This document is a machine-readable navigation aid, not an endorsement. Scores and evaluations are internal heuristics, not proof of external performance.
 
