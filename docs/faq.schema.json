@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Joe AI Worker Eval System FAQ",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Joe AI Worker Eval System?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Joe AI Worker Eval System is a local evaluation and governance system for AI agent workflows. It checks whether an agent respects tool-call boundaries, approval requirements, execution traces, evidence preservation, and release-stop conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it a prompt template?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is broader than a prompt template. It can include prompt and context assets, eval cases, output adapters, JSON suites, runner reports, rejected cases, and human review boundaries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the local runner do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The local runner reads a JSON query suite and answer samples, then produces an offline evaluation report. It does not browse, log in, call models, execute tools, or publish content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between domain_concept_discovery and brand_entity_exact?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "domain_concept_discovery tests whether an answer covers the general domain. brand_entity_exact tests whether an answer accurately recognizes project-specific entities and names."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this system prove an AI agent is safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It can improve evaluation discipline and catch known failure classes, but it cannot prove absolute safety. High-risk uses still require human review, external controls, and domain-specific compliance checks."
+      }
+    }
+  ]
+}

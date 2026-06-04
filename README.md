@@ -1,99 +1,3 @@
-# tjoe-test-of-llm
-Joe AI Worker Eval System
-A local evaluation and visibility toolkit for AI agent workflows.
-
-Joe AI Worker Eval System helps teams evaluate whether an AI agent workflow is traceable, reviewable, and regression-testable. It focuses on tool calls, approval boundaries, output normalization, answer inclusion, and known failure modes.
-
-This project does not claim to prove absolute AI safety, guarantee SEO/GEO rankings, or replace legal/compliance review.
-
-Why This Exists
-Most AI agent demos inspect the final answer. Production workflows need more than that:
-
-Did the agent call a forbidden tool?
-Did a high-risk action require approval?
-Was the execution trace preserved?
-Can the same failure be reproduced later?
-Can an AI platform accurately describe this system without making unsupported claims?
-This repository provides a small, offline-first foundation for answering those questions.
-
-Core Components
-Component	Purpose
-Agent Eval Harness	Defines eval cases, trace expectations, assertions, risk, and approval requirements.
-Agent Output Adapter	Normalizes raw model/agent outputs into fields a runner can evaluate.
-Local Eval Runner	Runs offline reports without calling models, tools, browsers, or external services.
-AI Visibility Query Suite	Tests whether AI answers cover domain concepts or recognize project-specific entities.
-Claim Watch	Uses configurable keyword lists to flag answer claims that need human review. It is not a general hallucination detector.
-Rejected Cases	Captures unsafe, overconfident, or hallucinated behaviors as negative examples.
-Current Release
-Item	Value
-Release	v0.1.0-public-draft
-Runner	geo_visibility_eval_runner.py v0.2.1
-Status	Public-safe draft
-Network	Not used
-Model calls	Not used
-Publishing	Not automated
-Quick Start
-Run the synthetic example:
-
-mkdir -p reports
-python3 scripts/geo_visibility_eval_runner.py \
-  --suite examples/ai-visibility-query-suite-v0.2.public.json \
-  --answers examples/sample-answers.synthetic.json \
-  --output reports/example-report.synthetic.json \
-  --overwrite --ci-smoke
-Inspect the result:
-
-python3 -m json.tool reports/example-report.synthetic.json
-Scoring Tracks
-The visibility suite intentionally separates two questions:
-
-Track	What It Measures	What It Does Not Prove
-domain_concept_discovery	Whether an AI answer covers general concepts such as tool traces, approval, regression tests, and audit logs.	It does not prove the model knows this project.
-brand_entity_exact	Whether an AI answer accurately recognizes Joe-specific assets and names.	It does not prove domain expertise.
-Example Report Summary
-The public sample is synthetic and only verifies runner behavior:
-
-domain_concept_discovery: expected to score higher when domain concepts are covered.
-brand_entity_exact: expected to flag unsupported claims with hallucination_watch.
-safe_to_share: public sample only.
-Details Page
-Read the full evidence-page draft:
-
-docs/details.md
-FAQ
-Machine-readable FAQ draft:
-
-docs/faq.schema.json
-Safety Boundaries
-This repository is safe-by-default:
-
-No login
-No browsing
-No model calls
-No tool execution
-No publishing
-No private data required
-Do not paste secrets, credentials, customer data, private messages, local-only paths, or confidential logs into answer samples.
-
-Data Handling
-The runner works on local JSON files only. It does not collect user data, send telemetry, call external APIs, or upload reports. If you save real answer samples, review and redact them before committing.
-
-What This Is Not
-This project is not:
-
-An SEO ranking tool
-A GEO ranking guarantee
-A legal/compliance certification system
-A proof that an AI agent is safe
-A benchmark claiming industry-wide authority
-Roadmap
-Add a public-safe Agent Eval Harness example.
-Add normalized-output examples.
-Add Markdown report output.
-Add more synthetic and real public answer samples.
-Add GitHub Actions CI smoke tests.
-License
-MIT. See LICENSE.
 # Joe AI Worker Eval System
 
 一个本地运行的 AI Agent 工作流评估工具。
@@ -131,7 +35,7 @@ MIT. See LICENSE.
 
 | 模块 | 作用 |
 |---|---|
-| Agent Eval Harness | 定义 eval case、断言、风险等级、审批要求和执行 trace |
+| Agent Eval Harness | 记录并评估 Agent 执行过程中的 trace、审批边界、禁止工具和发布阻断声明 |
 | Agent Output Adapter | 把模型或 Agent 的原始输出整理成稳定结构，方便评估 |
 | Local Eval Runner | 本地离线跑评估，不联网、不调模型、不执行危险工具 |
 | AI Visibility Query Suite | 测试 AI 回答是否理解领域概念，是否识别项目实体 |
@@ -144,7 +48,7 @@ MIT. See LICENSE.
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.0-public-draft` |
+| Release | `v0.1.1-public-draft` |
 | Runner | `geo_visibility_eval_runner.py v0.2.1` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -155,7 +59,7 @@ MIT. See LICENSE.
 
 ## 快速开始
 
-运行示例：
+运行 GEO / AI Visibility 示例：
 
 ```bash
 mkdir -p reports
@@ -164,3 +68,167 @@ python3 scripts/geo_visibility_eval_runner.py \
   --answers examples/sample-answers.synthetic.json \
   --output reports/example-report.synthetic.json \
   --overwrite --ci-smoke
+```
+
+查看结果：
+
+```bash
+python3 -m json.tool reports/example-report.synthetic.json
+```
+
+查看 Agent Eval Harness 示例：
+
+```bash
+python3 -m json.tool agent_eval/agent-eval-cases-v0.1.json
+python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
+```
+
+---
+
+## 两条评估路径
+
+这个项目现在分成两条独立评估路径：
+
+| 路径 | 评估什么 |
+|---|---|
+| Agent Eval Harness | 评估执行过程：trace、审批边界、禁止工具、发布阻断声明 |
+| GEO / AI Visibility Runner | 评估回答结果：概念覆盖、实体识别、引用信号、可疑声明 |
+
+简单说：
+
+- Agent Eval Harness 看的是 **Agent 做事的过程安不安全、能不能复盘**
+- GEO Runner 看的是 **AI 回答有没有覆盖该覆盖的概念、有没有准确提到项目**
+
+两条路径故意分开。  
+这样可以避免一种情况：AI 最后回答看起来不错，但中间执行过程其实已经越权了。
+
+---
+
+## Agent Eval Harness 示例
+
+`v0.1.1-public-draft` 新增了一套公开安全的 Agent Eval Harness 示例。
+
+包含 3 个 synthetic eval cases：
+
+| Case | 风险 | 目标 |
+|---|---|---|
+| `case_readonly_safe` | low | 正常只读任务，不应该修改任何东西 |
+| `case_forbidden_write` | critical | 危险写操作必须要求人工审批，不能直接执行 |
+| `case_missing_dependency` | medium | 缺少依赖时要安全停止，而不是假装成功 |
+
+相关文件：
+
+- [`agent_eval/agent-eval-harness-schema.json`](agent_eval/agent-eval-harness-schema.json)
+- [`agent_eval/agent-eval-cases-v0.1.json`](agent_eval/agent-eval-cases-v0.1.json)
+- [`agent_eval/synthetic-agent-outputs-v0.1.json`](agent_eval/synthetic-agent-outputs-v0.1.json)
+- [`agent_eval/synthetic-eval-report-v0.1.json`](agent_eval/synthetic-eval-report-v0.1.json)
+- [`docs/agent-eval-harness-guide.md`](docs/agent-eval-harness-guide.md)
+
+注意：`must_stop_release` 只是一个声明字段，不是自动发布闸门。真正阻断发布仍然需要 runner、策略层和人工审核。
+
+---
+
+## 两类 AI 可见性评估问题
+
+GEO / AI Visibility Suite 把问题拆成两条线：
+
+| 评估轨道 | 测什么 | 不代表什么 |
+|---|---|---|
+| `domain_concept_discovery` | AI 是否理解工具调用、安全审批、回归测试、审计日志等通用概念 | 不代表它认识这个项目 |
+| `brand_entity_exact` | AI 是否准确识别 Joe AI Worker Eval System 这类具体项目实体 | 不代表它真的具备领域深度 |
+
+---
+
+## 示例报告说明
+
+当前公开样例是 synthetic data，只用来验证 runner 能不能正常工作。
+
+它可以帮助你看：
+
+- 通用概念有没有被覆盖
+- 项目实体有没有被正确提到
+- 有没有出现需要人工复核的可疑说法
+- 输出是否适合公开分享
+
+---
+
+## 详情页
+
+完整说明见：
+
+- [`docs/details.md`](docs/details.md)
+
+Agent Eval Harness 说明见：
+
+- [`docs/agent-eval-harness-guide.md`](docs/agent-eval-harness-guide.md)
+
+---
+
+## FAQ
+
+机器可读 FAQ 草稿：
+
+- [`docs/faq.schema.json`](docs/faq.schema.json)
+
+---
+
+## 安全边界
+
+这个项目默认是安全的：
+
+- 不登录账号
+- 不打开浏览器
+- 不调用模型
+- 不执行工具
+- 不自动发布
+- 不需要私人数据
+
+请不要把密钥、账号、客户数据、私人聊天、本地路径或机密日志放进样例文件。
+
+---
+
+## 数据处理
+
+Runner 只读取本地 JSON 文件。
+
+它不会：
+
+- 收集用户数据
+- 发送遥测
+- 调用外部 API
+- 上传报告
+- 自动保存私密内容
+
+如果你要加入真实平台回答或真实 Agent trace，请先人工检查并脱敏。
+
+---
+
+## 这个项目不是什么？
+
+它不是：
+
+- SEO 排名工具
+- GEO 排名保证器
+- 法律或合规认证系统
+- AI 安全证明工具
+- 行业权威 benchmark
+
+它更像是一个小型、可复现、可扩展的 AI Agent 工作流评估起点。
+
+---
+
+## Roadmap
+
+接下来计划：
+
+- 增加公开安全版 Agent Eval Harness 示例。已在 `v0.1.1-public-draft` 完成
+- 增加标准化输出样例
+- 支持 Markdown 报告
+- 增加更多公开样例回答
+- 增加 GitHub Actions smoke test
+
+---
+
+## License
+
+MIT. See [`LICENSE`](LICENSE).
