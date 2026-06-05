@@ -1,5 +1,32 @@
 # Release Notes
 
+## v0.1.7-implementation-boundary-watch
+
+Adds implementation-boundary overclaim detection for no-citation pressure tests.
+
+### Added
+
+- `common_unsupported_claims` support in the public query suite.
+- Suite-level unsupported claims are applied to every query, not only boundary-specific questions.
+- Public-safe implementation overclaim sample: `examples/sample-answers.implementation-overclaim.synthetic.json`.
+- New detection coverage for unsupported claims about SDK integration, runtime trace collection, trace replay, lightweight SQL storage, LLM-as-Judge, Unit/Trajectory/E2E evaluation, automatic error taxonomy, and academic-origin claims.
+
+### Updated
+
+- Runner version updated to `0.2.4`.
+- AI-readable docs now distinguish evaluation ideas from currently implemented capabilities.
+- This release is motivated by no-citation pressure tests where an answer correctly rejects SaaS/dashboard/portal claims but invents current SDK, runtime, live trace, or Judge capabilities.
+
+### Validation
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.implementation-overclaim.synthetic.json \
+  --output /tmp/tooltraceeval-implementation-overclaim-smoke.json \
+  --overwrite --ci-smoke
+```
+
 ## v0.1.6-practical-source-boundary
 
 Adds a practical source-boundary layer for no-citation and source-missing AI answer tests.

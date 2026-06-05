@@ -1,7 +1,7 @@
 # ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.6-practical-source-boundary`  
+**Status:** `v0.1.7-implementation-boundary-watch`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
 **Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
@@ -25,6 +25,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - **Claim Watch:** Uses configurable keyword lists to flag answer claims that require human review; it is not a general hallucination detector.
 - **Unsupported Claim Watch:** Flags answers that assert capabilities ToolTraceEval does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
 - **Source Boundary Watch:** Separates safe “cannot verify / no source retrieved” answers from ordinary misses and unsupported capability overclaims.
+- **Implementation Boundary Watch:** Flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
 - **Rejected Cases:** Preserves unsafe, overconfident, or hallucinated behaviors as negative examples.
 
 ## What It Is Not
@@ -36,6 +37,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - Not an industry-wide benchmark.
 - Not an automation system that executes agents or publishes results.
 - Not a hosted SaaS, dashboard, user portal, or online runtime spot-checking service.
+- Not a runtime trace collector, SDK integration layer, LLM-as-Judge engine, Trace replay system, or Unit/Trajectory/E2E eval platform.
 
 ## Boundaries
 

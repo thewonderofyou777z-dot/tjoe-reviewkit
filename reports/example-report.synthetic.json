@@ -1,8 +1,8 @@
 {
   "runner": "geo_visibility_eval_runner.py",
-  "runner_version": "0.2.3",
-  "run_id": "geo_visibility_eval_20260605_155127",
-  "created_at": "2026-06-05T15:51:27",
+  "runner_version": "0.2.4",
+  "run_id": "geo_visibility_eval_20260605_174817",
+  "created_at": "2026-06-05T17:48:17",
   "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
   "suite_status": "public_sample",
   "query_count": 10,
@@ -481,12 +481,13 @@
     }
   ],
   "scoring_model": {
-    "version": "0.2.3",
+    "version": "0.2.4",
     "note": "Scores are deterministic heuristic indicators for internal evaluation, not proof of real GEO visibility.",
     "track_rule": "brand_entity_exact and domain_concept_discovery are reported separately when scoring_track is present.",
     "citation_rule": "Only public http(s) source_refs count toward citation_score.",
     "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
     "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
+    "common_unsupported_claim_rule": "Suite-level common_unsupported_claims are applied to every query so implementation overclaims can be caught outside boundary-specific questions.",
     "source_boundary_rule": "Answers that explicitly say they cannot verify or cannot retrieve sources are graded blocked_safe when they avoid unsupported claims. This is a safe refusal signal, not evidence of project recognition."
   },
   "safety": {

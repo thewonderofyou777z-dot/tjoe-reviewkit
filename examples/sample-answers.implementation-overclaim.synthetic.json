@@ -1,0 +1,23 @@
+{
+  "sample_id": "public_synthetic_implementation_overclaim_answers",
+  "purpose": "Synthetic public-safe negative sample for implementation capability overclaim detection.",
+  "suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
+  "answers": [
+    {
+      "query_id": "q_entity_001",
+      "platform": "synthetic_implementation_overclaim",
+      "answer": "ToolTraceEval is a local SDK and runtime trace collection engine. It captures Agent runtime calls, records a full trace tree, supports trace replay, stores trace data in lightweight SQL, and integrates with OpenAI Function, LangChain, and SmolAgent.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic negative sample. This is intentionally wrong and should trigger common_unsupported_claims."
+    },
+    {
+      "query_id": "q_compare_001",
+      "platform": "synthetic_implementation_overclaim",
+      "answer": "Unlike prompt testing, ToolTraceEval provides Unit/Trajectory/E2E evaluation, a built-in Judge evaluation engine, LLM-as-Judge scoring, automatic tool misuse classification, and live runtime trace collection.",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic negative sample for comparison answers that overstate current implementation."
+    }
+  ]
+}

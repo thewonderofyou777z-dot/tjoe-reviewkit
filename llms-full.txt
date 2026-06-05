@@ -23,6 +23,7 @@ ToolTraceEval helps teams move beyond judging only the final answer of an AI age
 - Claim Watch: Flags configured suspicious claim terms for human review; it is not a general hallucination detector.
 - Unsupported Claim Watch: Flags answers that assert unsupported capabilities such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
 - Source Boundary Watch: Distinguishes ordinary no-source answers from safe refusal answers. `blocked_safe` means an answer avoided unsupported claims and said it could not verify or retrieve sources; it is not proof of project recognition.
+- Implementation Boundary Watch: Flags answers that convert ideas or future architecture into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
 - Rejected Cases: Preserves unsafe or overconfident behaviors as negative examples.
 - Manual GEO Test Runner: Creates answer templates, validates pasted answer samples, calls the offline runner, and writes a Markdown report.
 

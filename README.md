@@ -53,6 +53,7 @@
 | Claim Watch | 用关键词标记需要人工复核的可疑说法，不是通用幻觉检测器 |
 | Unsupported Claim Watch | 抓“当前不支持的能力被说成支持”，例如 SaaS、dashboard、runtime gateway、live tool calls |
 | Source Boundary Watch | 抓“缺少来源时是否安全拒答”，区分 `blocked_safe`、`source_not_retrieved` 和普通低分 |
+| Implementation Boundary Watch | 抓“把概念方向夸成已实现能力”，例如 SDK、runtime trace collection、LLM-as-Judge、Unit/Trajectory/E2E |
 | Rejected Cases | 保存坏案例，防止同类错误反复出现 |
 
 ---
@@ -61,8 +62,8 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.6-practical-source-boundary` |
-| Runner | `geo_visibility_eval_runner.py v0.2.3` |
+| Release | `v0.1.7-implementation-boundary-watch` |
+| Runner | `geo_visibility_eval_runner.py v0.2.4` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
 | 是否调用模型 | 不调用 |
@@ -279,6 +280,7 @@ Runner 只读取本地 JSON 文件。
 - 增加 GitHub Actions smoke test。已在 `v0.1.3-rename-geo-calibration` 完成
 - 增加 unsupported claim watch，用公开 synthetic negative sample 捕捉 SaaS / dashboard / runtime / live tool overclaim。已在 `v0.1.5-practical-overclaim-watch` 完成
 - 增加 source boundary watch，用公开 synthetic safe refusal sample 区分 `blocked_safe`、`source_not_retrieved` 和普通 `miss`。已在 `v0.1.6-practical-source-boundary` 完成
+- 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / runtime trace / LLM-as-Judge / Unit-Trajectory-E2E 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 
 ---
 

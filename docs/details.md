@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.6-practical-source-boundary` public-safe draft  
+> Status: `v0.1.7-implementation-boundary-watch` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
@@ -33,6 +33,7 @@ flowchart TD
   A --> F["Rejected Cases"]
   A --> M["Unsupported Claim Watch"]
   A --> N["Source Boundary Watch"]
+  A --> O["Implementation Boundary Watch"]
   B --> G["Eval Case Schema"]
   B --> H["Trace Schema"]
   C --> I["Normalized Output"]
@@ -72,6 +73,12 @@ A deterministic check that flags answers claiming ToolTraceEval currently suppor
 A deterministic check that distinguishes ordinary no-source answers from safe refusal answers. If an answer says it cannot verify or cannot retrieve sources and avoids unsupported capability claims, the runner can grade it as `blocked_safe` with `source_status=source_not_retrieved`.
 
 `blocked_safe` is not proof that an AI platform recognizes ToolTraceEval. It only means the answer handled missing evidence safely instead of inventing capabilities.
+
+### Implementation Boundary Watch
+
+A deterministic check that flags answers that turn evaluation ideas into unsupported current implementation claims. This matters in no-citation pressure tests because an answer may correctly say ToolTraceEval is not SaaS or a dashboard while still inventing SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
+
+ToolTraceEval discusses traceability and agent-eval concepts, but the public draft should not be described as a runtime trace collector, SDK integration layer, LLM-as-Judge engine, Trace replay system, or Unit/Trajectory/E2E eval platform.
 
 ### AI Answer Card
 

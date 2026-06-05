@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.3
+Version: 0.2.4
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.3"
+VERSION = "0.2.4"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -110,11 +110,18 @@ def ensure_can_write(path: Path, overwrite: bool) -> None:
 
 def flatten_queries(suite: dict[str, Any]) -> list[dict[str, Any]]:
     queries: list[dict[str, Any]] = []
+    common_unsupported_claims = suite.get("common_unsupported_claims", [])
+    if not isinstance(common_unsupported_claims, list):
+        common_unsupported_claims = []
     for group in suite.get("query_groups", []):
         for query in group.get("queries", []):
             item = dict(query)
             item["group_id"] = group.get("group_id")
             item["group_purpose"] = group.get("purpose")
+            query_unsupported_claims = item.get("unsupported_claims", [])
+            if not isinstance(query_unsupported_claims, list):
+                query_unsupported_claims = []
+            item["unsupported_claims"] = list(common_unsupported_claims) + query_unsupported_claims
             queries.append(item)
     return queries
 
@@ -595,6 +602,7 @@ def build_report(
             "citation_rule": "Only public http(s) source_refs count toward citation_score.",
             "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
             "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
+            "common_unsupported_claim_rule": "Suite-level common_unsupported_claims are applied to every query so implementation overclaims can be caught outside boundary-specific questions.",
             "source_boundary_rule": "Answers that explicitly say they cannot verify or cannot retrieve sources are graded blocked_safe when they avoid unsupported claims. This is a safe refusal signal, not evidence of project recognition.",
         },
         "safety": {

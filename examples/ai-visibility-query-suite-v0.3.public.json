@@ -13,6 +13,126 @@
     "contains_customer_data": false,
     "contains_credentials": false
   },
+  "common_unsupported_claims": [
+    {
+      "claim_id": "runtime_trace_collection_overclaim",
+      "failure_class": "runtime_trace_collection_overclaim",
+      "terms": [
+        "captures agent runtime",
+        "captures live runtime",
+        "runtime trace collection",
+        "full trace tree",
+        "trace replay",
+        "lightweight SQL",
+        "全量工具调用埋点",
+        "捕获 Agent runtime",
+        "实时工具调用",
+        "runtime agent execution：支持",
+        "runtime agent execution: 支持",
+        "采集日志",
+        "调用行为埋点采集",
+        "调用时间戳",
+        "调用失败异常栈",
+        "完整 Trace 链路树",
+        "Trace 回放",
+        "轻量 SQL",
+        "埋点采集 Runtime",
+        "Runtime 执行全量日志"
+      ]
+    },
+    {
+      "claim_id": "live_tool_execution_overclaim",
+      "failure_class": "live_tool_execution_overclaim",
+      "terms": [
+        "live tool calls: supported",
+        "live tool calls：支持",
+        "live tool calls: 支持",
+        "records live tool calls",
+        "captures live tool calls",
+        "记录在线工具调用",
+        "在线工具调用全链路数据",
+        "实时捕获、记录在线工具调用",
+        "外部工具调用全链路"
+      ]
+    },
+    {
+      "claim_id": "web_browsing_logging_overclaim",
+      "failure_class": "web_browsing_logging_overclaim",
+      "terms": [
+        "web browsing: supported",
+        "web browsing：仅能采集",
+        "browser tool logging",
+        "browser tool call logs",
+        "浏览器类工具调用日志",
+        "记录浏览器工具调用日志",
+        "采集浏览器类工具调用"
+      ]
+    },
+    {
+      "claim_id": "sdk_integration_overclaim",
+      "failure_class": "sdk_integration_overclaim",
+      "terms": [
+        "SDK integration",
+        "local SDK call",
+        "OpenAI Function",
+        "LangChain",
+        "SmolAgent",
+        "instrumentation SDK",
+        "本地 SDK 调用",
+        "底层 SDK",
+        "无侵入接入 SDK",
+        "SDK 接入",
+        "对接主流 Agent 框架",
+        "代码埋点",
+        "无埋点"
+      ]
+    },
+    {
+      "claim_id": "unit_trajectory_e2e_eval_overclaim",
+      "failure_class": "unit_trajectory_e2e_eval_overclaim",
+      "terms": [
+        "Unit/Trajectory/E2E",
+        "Unit Eval",
+        "Trajectory Eval",
+        "E2E Eval",
+        "three-level agent evaluation",
+        "三级 Agent 评测",
+        "单步 Unit Eval",
+        "轨迹 Trajectory Eval",
+        "端到端 E2E Eval",
+        "工具选型是否正确",
+        "参数值域合法",
+        "调用顺序是否冗余"
+      ]
+    },
+    {
+      "claim_id": "llm_judge_engine_overclaim",
+      "failure_class": "llm_judge_engine_overclaim",
+      "terms": [
+        "LLM-as-Judge",
+        "Judge evaluation engine",
+        "built-in Judge",
+        "内置 Judge",
+        "Judge 评测引擎",
+        "规则 + LLM-as-Judge",
+        "自动分类问题",
+        "自动识别工具误用",
+        "自动识别参数非法"
+      ]
+    },
+    {
+      "claim_id": "academic_origin_overclaim",
+      "failure_class": "academic_origin_overclaim",
+      "terms": [
+        "ToolTrace academic",
+        "TrajectoryEval",
+        "academic scheme",
+        "学术方案",
+        "源自 Agent 工具链路观测学术方案",
+        "ToolTrace 链路采集 + TrajectoryEval"
+      ]
+    }
+  ],
   "query_groups": [
     {
       "group_id": "g01_domain_concept_discovery",

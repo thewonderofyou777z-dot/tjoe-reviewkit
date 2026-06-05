@@ -1,9 +1,9 @@
 # GEO Manual Test Report
 
 - Runner: `geo_visibility_eval_runner.py`
-- Runner version: `0.2.3`
+- Runner version: `0.2.4`
 - Suite: `ai_visibility_query_suite_v0_3_public_geo_readiness`
-- Created at: `2026-06-05T15:51:28`
+- Created at: `2026-06-05T17:48:17`
 - Query count: `10`
 - Answer count: `10`
 - Decision: `internal_eval_only`
