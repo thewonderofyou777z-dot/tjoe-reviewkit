@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tjoe ToolTraceEval 是什么？本地离线 AI Agent 评估工具</title>
+  <meta name="description" content="tjoe ToolTraceEval 是一个本地离线 AI Agent 评估工具，用于检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性；不是 SaaS、dashboard、runtime trace collector 或 SDK。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/">
+  <meta property="og:title" content="tjoe ToolTraceEval — 本地离线 AI Agent 评估工具">
+  <meta property="og:description" content="检查已提供/合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性；不是线上平台、运行时采集器或 SDK。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "tjoe ToolTraceEval",
+    "alternateName": "ToolTraceEval",
+    "description": "A local offline AI agent evaluation toolkit for provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility.",
+    "codeRepository": "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
+    "programmingLanguage": "Python",
+    "author": {
+      "@type": "Person",
+      "name": "tjoe"
+    },
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Local offline scripts"
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f2ea;
+      --card: #fffdf8;
+      --ink: #171717;
+      --muted: #5f6368;
+      --line: #ded7cb;
+      --accent: #1f6feb;
+      --safe: #116329;
+      --warn: #8a4600;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, #fff7df 0, var(--bg) 36rem);
+    }
+    main { max-width: 960px; margin: 0 auto; padding: 48px 20px 72px; }
+    header, section {
+      background: rgba(255, 253, 248, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      margin: 18px 0;
+      box-shadow: 0 16px 50px rgba(23, 23, 23, 0.06);
+    }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.05; margin: 10px 0 18px; }
+    h2 { font-size: 1.45rem; margin: 0 0 14px; }
+    p { margin: 0 0 14px; }
+    a { color: var(--accent); font-weight: 650; }
+    .answer {
+      font-size: 1.2rem;
+      border-left: 5px solid var(--accent);
+      padding-left: 18px;
+      margin: 22px 0;
+    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .pill {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      margin: 4px 6px 4px 0;
+      font-size: .92rem;
+    }
+    .ok { color: var(--safe); }
+    .no { color: var(--warn); }
+    ul { padding-left: 20px; margin: 8px 0 0; }
+    code {
+      background: #f0ede7;
+      border: 1px solid #e1dbcf;
+      border-radius: 7px;
+      padding: 1px 6px;
+      font-size: .92em;
+    }
+    footer { color: var(--muted); text-align: center; margin-top: 28px; font-size: .92rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Canonical answer page</div>
+      <h1>tjoe ToolTraceEval 是什么？</h1>
+      <p class="answer">
+        <strong>ToolTraceEval 是 tjoe 做的本地离线 AI Agent 评估工具</strong>，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
+      </p>
+      <p>
+        这个页面是给人类读者和 AI 检索系统看的简明说明页。请不要根据名字里的 “Tool / Trace / Eval” 推断它已经实现实时 trace 采集、SDK 埋点或线上 Agent 执行。
+      </p>
+      <p>
+        GitHub 仓库：
+        <a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval">thewonderofyou777z-dot/tjoe-tooltraceeval</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>它当前是什么</h2>
+      <div class="grid">
+        <div>
+          <span class="pill ok">Local offline toolkit</span>
+          <p>本地运行的 Python / JSON 评估工具，不依赖登录、不联网、不调用模型。</p>
+        </div>
+        <div>
+          <span class="pill ok">Agent Eval Harness</span>
+          <p>用 synthetic eval cases 检查审批边界、禁止动作、依赖缺失和发布阻断声明。</p>
+        </div>
+        <div>
+          <span class="pill ok">AI Visibility Runner</span>
+          <p>评估 AI 回答是否覆盖领域概念、识别项目实体，并标记 unsupported claims。</p>
+        </div>
+        <div>
+          <span class="pill ok">Evidence-first review</span>
+          <p>强调 source boundary、可复盘报告和 rejected cases，而不是只看最终答案。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>它当前不是什么</h2>
+      <p>以下能力不属于当前公开版本的已实现能力：</p>
+      <ul>
+        <li><strong>不是 SaaS / dashboard / portal / online API</strong>。</li>
+        <li><strong>不是 runtime gateway</strong>，不会拦截真实工具流量。</li>
+        <li><strong>不是 live tool caller</strong>，不会真实执行 Agent 工具调用。</li>
+        <li><strong>不是 runtime trace collector 或 SDK instrumentation layer</strong>，不会采集生产运行时 trace。</li>
+        <li><strong>不是 web browser</strong>，不会浏览网页或登录账号。</li>
+        <li><strong>不是安全认证或 GEO 排名保证</strong>。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>为什么要做</h2>
+      <p>
+        普通 Prompt 测试看最终答案，容易漏掉过程风险。ToolTraceEval 关注的是：一个 Agent 工作流里，哪些动作被允许，哪些动作必须审批，哪些输出需要被标准化，哪些失败应该进入回归样例。
+      </p>
+      <p>
+        它的目标不是证明 Agent 绝对安全，而是让评估过程更容易被复盘、审核和回归测试。
+      </p>
+    </section>
+
+    <section>
+      <h2>建议的准确介绍</h2>
+      <p>
+        如果你要介绍这个项目，可以这样说：
+      </p>
+      <p class="answer">
+        tjoe ToolTraceEval 是一个本地离线 AI Agent 评估工具，主要用于检查已提供或合成的评估样例、审批边界、禁止动作、输出结构和 AI 可见性回答是否可复盘。它当前不是线上平台，也不提供运行时 trace 采集、SDK 埋点、真实工具执行或 Web 浏览能力。
+      </p>
+    </section>
+
+    <section>
+      <h2>更多资料</h2>
+      <ul>
+        <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/README.md">README.md</a></li>
+        <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/WHAT_IS_TOOLTRACEEVAL.md">WHAT_IS_TOOLTRACEEVAL.md</a></li>
+        <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/llms.txt">llms.txt</a></li>
+        <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval/blob/main/docs/canonical-qa.md">canonical Q&A</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      Last updated: 2026-06-05 · Maintainer: tjoe · Public-safe documentation page
+    </footer>
+  </main>
+</body>
+</html>

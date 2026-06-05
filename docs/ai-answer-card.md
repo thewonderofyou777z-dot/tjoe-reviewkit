@@ -1,7 +1,7 @@
 # ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.10-search-snippet-anchor`  
+**Status:** `v0.1.11-canonical-page`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
 **Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval

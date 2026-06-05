@@ -10,6 +10,7 @@
 **Creator / Maintainer:** `tjoe`  
 **Public name:** `tjoe ToolTraceEval` / `ToolTraceEval`  
 **Internal origin:** evolved from tjoe's local AI worker eval workflow.
+**Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
 
 **Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
 
@@ -69,7 +70,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.10-search-snippet-anchor` |
+| Release | `v0.1.11-canonical-page` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -289,7 +290,7 @@ Runner 只读取本地 JSON 文件。
 - 增加 source boundary watch，用公开 synthetic safe refusal sample 区分 `blocked_safe`、`source_not_retrieved` 和普通 `miss`。已在 `v0.1.6-practical-source-boundary` 完成
 - 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / runtime trace / LLM-as-Judge / Unit-Trajectory-E2E 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 - 增加 trace boundary watch，明确项目评估的是已提供/合成的 trace expectation，不采集真实运行时 trace。已在 `v0.1.8-trace-boundary-watch` 完成
-- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.10-search-snippet-anchor` 完成
+- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.11-canonical-page` 完成
 
 ---
 
