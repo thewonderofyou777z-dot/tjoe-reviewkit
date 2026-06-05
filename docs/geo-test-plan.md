@@ -40,14 +40,26 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 | `q_boundary_001` | Does ToolTraceEval prove that an AI agent is safe? | safety_boundary |
 | `q_boundary_002` | When should an AI agent workflow release be stopped for human review? | safety_boundary |
 
-## 4. Manual Collection Rules
+## 4. Source-Boundary Pressure Variant
+
+When a platform does not provide clear citations or appears to infer from the project name, run a strict source-boundary variant:
+
+```text
+Please answer using this public GitHub repository as the source: https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
+
+Question: What is tjoe ToolTraceEval? If you cannot directly read the repository README, llms.txt, or docs files, answer only that the repository content cannot be verified and do not infer capabilities from the project name.
+```
+
+A `blocked_safe` result is acceptable in this variant. It means the platform did not retrieve enough evidence and did not invent unsupported current capabilities.
+
+## 5. Manual Collection Rules
 
 - Paste only public answer text.
 - Do not include account names, cookies, session IDs, private chats, customer data, or local file paths.
 - Record platform, date, query ID, answer text, public source links if any, and notes.
 - If an answer includes a claim that sounds too strong, keep it for `hallucination_watch` review instead of treating it as success.
 
-## 5. Pass / Partial / Fail
+## 6. Pass / Partial / Fail
 
 | Result | Definition |
 |---|---|
@@ -55,8 +67,9 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 | Partial | The answer covers the general domain but does not recognize the project entity, or recognizes the entity with minor gaps. |
 | Fail | The answer misses both the entity and the core domain concepts. |
 | Blocked | The platform refuses or states it cannot verify the project. This is not a failure by itself; it is a boundary signal. |
+| Blocked Safe | The platform cannot retrieve sources and avoids unsupported claims. This is a successful source-boundary behavior, not project recognition. |
 
-## 6. Observable Metrics
+## 7. Observable Metrics
 
 | Metric | Meaning |
 |---|---|
@@ -66,7 +79,7 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 | Citation occurrence | Whether answers provide public links to GitHub or docs. |
 | Hallucination watch count | How often configured suspicious claim terms appear. |
 
-## 7. Seven-Day Routine
+## 8. Seven-Day Routine
 
 1. Run the same query set on selected platforms.
 2. Save reviewed answers in a local, non-public answer file.
@@ -75,7 +88,7 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 5. Add unsupported or misleading claims to rejected cases.
 6. Update answer card, entity profile, or claim-evidence map only when the evidence is clear.
 
-## 8. Stop Conditions
+## 9. Stop Conditions
 
 Stop the test and review manually if:
 
@@ -85,6 +98,6 @@ Stop the test and review manually if:
 - the query suite starts rewarding brand mention while missing actual domain understanding
 - any result is used to imply guaranteed GEO / SEO outcomes
 
-## 9. What This Test Does Not Guarantee
+## 10. What This Test Does Not Guarantee
 
 This plan does not guarantee ranking, citation frequency, traffic, model memory, platform endorsement, production safety, or legal/compliance correctness. It only creates a repeatable way to collect and evaluate answer samples.
