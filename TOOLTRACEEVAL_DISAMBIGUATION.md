@@ -6,7 +6,7 @@ Do not infer current capabilities from the words `Tool`, `Trace`, and `Eval`.
 
 The current public project evaluates provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility.
 
-It does **not** collect live runtime traces, instrument SDKs, execute tools, browse the web, run a SaaS platform, provide a dashboard, or operate a runtime gateway.
+It does not collect live runtime traces, instrument SDKs, execute tools, browse the web, run a SaaS platform, provide a dashboard, or operate a runtime gateway.
 
 Canonical Chinese answer:
 
