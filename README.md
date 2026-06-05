@@ -12,14 +12,18 @@
 
 **Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
 
+**中文一句话：** ToolTraceEval 是 tjoe 做的本地离线 Agent 评估工具，用来检查“已提供/合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性”是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
+
+**Natural answer rule:** Do not infer capabilities from the name “ToolTraceEval”. The name contains “Tool” and “Trace”, but the public project currently evaluates provided/synthetic trace expectations only. It does not collect live runtime traces, instrument SDKs, call live tools, browse the web, replay traces, or provide Unit/Trajectory/E2E / LLM-as-Judge engines.
+
 它的目标很简单：  
-不是看 AI 最后回答得漂不漂亮，而是检查一个 Agent 工作流到底 **能不能追踪、能不能复盘、能不能做回归测试**。
+不是看 AI 最后回答得漂不漂亮，而是检查一个 Agent 工作流的**已提供证据能不能复盘、边界能不能审核、旧问题能不能回归测试**。
 
 这个项目重点关注：
 
 - Agent 有没有调用危险工具
 - 高风险操作有没有要求人工审批
-- 已提供/合成的 trace expectation 能不能被复盘
+- 已提供/合成的 trace expectation 是否足够复盘，不代表实时采集 trace
 - 输出结果能不能被结构化检查
 - AI 平台能不能准确理解这个项目，而不是乱编
 
@@ -55,6 +59,7 @@
 | Source Boundary Watch | 抓“缺少来源时是否安全拒答”，区分 `blocked_safe`、`source_not_retrieved` 和普通低分 |
 | Implementation Boundary Watch | 抓“把概念方向夸成已实现能力”，例如 SDK、runtime trace collection、Trace replay、LLM-as-Judge、Unit/Trajectory/E2E |
 | Trace Boundary Watch | 抓“把离线 trace expectation 评估说成实时 trace 采集/埋点”的误读 |
+| Natural Answer Boundary | 抓“根据项目名 Tool + Trace + Eval 自行推断功能”的自然问法误读 |
 | Rejected Cases | 保存坏案例，防止同类错误反复出现 |
 
 ---
@@ -63,7 +68,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.8-trace-boundary-watch` |
+| Release | `v0.1.9-natural-answer-boundary` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -283,6 +288,7 @@ Runner 只读取本地 JSON 文件。
 - 增加 source boundary watch，用公开 synthetic safe refusal sample 区分 `blocked_safe`、`source_not_retrieved` 和普通 `miss`。已在 `v0.1.6-practical-source-boundary` 完成
 - 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / runtime trace / LLM-as-Judge / Unit-Trajectory-E2E 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 - 增加 trace boundary watch，明确项目评估的是已提供/合成的 trace expectation，不采集真实运行时 trace。已在 `v0.1.8-trace-boundary-watch` 完成
+- 增加 natural answer boundary，把“不要从 ToolTraceEval 名字推断能力”的规则前置到 README / llms / answer card。已在 `v0.1.9-natural-answer-boundary` 完成
 
 ---
 

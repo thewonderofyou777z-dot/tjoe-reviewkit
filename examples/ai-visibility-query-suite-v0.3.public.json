@@ -156,7 +156,16 @@
         "记录 Agent 工具调用全链路",
         "Agent 工具调用全链路",
         "records full agent tool-call chains",
-        "records full agent tool call chains"
+        "records full agent tool call chains",
+        "全链路 Trace 轨迹采集能力",
+        "Trace 轨迹采集能力",
+        "采集 Agent 全链路工具调用运行轨迹",
+        "全链路工具调用运行轨迹",
+        "完整捕获单次任务全流程数据",
+        "运行轨迹采集",
+        "每一次工具选择、入参字段、工具返回结果",
+        "collects full tool-call execution trajectories",
+        "captures every tool choice and return payload"
       ]
     }
   ],

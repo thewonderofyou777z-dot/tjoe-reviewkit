@@ -1,5 +1,16 @@
 # Release Notes
 
+## v0.1.9-natural-answer-boundary
+
+Focus: improve natural-language answers so AI systems do not infer implementation capabilities from the name `ToolTraceEval`.
+
+Changes:
+
+- Added a front-loaded natural answer rule in README, llms.txt, llms-full.txt, answer card, and details.
+- Added a canonical Chinese natural answer.
+- Clarified that “Tool” and “Trace” describe the evaluation theme, not a live runtime instrumentation product.
+- Kept real platform samples local-only; public repo still contains synthetic examples and test method docs only.
+
 ## v0.1.8-trace-boundary-watch
 
 Focus: close the remaining gap where AI answers confuse provided/synthetic trace expectation evaluation with live runtime trace collection.

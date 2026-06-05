@@ -26,6 +26,14 @@
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic negative sample for trace-boundary overclaim detection."
+    },
+    {
+      "query_id": "q_entity_001",
+      "platform": "synthetic_natural_name_inference_overclaim",
+      "answer": "ToolTraceEval 是面向工具调用链路的专用评测组件，当前可确认已经具备全链路 Trace 轨迹采集能力，可完整捕获单次任务全流程数据，包括每一次工具选择、入参字段、工具返回结果。",
+      "source_refs": [],
+      "manual_scores": {},
+      "notes": "Synthetic negative sample for natural-answer over-inference from the name ToolTraceEval."
     }
   ]
 }

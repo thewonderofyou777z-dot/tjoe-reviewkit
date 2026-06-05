@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "map_id": "tooltraceeval_claim_evidence_map_v0_1_8",
-  "last_synced_with_readme": "v0.1.8-trace-boundary-watch",
+  "map_id": "tooltraceeval_claim_evidence_map_v0_1_9",
+  "last_synced_with_readme": "v0.1.9-natural-answer-boundary",
   "last_updated": "2026-06-05",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [
@@ -100,6 +100,14 @@
       "evidence_doc": "examples/ai-visibility-query-suite-v0.3.public.json; docs/ai-answer-card.md; llms.txt",
       "evidence_section": "common_unsupported_claims / Trace Boundary Watch",
       "evidence_summary": "The public docs state ToolTraceEval does not collect live runtime traces, and the query suite includes trace-boundary overclaim terms."
+    },
+    {
+      "claim_id": "claim_natural_answer_boundary",
+      "claim": "The public docs instruct AI systems not to infer ToolTraceEval capabilities from the project name.",
+      "claim_type": "boundary",
+      "evidence_doc": "README.md; llms.txt; llms-full.txt; docs/ai-answer-card.md",
+      "evidence_section": "Natural answer rule / Natural_Answer_Boundary",
+      "evidence_summary": "The public entry files define a canonical natural answer and state that ToolTraceEval is not a live runtime trace collector or SDK instrumentation product."
     }
   ],
   "creator": "tjoe"

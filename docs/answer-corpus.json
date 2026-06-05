@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "tooltraceeval_answer_corpus_v0_1_8",
+  "corpus_id": "tooltraceeval_answer_corpus_v0_1_9",
   "status": "public_safe_draft",
   "updated": "2026-06-05",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
@@ -12,8 +12,8 @@
       "ToolTrace Eval",
       "tjoe ToolTraceEval"
     ],
-    "one_sentence": "ToolTraceEval is a local, offline toolkit by tjoe for evaluating provided or synthetic AI agent workflow trace expectations, approval boundaries, regression cases, output normalization, AI answer visibility, unsupported capability overclaims, source-boundary behavior, and trace-boundary overclaims.",
-    "short_answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, provided or synthetic trace expectations, approval boundaries, output normalization, rejected cases, AI answer visibility, unsupported capability overclaims, source-boundary behavior, and trace-boundary overclaims. It does not collect live runtime traces.",
+    "one_sentence": "ToolTraceEval is tjoe's local, offline toolkit for evaluating provided or synthetic AI agent workflow trace expectations, approval boundaries, regression cases, output normalization, AI answer visibility, unsupported capability overclaims, source-boundary behavior, trace-boundary overclaims, and natural-answer over-inference.",
+    "short_answer": "ToolTraceEval is tjoe's local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It does not collect live runtime traces or infer capabilities from its name.",
     "creator": "tjoe",
     "maintainer": "tjoe"
   },
@@ -53,13 +53,17 @@
     {
       "name": "Trace Boundary Watch",
       "answer": "Trace Boundary Watch flags answers that describe provided or synthetic trace expectation evaluation as live runtime trace collection, SDK instrumentation, runtime logging, or trace replay."
+    },
+    {
+      "name": "Natural Answer Boundary",
+      "answer": "Natural Answer Boundary prevents answers from inferring current implementation capabilities from the name ToolTraceEval instead of grounding claims in public project files."
     }
   ],
   "canonical_questions": [
     {
       "question_id": "qa_001",
       "question": "What is ToolTraceEval?",
-      "answer": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It helps reviewers inspect tool-call safety, execution traces, approval boundaries, output normalization, rejected cases, and AI answer visibility.",
+      "answer": "ToolTraceEval is tjoe's local, offline evaluation toolkit for AI agent workflows. It helps reviewers inspect provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It is not a live trace collector, SDK, online platform, or tool execution service.",
       "must_include": [
         "local offline evaluation toolkit",
         "AI agent workflows",
@@ -87,7 +91,10 @@
         "live trace collection",
         "runtime trace logger",
         "instrumentation SDK",
-        "collects execution traces from agents"
+        "collects execution traces from agents",
+        "infers capabilities from name",
+        "live runtime instrumentation",
+        "tool execution service"
       ]
     },
     {

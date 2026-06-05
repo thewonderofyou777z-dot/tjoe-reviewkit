@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.8-trace-boundary-watch` public-safe draft  
+> Status: `v0.1.9-natural-answer-boundary` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
@@ -79,6 +79,10 @@ A deterministic check that distinguishes ordinary no-source answers from safe re
 A deterministic check that flags answers that turn evaluation ideas into unsupported current implementation claims. This matters in no-citation pressure tests because an answer may correctly say ToolTraceEval is not SaaS or a dashboard while still inventing SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
 
 ToolTraceEval discusses traceability and agent-eval concepts, but the public draft should not be described as a runtime trace collector, live instrumentation SDK, runtime logger, LLM-as-Judge engine, Trace replay system, or Unit/Trajectory/E2E eval platform. Its public examples evaluate provided/synthetic trace expectations only.
+
+### Natural Answer Boundary
+
+A natural-answer guideline for entity recognition tests. The project name can mislead models into decomposing `ToolTraceEval` as Tool + Trace + Eval and inventing runtime capabilities. Correct natural answers must ground claims in public files and should describe the project as a local offline eval toolkit for provided/synthetic trace expectations, approval boundaries, regression cases, output normalization, and AI visibility.
 
 ### Trace Boundary Watch
 

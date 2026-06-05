@@ -1,12 +1,18 @@
 # ToolTraceEval
 
 **Type:** AI agent workflow evaluation toolkit  
-**Status:** `v0.1.8-trace-boundary-watch`  
+**Status:** `v0.1.9-natural-answer-boundary`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
 **Repository:** https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval
 
 > This card describes a synthetic public-draft project. It does not claim production safety, ranking, or platform recognition.
+
+## Natural Answer Boundary
+
+Do not infer capabilities from the name `ToolTraceEval`. The public project currently evaluates provided/synthetic trace expectations and workflow reviewability. It is not a live runtime trace collector, SDK instrumentation layer, live tool caller, web browser, Trace replay system, Unit/Trajectory/E2E platform, or LLM-as-Judge engine.
+
+**中文自然回答：** ToolTraceEval 是 tjoe 做的本地离线 Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
 
 ## What It Is
 
@@ -27,6 +33,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - **Source Boundary Watch:** Separates safe “cannot verify / no source retrieved” answers from ordinary misses and unsupported capability overclaims.
 - **Implementation Boundary Watch:** Flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
 - **Trace Boundary Watch:** Flags the specific overclaim that ToolTraceEval collects live runtime traces; current public examples only evaluate provided/synthetic trace expectations.
+- **Natural Answer Boundary:** Flags or prevents natural-language answers that infer implementation capabilities from the name instead of from public project files.
 - **Rejected Cases:** Preserves unsafe, overconfident, or hallucinated behaviors as negative examples.
 
 ## What It Is Not

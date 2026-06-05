@@ -3,7 +3,7 @@
 - Runner: `geo_visibility_eval_runner.py`
 - Runner version: `0.2.5`
 - Suite: `ai_visibility_query_suite_v0_3_public_geo_readiness`
-- Created at: `2026-06-05T20:25:52`
+- Created at: `2026-06-05T22:05:03`
 - Query count: `10`
 - Answer count: `40`
 - Decision: `template_only`
