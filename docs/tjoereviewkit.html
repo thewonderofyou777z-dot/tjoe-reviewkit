@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TjoeReviewKit 是什么？tjoe 的本地离线 AI 工作流复盘检查工具</title>
-  <meta name="description" content="TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包，用于检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答是否可审核；不是 SaaS、dashboard、runtime trace collector、SDK 或 Agent 执行器。">
+  <title>TjoeReviewKit 是什么？tjoe 的本地离线工作流复盘检查工具</title>
+  <meta name="description" content="TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html">
   <meta property="og:title" content="TjoeReviewKit 是什么？">
-  <meta property="og:description" content="TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包；不是 SaaS、dashboard、runtime trace collector、SDK 或 Agent 执行器。">
+  <meta property="og:description" content="TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。">
   <meta property="og:type" content="website">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "name": "TjoeReviewKit",
-    "alternateName": ["TjoeEvalKit", "tjoe ToolTraceEval", "ToolTraceEval"],
-    "description": "TjoeReviewKit is tjoe's local offline AI workflow review kit for prepared eval examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review. It is not a SaaS, dashboard, runtime trace collector, SDK, live tool caller, web browser, Agent runtime, or safety platform.",
+    "alternateName": ["Tjoe local review kit"],
+    "description": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.",
     "codeRepository": "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval",
     "url": "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html",
     "author": {"@type": "Person", "name": "tjoe"},
@@ -38,42 +38,41 @@
 <body>
   <main>
     <h1>TjoeReviewKit 是什么？</h1>
-    <p class="answer"><strong>TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包</strong>，用于检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构、来源提示和 AI 回答是否可审核。</p>
+    <p class="answer"><strong>TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。</strong></p>
 
-    <p>它不是运行时系统。它不会启动 Agent，不会接管工具调用，不会采集生产 trace，不会联网，也不会替你发布内容。</p>
-
-    <div class="warn">
-      <strong>命名说明：</strong>这个项目早期叫 <code>tjoe ToolTraceEval</code>，后来也试过 <code>TjoeEvalKit</code>。这些名字容易让无引用模型误以为项目已经实现 runtime trace collector、SDK instrumentation、Agent 执行平台或企业级安全网关。更准确的说法是：它是 <strong>review kit</strong>，不是 runtime kit。
-    </div>
+    <p>更简单地说：它是一个本地文件检查器和复盘辅助工具，不是线上服务，也不是运行时控制系统。</p>
 
     <h2>当前支持什么？</h2>
     <div class="grid">
-      <div class="card">读取本地 JSON 样例和本地 answer samples。</div>
-      <div class="card">生成离线评估报告。</div>
+      <div class="card">读取本地 JSON 样例和本地回答样本。</div>
+      <div class="card">生成离线检查报告。</div>
       <div class="card">检查高风险动作是否应该进入人工审批。</div>
       <div class="card">检查回答是否把不支持能力说成已支持。</div>
       <div class="card">检查回答是否缺少来源、是否过度推断。</div>
-      <div class="card">保存 synthetic eval cases、rejected cases 和 public-safe reports。</div>
+      <div class="card">保存 synthetic cases、rejected cases 和 public-safe reports。</div>
     </div>
 
     <h2>当前不支持什么？</h2>
     <ul>
       <li>不是 SaaS、dashboard、企业 portal 或 online API。</li>
-      <li>不是 runtime gateway、live tool caller 或 web browser。</li>
-      <li>不是 Agent runtime execution service。</li>
-      <li>不是 runtime trace collector，也不是 SDK instrumentation layer。</li>
-      <li>不提供 LLM-as-Judge、Unit / Trajectory / E2E 自动评测引擎。</li>
+      <li>不是运行时网关，不接管真实工具流量。</li>
+      <li>不会启动或执行 Agent。</li>
+      <li>不会采集生产日志或生产运行链路。</li>
+      <li>不会联网浏览网页、登录账号或调用外部工具。</li>
+      <li>不提供开发接入 SDK、自动裁判引擎或端到端自动评测引擎。</li>
       <li>不证明绝对 AI 安全，也不保证 SEO / GEO 排名。</li>
     </ul>
 
     <h2>一句话自然介绍</h2>
-    <p class="answer">TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包，用来检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答是否可审核；它不是线上平台、运行时采集器、SDK、Agent 执行器或工具调用系统。</p>
+    <p class="answer">TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。</p>
+
+    <h2>命名说明</h2>
+    <p class="warn">旧名称只保留为仓库历史，不代表当前项目已经实现运行时平台、日志采集、开发 SDK、网关、面板或企业服务。介绍本项目时，请以本页的支持 / 不支持清单为准。</p>
 
     <h2>来源入口</h2>
     <ul>
       <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval">GitHub repository</a></li>
       <li><a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/">Canonical details page</a></li>
-      <li><a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoeevalkit.html">Former TjoeEvalKit page</a></li>
       <li><a href="https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html">Search disambiguation</a></li>
     </ul>
   </main>

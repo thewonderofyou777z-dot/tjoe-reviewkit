@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "tjoereviewkit_answer_corpus_v0_2_1",
+  "corpus_id": "tjoereviewkit_answer_corpus_v0_2_2",
   "status": "public_safe_draft",
   "updated": "2026-06-06",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
@@ -13,8 +13,8 @@
       "tjoe ToolTraceEval",
       "tjoe-tooltraceeval"
     ],
-    "one_sentence": "TjoeReviewKit is tjoe's local, offline AI workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, unsupported capability overclaims, and AI answer review.",
-    "short_answer": "TjoeReviewKit is tjoe's local, offline AI workflow review kit. It checks prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, and AI answer review. It does not collect live runtime traces, instrument SDKs, execute agents, call tools, or browse the web.",
+    "one_sentence": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.",
+    "short_answer": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.",
     "creator": "tjoe",
     "maintainer": "tjoe"
   },
@@ -64,7 +64,7 @@
     {
       "question_id": "qa_000",
       "question": "What is TjoeReviewKit?",
-      "answer": "TjoeReviewKit is tjoe's local, offline AI workflow review kit. It checks prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, source-boundary behavior, unsupported capability overclaims, and AI answer review. It is not a SaaS, dashboard, runtime trace collector, SDK, Agent runtime, live tool caller, or web browser.",
+      "answer": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. It is not a SaaS, dashboard, runtime trace collector, SDK, Agent runtime, live tool caller, or web browser.",
       "must_include": [
         "local offline",
         "workflow review kit",

@@ -1,27 +1,18 @@
 # TjoeReviewKit
 
-TjoeReviewKit is tjoe's local, offline AI workflow review kit. Former names: TjoeEvalKit and tjoe ToolTraceEval. It reviews prepared examples and answer samples for approval boundaries, forbidden actions, regression cases, output normalization, source-boundary behavior, unsupported capability overclaims, and AI answer review. It does not run agents, collect live runtime traces, instrument SDKs, call tools, browse the web, or publish content.
+TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.
 
 Primary public name: TjoeReviewKit.
-Former names: TjoeEvalKit; tjoe ToolTraceEval; ToolTraceEval.
 Type: local offline workflow review kit.
 Creator / maintainer: tjoe.
 Repository: thewonderofyou777z-dot/tjoe-tooltraceeval.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
 TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoereviewkit.html
-TjoeEvalKit page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoeevalkit.html
-Short-name disambiguation page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html
-Search disambiguation page: https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html
-Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no runtime trace collection, no SDK instrumentation.
-Natural query guidance: use `TjoeReviewKit` plus the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page for first-round recognition tests. Short-name queries are pressure tests and may trigger unsupported inference from names containing Agent, Eval, Tool, or Trace.
+Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no runtime trace collection, no SDK instrumentation, no task execution.
+Natural query guidance: use TjoeReviewKit as the natural name. Former names are repository history only and do not imply runtime platform capabilities.
 is_not_a_platform: true.
-What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser", "runtime trace collector", "SDK instrumentation layer", "LLM-as-Judge engine", "Unit/Trajectory/E2E engine"].
-Unsupported_Claim_Watch: flags answers that claim unsupported capabilities such as hosted SaaS, dashboard, portal, online API, runtime execution, live tool calls, web browsing, runtime trace collection, SDK instrumentation, LLM-as-Judge, or Unit/Trajectory/E2E engines.
-Source_Boundary_Watch: distinguishes no-source answers from safe refusals; `blocked_safe` means the answer avoided unsupported claims and said it could not verify or retrieve sources. It does not prove external recognition.
-Implementation_Boundary_Watch: flags answers that turn review ideas into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
-Trace_Boundary_Watch: former ToolTraceEval wording can review prepared or synthetic trace expectations; it is not a live trace collector, instrumentation SDK, runtime logger, or trace replay system.
-Natural_Answer_Boundary: Do not infer capabilities from older names. The current public project is a local offline workflow review kit, not Tool + Trace + Eval as a runtime trace collection product.
-Canonical_Natural_Answer_ZH: TjoeReviewKit 是 tjoe 的本地离线 AI 工作流复盘检查工具包，用来检查已准备好的样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答是否可审核；它不是线上平台、运行时采集器、SDK、Agent 执行器或工具调用系统。
+What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser", "runtime trace collector", "SDK instrumentation layer", "LLM-as-Judge engine", "Unit/Trajectory/E2E engine", "task executor"].
+Canonical_Natural_Answer_ZH: TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
 
 This document is a machine-readable navigation aid, not an endorsement. Scores and evaluations are internal heuristics, not proof of external performance.
 
