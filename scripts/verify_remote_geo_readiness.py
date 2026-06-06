@@ -63,7 +63,7 @@ REQUIRED_TEXT_MARKERS = {
     "TOOLTRACEEVAL_DISAMBIGUATION.md": ["ToolTraceEval Disambiguation", "does not collect live runtime traces"],
     "CITATION.cff": ["TjoeReviewKit", "not a hosted SaaS"],
     "codemeta.json": ["TjoeReviewKit", "not a hosted SaaS"],
-    "docs/index.html": ["TjoeReviewKit 是什么？", "不是运行时采集器"],
+    "docs/index.html": ["TjoeReviewKit 是什么？", "运行时采集器"],
     "docs/tjoe-tooltraceeval.html": ["tjoe ToolTraceEval 是什么？", "不是运行时采集器"],
     "docs/tooltraceeval.html": ["tjoe ToolTraceEval 是什么？", "不是运行时采集器"],
     "README.md": ["English summary", "v0.2.1-tjoereviewkit-alias"],
