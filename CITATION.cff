@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-title: "tjoe ToolTraceEval"
-message: "If you use or reference this software, cite it as tjoe ToolTraceEval, a local offline AI agent evaluation toolkit."
+title: "TjoeEvalKit"
+message: "If you use or reference this software, cite it as TjoeEvalKit, tjoe's local offline AI agent evaluation toolkit. Former public name: tjoe ToolTraceEval."
 type: software
 authors:
   - name: tjoe
 repository-code: "https://github.com/thewonderofyou777z-dot/tjoe-tooltraceeval"
 url: "https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/"
-abstract: "tjoe ToolTraceEval is a local offline AI agent evaluation toolkit for provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, live tool caller, web browser, or safety certification system."
+abstract: "TjoeEvalKit is tjoe's local offline AI agent evaluation toolkit for provided or synthetic trace expectations, approval boundaries, forbidden actions, regression cases, output normalization, and AI answer visibility. It is not a hosted SaaS, dashboard, runtime trace collector, SDK instrumentation layer, live tool caller, web browser, or safety certification system."
 keywords:
   - ai-agent-evaluation
   - llm-eval
@@ -14,5 +14,5 @@ keywords:
   - tooltraceeval
   - tjoe
 license: MIT
-version: "0.1.14-search-disambiguation"
+version: "0.2.0-tjoeevalkit-alias"
 date-released: "2026-06-06"

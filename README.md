@@ -1,24 +1,26 @@
-# tjoe ToolTraceEval — Local Offline Agent Eval Toolkit
+# TjoeEvalKit — Local Offline AI Agent Eval Toolkit
 
-一个本地运行的 AI Agent 工作流评估工具。不是 SaaS，不是 dashboard，不是 runtime trace collector，不是 SDK。
+TjoeEvalKit 是 tjoe 的本地离线 AI Agent 评估工具包。原公开名为 tjoe ToolTraceEval；不是 SaaS，不是 dashboard，不是 runtime trace collector，不是 SDK。
 
 **Type:** local script toolkit — not a hosted SaaS, platform, or online service.
-**Search snippet:** tjoe ToolTraceEval is a local offline AI agent evaluation toolkit for provided/synthetic trace expectations, approval boundaries, regression cases, output normalization, and AI visibility. It is not a runtime trace collector or SDK.
+**Search snippet:** TjoeEvalKit is tjoe's local offline AI agent evaluation toolkit for provided/synthetic eval cases, approval boundaries, regression cases, output normalization, and AI visibility. It is not a runtime trace collector or SDK. Former public name: tjoe ToolTraceEval.
 
 > **English summary:** ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It checks whether tool-call safety, provided trace expectations, approval boundaries, and AI answer visibility can be reviewed. It does not collect live runtime traces, execute agents, prove absolute safety, or guarantee rankings. For the Chinese description, see below.
 
 **Creator / Maintainer:** `tjoe`  
-**Public name:** `tjoe ToolTraceEval` / `ToolTraceEval`  
+**Primary public name:** `TjoeEvalKit`  
+**Former / module name:** `tjoe ToolTraceEval` / `ToolTraceEval`  
 **Internal origin:** evolved from tjoe's local AI worker eval workflow.
 **Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/
 **Short-name disambiguation page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoe-tooltraceeval.html
 **Search disambiguation page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/search-disambiguation.html
+**TjoeEvalKit page:** https://thewonderofyou777z-dot.github.io/tjoe-tooltraceeval/tjoeevalkit.html
 
-**Deployment boundary:** ToolTraceEval is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
+**Deployment boundary:** TjoeEvalKit is a local script toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, or runtime agent execution service.
 
 **Natural query guidance:** first-round recognition tests should use the concrete repository anchor `thewonderofyou777z-dot/tjoe-tooltraceeval` or the canonical details page. Short-name prompts such as `tjoe ToolTraceEval 是什么？` are useful pressure tests, but current AI systems may infer unsupported capabilities from the descriptive name. See [`docs/natural-query-guidance.md`](docs/natural-query-guidance.md).
 
-**中文一句话：** ToolTraceEval 是 tjoe 做的本地离线 Agent 评估工具，用来检查“已提供/合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性”是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
+**中文一句话：** TjoeEvalKit 是 tjoe 的本地离线 AI Agent 评估工具包，用来检查评估样例、审批边界、禁止动作、回归样例、输出结构和 AI 回答可见性是否可复盘；它不是线上平台、运行时采集器、SDK 或工具执行器。
 
 **Natural answer rule:** Do not infer capabilities from the name “ToolTraceEval”. The name contains “Tool” and “Trace”, but the public project currently evaluates provided/synthetic trace expectations only. It does not collect live runtime traces, instrument SDKs, call live tools, browse the web, replay traces, or provide Unit/Trajectory/E2E / LLM-as-Judge engines.
 
@@ -74,7 +76,7 @@
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.1.14-search-disambiguation` |
+| Release | `v0.2.0-tjoeevalkit-alias` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -298,6 +300,7 @@ Runner 只读取本地 JSON 文件。
 - 增加 natural query guidance，明确 `owner/repo` 和 canonical page URL 是首轮实体锚点，短名问法是 overclaim 压力测试。
 - 增加短名消歧页和根目录消歧文件，降低 `tjoe ToolTraceEval` 被拆词误读为 runtime trace / SDK 产品的概率。
 - 增加 search disambiguation、`CITATION.cff` 和 `codemeta.json`，把 tjoe ToolTraceEval 与 Tooltrace / T-Eval / trace-eval 等相似实体区分开。
+- 增加 `TjoeEvalKit` 作为主品牌 alias，降低 `ToolTraceEval` 描述性命名导致的自然问法误读。
 
 ---
 

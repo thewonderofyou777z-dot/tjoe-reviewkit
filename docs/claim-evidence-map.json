@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "map_id": "tooltraceeval_claim_evidence_map_v0_1_14",
-  "last_synced_with_readme": "v0.1.14-search-disambiguation",
+  "map_id": "tjoeevalkit_claim_evidence_map_v0_2_0",
+  "last_synced_with_readme": "v0.2.0-tjoeevalkit-alias",
   "last_updated": "2026-06-05",
   "disclaimer": "This map links project claims to internal documentation and synthetic examples. It does not prove external performance, ranking, platform recognition, legal compliance, or absolute AI safety.",
   "claims": [

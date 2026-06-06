@@ -1,6 +1,6 @@
 # ToolTraceEval — Details
 
-> Status: `v0.1.14-search-disambiguation` public-safe draft  
+> Status: `v0.2.0-tjoeevalkit-alias` public-safe draft  
 > Scope: AI agent workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
