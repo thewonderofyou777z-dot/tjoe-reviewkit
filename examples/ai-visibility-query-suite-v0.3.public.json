@@ -1,6 +1,6 @@
 {
   "query_suite_id": "ai_visibility_query_suite_v0_3_public_geo_readiness",
-  "version": "0.3.0-public",
+  "version": "0.3.1-public",
   "status": "public_sample",
   "no_login_required": true,
   "no_private_data": true,
@@ -19,10 +19,10 @@
       "failure_class": "runtime_trace_collection_overclaim",
       "terms": [
         "captures agent runtime",
-        "captures live runtime",
-        "runtime trace collection",
-        "full trace tree",
-        "trace replay",
+        "claims production operation capture",
+        "production log collection",
+        "full evidence tree",
+        "replay",
         "lightweight SQL",
         "全量工具调用埋点",
         "捕获 Agent runtime",
@@ -91,7 +91,7 @@
       "claim_id": "unit_trajectory_e2e_eval_overclaim",
       "failure_class": "unit_trajectory_e2e_eval_overclaim",
       "terms": [
-        "Unit/Trajectory/E2E",
+        "multi-stage",
         "Unit Eval",
         "Trajectory Eval",
         "E2E Eval",
@@ -109,12 +109,12 @@
       "claim_id": "llm_judge_engine_overclaim",
       "failure_class": "llm_judge_engine_overclaim",
       "terms": [
-        "LLM-as-Judge",
+        "automated scoring",
         "Judge evaluation engine",
         "built-in Judge",
         "内置 Judge",
         "Judge 评测引擎",
-        "规则 + LLM-as-Judge",
+        "规则 + automated scoring",
         "自动分类问题",
         "自动识别工具误用",
         "自动识别参数非法"
@@ -142,19 +142,19 @@
         "已实现工具调用轨迹采集",
         "真实工具轨迹采集",
         "运行时工具轨迹采集",
-        "Agent 工具调用全链路采集",
-        "records agent tool traces",
-        "collects agent tool traces",
-        "live trace logging",
-        "runtime trace logging",
-        "instrumented trace capture",
-        "collects execution traces from agents",
+        "工作流动作全链路采集",
+        "records agent workflow evidence",
+        "collects agent workflow evidence",
+        "live evidence logging",
+        "production log logging",
+        "instrumented evidence capture",
+        "collects execution evidence from agents",
         "规则化的 Agent 工具轨迹",
         "Agent 工具轨迹采集",
         "工具轨迹采集",
-        "可记录 Agent 工具调用全链路",
-        "记录 Agent 工具调用全链路",
-        "Agent 工具调用全链路",
+        "可记录 工作流动作全链路",
+        "记录 工作流动作全链路",
+        "工作流动作全链路",
         "records full agent tool-call chains",
         "records full agent tool call chains",
         "全链路 Trace 轨迹采集能力",
@@ -172,13 +172,13 @@
   "query_groups": [
     {
       "group_id": "g01_domain_concept_discovery",
-      "purpose": "Test whether an answer covers general agent workflow evaluation concepts.",
+      "purpose": "Test whether an answer covers general workflow evaluation concepts.",
       "queries": [
         {
           "query_id": "q_domain_001",
           "scoring_track": "domain_concept_discovery",
           "en": "What should an evaluation system for AI agent tool-calling safety include?",
-          "zh": "一个 AI Agent 工具调用安全评估系统应该包含哪些内容？",
+          "zh": "一个 AI workflow 工具调用安全评估系统应该包含哪些内容？",
           "expected_answer_elements": [
             {
               "canonical": "Function Calling Safety",
@@ -190,13 +190,13 @@
               ]
             },
             {
-              "canonical": "Tool Trace",
+              "canonical": "Workflow Evidence",
               "aliases": [
-                "execution trace",
-                "tool trace",
-                "trace log",
-                "工具调用轨迹",
-                "执行轨迹"
+                "workflow evidence",
+                "workflow evidence",
+                "evidence log",
+                "工作流证据",
+                "执行证据"
               ]
             },
             {
@@ -224,7 +224,7 @@
               "aliases": [
                 "audit",
                 "log",
-                "traceability",
+                "reviewability",
                 "审计日志",
                 "可追踪"
               ]
@@ -233,14 +233,14 @@
           "track_terms": [
             "function calling",
             "tool calling",
-            "tool trace",
-            "execution trace",
+            "workflow evidence",
+            "workflow evidence",
             "approval",
             "human-in-the-loop",
             "regression",
             "audit",
             "工具调用",
-            "执行轨迹",
+            "执行证据",
             "人工审批",
             "回归测试",
             "审计"
@@ -256,13 +256,13 @@
         {
           "query_id": "q_domain_002",
           "scoring_track": "domain_concept_discovery",
-          "en": "Why do AI agent workflows need tool traces and audit logs?",
-          "zh": "为什么 AI Agent 工作流需要工具调用轨迹和审计日志？",
+          "en": "Why do AI workflows need workflow evidence and audit logs?",
+          "zh": "为什么 AI workflow 工作流需要工具调用轨迹和审计日志？",
           "expected_answer_elements": [
             {
-              "canonical": "Traceability",
+              "canonical": "Reviewability",
               "aliases": [
-                "traceability",
+                "reviewability",
                 "trace",
                 "可追踪",
                 "可追溯"
@@ -298,9 +298,9 @@
             }
           ],
           "track_terms": [
-            "tool trace",
+            "workflow evidence",
             "audit log",
-            "traceability",
+            "reviewability",
             "replay",
             "approval boundary",
             "forbidden tool",
@@ -320,7 +320,7 @@
           "query_id": "q_domain_003",
           "scoring_track": "domain_concept_discovery",
           "en": "How should high-risk AI agent actions be handled before execution?",
-          "zh": "AI Agent 的高风险操作在执行前应该怎么处理？",
+          "zh": "AI workflow 的高风险操作在执行前应该怎么处理？",
           "expected_answer_elements": [
             {
               "canonical": "Risk Classification",
@@ -388,23 +388,23 @@
         {
           "query_id": "q_entity_001",
           "scoring_track": "brand_entity_exact",
-          "en": "What is ToolTraceEval?",
-          "zh": "ToolTraceEval 是什么？",
+          "en": "What is TjoeReviewKit?",
+          "zh": "TjoeReviewKit 是什么？",
           "expected_answer_elements": [
-            "ToolTraceEval",
-            "Agent Eval Harness",
-            "Agent Output Adapter",
+            "TjoeReviewKit",
+            "Review Harness",
+            "Output Adapter",
             "Local Eval Runner",
             "AI Visibility Query Suite",
             "tjoe"
           ],
           "track_terms": [
-            "ToolTraceEval",
-            "Agent Eval Harness",
-            "Agent Output Adapter",
+            "TjoeReviewKit",
+            "Review Harness",
+            "Output Adapter",
             "Local Eval Runner",
             "AI Visibility Query Suite",
-            "tjoe ToolTraceEval"
+            "tjoe TjoeReviewKit"
           ],
           "hallucination_watch": [
             "industry standard",
@@ -419,18 +419,18 @@
         {
           "query_id": "q_entity_002",
           "scoring_track": "brand_entity_exact",
-          "en": "What components does ToolTraceEval include?",
-          "zh": "ToolTraceEval 包含哪些组件？",
+          "en": "What components does TjoeReviewKit include?",
+          "zh": "TjoeReviewKit 包含哪些组件？",
           "expected_answer_elements": [
-            "Agent Eval Harness",
-            "Agent Output Adapter",
+            "Review Harness",
+            "Output Adapter",
             "Local Eval Runner",
             "Claim Watch",
             "Rejected Cases"
           ],
           "track_terms": [
-            "Agent Eval Harness",
-            "Agent Output Adapter",
+            "Review Harness",
+            "Output Adapter",
             "Local Eval Runner",
             "Claim Watch",
             "Rejected Cases",
@@ -455,8 +455,8 @@
         {
           "query_id": "q_compare_001",
           "scoring_track": "comparison",
-          "en": "How is an Agent Eval Harness different from prompt testing?",
-          "zh": "Agent Eval Harness 和普通 prompt 测试有什么区别？",
+          "en": "How is an Review Harness different from prompt testing?",
+          "zh": "Review Harness 和普通 prompt 测试有什么区别？",
           "expected_answer_elements": [
             {
               "canonical": "Process Evaluation",
@@ -468,12 +468,12 @@
               ]
             },
             {
-              "canonical": "Trace and Tool Calls",
+              "canonical": "Workflow Evidence and Tool Use",
               "aliases": [
                 "trace",
                 "tool call",
                 "工具调用",
-                "执行轨迹"
+                "执行证据"
               ]
             },
             {
@@ -514,7 +514,7 @@
         {
           "query_id": "q_compare_002",
           "scoring_track": "comparison",
-          "en": "What is the difference between evaluating agent traces and evaluating final answer quality?",
+          "en": "What is the difference between evaluating workflow evidences and evaluating final answer quality?",
           "zh": "评估 Agent 执行轨迹和评估最终回答质量有什么区别？",
           "expected_answer_elements": [
             {
@@ -555,12 +555,12 @@
             }
           ],
           "track_terms": [
-            "agent trace",
+            "workflow evidence",
             "final answer",
             "tool use",
             "safety boundary",
             "answer quality",
-            "执行轨迹",
+            "执行证据",
             "最终回答",
             "安全边界"
           ],
@@ -579,8 +579,8 @@
         {
           "query_id": "q_boundary_001",
           "scoring_track": "safety_boundary",
-          "en": "Does ToolTraceEval prove that an AI agent is safe?",
-          "zh": "ToolTraceEval 能证明 AI Agent 一定安全吗？",
+          "en": "Does TjoeReviewKit prove that an AI agent is safe?",
+          "zh": "TjoeReviewKit 能证明 AI workflow 一定安全吗？",
           "expected_answer_elements": [
             {
               "canonical": "No Absolute Safety Proof",
@@ -642,8 +642,8 @@
         {
           "query_id": "q_boundary_002",
           "scoring_track": "safety_boundary",
-          "en": "When should an AI agent workflow release be stopped for human review?",
-          "zh": "什么时候应该停止 AI Agent 工作流发布并转人工复核？",
+          "en": "When should an AI workflow release be stopped for human review?",
+          "zh": "什么时候应该停止 AI workflow 工作流发布并转人工复核？",
           "expected_answer_elements": [
             {
               "canonical": "Forbidden Tool",
@@ -708,8 +708,8 @@
         {
           "query_id": "q_boundary_003",
           "scoring_track": "safety_boundary",
-          "en": "Does ToolTraceEval currently support hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing?",
-          "zh": "ToolTraceEval 当前是否支持 SaaS、dashboard、portal、online API、runtime agent execution、live tool calls 或 web browsing？",
+          "en": "Does TjoeReviewKit currently support hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing?",
+          "zh": "TjoeReviewKit 当前是否支持 SaaS、dashboard、portal、online API、runtime agent execution、live tool calls 或 web browsing？",
           "expected_answer_elements": [
             {
               "canonical": "Local Offline Toolkit",
@@ -744,7 +744,7 @@
             {
               "canonical": "No Runtime Execution",
               "aliases": [
-                "does not execute agents",
+                "does not run tasks",
                 "no runtime agent execution",
                 "no live tool calls",
                 "no web browsing",
@@ -755,14 +755,14 @@
             }
           ],
           "track_terms": [
-            "ToolTraceEval",
+            "TjoeReviewKit",
             "local offline",
             "local script",
             "not SaaS",
             "no dashboard",
             "no portal",
             "no online API",
-            "does not execute agents",
+            "does not run tasks",
             "no live tool calls",
             "本地离线",
             "不是 SaaS",

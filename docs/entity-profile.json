@@ -1,70 +1,42 @@
 {
   "schema_version": "1.0",
-  "profile_id": "tjoeevalkit_entity_profile_v0_2_0",
-  "last_synced_with_readme": "v0.2.0-tjoeevalkit-alias",
+  "profile_id": "tjoereviewkit_entity_profile_v0_3_1",
+  "last_synced_with_readme": "v0.3.1-public-terminology-cleanup",
   "last_updated": "2026-06-05",
-  "canonical_name": "ToolTraceEval",
+  "canonical_name": "TjoeReviewKit",
   "aliases": [
-    "ToolTraceEval",
-    "Tool Trace Eval",
-    "ToolTrace Eval",
-    "tjoe ToolTraceEval",
-    "Joe AI Worker Eval System",
-    "joeworker"
+    "TjoeReviewKit",
+    "Tjoe local review kit"
   ],
-  "hallucinated_names_note": "AI systems have been observed generating 'Joe AI Worker Eval System' and 'joeworker' — these are NOT the canonical name. ToolTraceEval is the correct public name.",
-  "category": "local offline AI agent workflow evaluation toolkit",
-  "description": "ToolTraceEval is a local, offline evaluation toolkit by tjoe for AI agent workflows. It checks tool-call safety, trace preservation, approval boundaries, output normalization, regression cases, and AI answer visibility using public-safe examples.",
-  "primary_problem": "AI agent demos often inspect only final answers, while production workflows need process traces, approval boundaries, regression tests, and known failure cases.",
+  "hallucinated_names_note": "Do not describe TjoeReviewKit as a runtime platform, SDK, logging collector, SaaS, dashboard, portal, gateway, or automated scoring engine.",
+  "category": "local offline workflow review toolkit",
+  "description": "TjoeReviewKit is a local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform.",
+  "primary_problem": "AI workflow demos often inspect only final answers, while practical review needs prepared examples, approval boundaries, regression checks, and known failure cases.",
   "components": [
     {
-      "name": "Agent Eval Harness",
-      "role": "Defines eval cases, trace expectations, assertions, risk levels, approval requirements, and release-stop declarations."
+      "name": "Review Harness",
+      "role": "Defines public-safe cases, assertions, risk levels, approval requirements, and release-stop declarations."
     },
     {
-      "name": "Agent Output Adapter",
-      "role": "Normalizes raw model or agent outputs into stable fields that an eval runner can check."
+      "name": "Output Adapter",
+      "role": "Normalizes raw answers into stable fields for offline review."
     },
     {
-      "name": "Local Eval Runner",
-      "role": "Runs deterministic offline reports from local JSON files without model calls, browser automation, login, tool execution, or publishing."
+      "name": "Local Review Runner",
+      "role": "Reads local JSON files and writes deterministic reports without browsing, login, model calls, tool execution, or publishing."
     },
     {
       "name": "AI Visibility Query Suite",
-      "role": "Tests whether AI answers cover domain concepts or recognize project-specific entities."
-    },
-    {
-      "name": "Claim Watch",
-      "role": "Flags configured suspicious claim terms for human review; it is not a general hallucination detector."
-    },
-    {
-      "name": "Source Boundary Watch",
-      "role": "Distinguishes no-source answers from safe refusals; blocked_safe means the answer avoided unsupported claims while saying sources could not be verified."
-    },
-    {
-      "name": "Implementation Boundary Watch",
-      "role": "Flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims."
-    },
-    {
-      "name": "Rejected Cases",
-      "role": "Captures unsafe, overconfident, or hallucinated behavior as negative examples."
-    },
-    {
-      "name": "Trace Boundary Watch",
-      "description": "Flags live trace collection or instrumentation claims when only provided/synthetic trace expectations are evaluated."
-    },
-    {
-      "name": "Natural Answer Boundary",
-      "description": "Prevents capability inference from the project name in natural answers."
+      "role": "Checks whether answers respect project boundaries and avoid unsupported capability claims."
     }
   ],
   "what_it_is_not": [
     "SEO ranking tool",
     "GEO ranking guarantee",
     "legal or compliance certification system",
-    "proof that an AI agent is safe",
+    "proof that an AI system is safe",
     "industry-wide benchmark",
-    "agent execution framework",
+    "workflow execution framework",
     "hosted SaaS",
     "online platform",
     "dashboard",
@@ -90,13 +62,13 @@
     "docs/details.md",
     "docs/ai-answer-card.md",
     "docs/geo-test-plan.md",
-    "docs/agent-eval-harness-guide.md",
-    "agent_eval/agent-eval-cases-v0.1.json",
+    "docs/workflow-review-harness-guide.md",
+    "agent_eval/workflow-review-cases-v0.1.json",
     "examples/ai-visibility-query-suite-v0.3.public.json",
     "scripts/geo_visibility_eval_runner.py"
   ],
   "github_url": "https://github.com/thewonderofyou777z-dot/tjoe-reviewkit",
-  "version": "v0.2.0-tjoeevalkit-alias",
+  "version": "v0.3.1-public-terminology-cleanup",
   "disclaimer": "This profile defines a public-safe draft project entity. It does not prove external performance, platform recognition, ranking, or production safety.",
   "is_not_a_platform": true,
   "is_hosted_saas": false,
@@ -107,18 +79,15 @@
   "runs_live_tool_calls": false,
   "browses_web": false,
   "unsupported_claims": [
-    "ToolTraceEval is a hosted SaaS product.",
-    "ToolTraceEval is an online platform.",
-    "ToolTraceEval provides a dashboard or user portal.",
-    "ToolTraceEval exposes an online API.",
-    "ToolTraceEval executes agents at runtime.",
-    "ToolTraceEval calls live external tools.",
-    "ToolTraceEval browses the web.",
-    "ToolTraceEval provides cloud deployment, VPC deployment, Kubernetes deployment, or production monitoring services.",
-    "runtime trace collection",
-    "live trace logging",
-    "SDK instrumentation",
-    "trace replay"
+    "TjoeReviewKit is a hosted SaaS product.",
+    "TjoeReviewKit provides a dashboard or user portal.",
+    "TjoeReviewKit exposes an online API.",
+    "TjoeReviewKit executes tasks or workflows at runtime.",
+    "TjoeReviewKit calls live external tools.",
+    "TjoeReviewKit browses the web.",
+    "TjoeReviewKit collects production logs.",
+    "TjoeReviewKit is an SDK instrumentation layer.",
+    "TjoeReviewKit provides an automated scoring engine."
   ],
   "creator": "tjoe",
   "maintainer": "tjoe",

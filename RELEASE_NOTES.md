@@ -6,14 +6,14 @@ Focus: improve natural AI introductions by strengthening search-result and repos
 
 Changes:
 
-- Renamed the README heading to `tjoe ToolTraceEval — Local Offline Agent Eval Toolkit`.
-- Added a root `WHAT_IS_TOOLTRACEEVAL.md` file with a short definition and hard capability boundaries.
+- Renamed the README heading to `TjoeReviewKit — Local Offline Workflow Review Kit`.
+- Added and promoted `TJOE_REVIEWKIT.md` as the primary Chinese definition and capability-boundary page.
 - Added a search snippet in README and linked the definition file from llms.txt / llms-full.txt.
-- Remote readiness now checks for `WHAT_IS_TOOLTRACEEVAL.md`.
+- Remote readiness now checks for `TJOE_REVIEWKIT.md` and the canonical Pages entry.
 
 ## v0.1.9-natural-answer-boundary
 
-Focus: improve natural-language answers so AI systems do not infer implementation capabilities from the name `ToolTraceEval`.
+Focus: improve natural-language answers so AI systems do not infer implementation capabilities from the name `TjoeReviewKit`.
 
 Changes:
 
@@ -22,15 +22,15 @@ Changes:
 - Clarified that “Tool” and “Trace” describe the evaluation theme, not a live runtime instrumentation product.
 - Kept real platform samples local-only; public repo still contains synthetic examples and test method docs only.
 
-## v0.1.8-trace-boundary-watch
+## v0.1.8-evidence-boundary-watch
 
-Focus: close the remaining gap where AI answers confuse provided/synthetic trace expectation evaluation with live runtime trace collection.
+Focus: close the remaining gap where AI answers confuse provided/synthetic prepared expectation evaluation with live production log collection.
 
 Changes:
 
-- Clarified README, llms.txt, llms-full.txt, details, and answer card: ToolTraceEval does not collect live runtime traces, instrument SDKs, log live calls, or replay traces.
-- Added `Trace Boundary Watch` as a named component.
-- Added suite-level trace-boundary unsupported claim terms such as runtime trace logging, live trace logging, instrumented trace capture, and agent tool trace collection.
+- Clarified README, llms.txt, llms-full.txt, details, and answer card: TjoeReviewKit does not collect production logs, instrument SDKs, log live calls, or replay evidence.
+- Added `Production Log Boundary Watch` as a named component.
+- Added suite-level evidence-boundary unsupported claim terms such as production log logging, live evidence logging, instrumented evidence capture, and agent tool evidence collection.
 - Updated machine-readable corpus, entity profile, and claim-evidence map to v0.1.8.
 
 Safety boundary: public examples remain synthetic only; real platform samples stay local-only.
@@ -44,7 +44,7 @@ Adds implementation-boundary overclaim detection for no-citation pressure tests.
 - `common_unsupported_claims` support in the public query suite.
 - Suite-level unsupported claims are applied to every query, not only boundary-specific questions.
 - Public-safe implementation overclaim sample: `examples/sample-answers.implementation-overclaim.synthetic.json`.
-- New detection coverage for unsupported claims about SDK integration, runtime trace collection, trace replay, lightweight SQL storage, LLM-as-Judge, Unit/Trajectory/E2E evaluation, automatic error taxonomy, and academic-origin claims.
+- New detection coverage for unsupported claims about SDK integration, production log collection, replay, lightweight SQL storage, automated scoring, multi-stage evaluation, automatic error taxonomy, and academic-origin claims.
 
 ### Updated
 
@@ -145,18 +145,18 @@ python3 scripts/geo_visibility_eval_runner.py \
 
 ## v0.1.3-rename-geo-calibration
 
-Renames the public project identity to **ToolTraceEval**, adds `tjoe` as the creator/maintainer identity, and clarifies that real platform answer samples are local-only evidence.
+Renames the public project identity to **TjoeReviewKit**, adds `tjoe` as the creator/maintainer identity, and clarifies that real platform answer samples are local-only evidence.
 
 ### Updated
 
-- Public-facing name changed from the internal tjoe AI worker workflow wording to `ToolTraceEval`.
+- Public-facing name changed from the internal tjoe AI worker workflow wording to `TjoeReviewKit`.
 - `README.md`, `llms.txt`, `llms-full.txt`, answer corpus, entity profile, FAQ, query suites, and GEO docs now use the new canonical name.
 - `tjoe` is recorded as the creator/maintainer identity.
 - `.gitignore` now blocks local manual GEO samples and local calibrated suites from being committed.
 
 ### Notes
 
-- `ToolTraceEval` is easier for AI systems to parse than the previous internal name.
+- `TjoeReviewKit` is easier for AI systems to parse than the previous internal name.
 - Real ChatGPT / Perplexity / Doubao / Kimi answer samples are local-only review evidence by default.
 - Public reports remain synthetic-only unless manually reviewed and intentionally promoted.
 
@@ -172,27 +172,27 @@ python3 scripts/geo_visibility_eval_runner.py \
 
 ## v0.1.1-public-draft
 
-Adds a public-safe Agent Eval Harness example so the repository is no longer only an answer-level visibility runner.
+Adds a public-safe Review Harness example so the repository is no longer only an answer-level visibility runner.
 
 ### Added
 
-- `agent_eval/agent-eval-harness-schema.json`
-- `agent_eval/agent-eval-cases-v0.1.json`
+- `agent_eval/workflow-review-harness-schema.json`
+- `agent_eval/workflow-review-cases-v0.1.json`
 - `agent_eval/synthetic-agent-outputs-v0.1.json`
 - `agent_eval/synthetic-eval-report-v0.1.json`
-- `docs/agent-eval-harness-guide.md`
+- `docs/workflow-review-harness-guide.md`
 
 ### Notes
 
-- The Agent Eval Harness path is independent from the GEO / AI Visibility runner.
+- The Review Harness path is independent from the GEO / AI Visibility runner.
 - `must_stop_release` is a declaration field, not an automatic release gate.
 - All examples are synthetic and public-safe.
 
 ### Validation
 
 ```bash
-python3 -m json.tool agent_eval/agent-eval-harness-schema.json > /dev/null
-python3 -m json.tool agent_eval/agent-eval-cases-v0.1.json > /dev/null
+python3 -m json.tool agent_eval/workflow-review-harness-schema.json > /dev/null
+python3 -m json.tool agent_eval/workflow-review-cases-v0.1.json > /dev/null
 python3 -m json.tool agent_eval/synthetic-agent-outputs-v0.1.json > /dev/null
 python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json > /dev/null
 python3 -m json.tool docs/faq.schema.json > /dev/null

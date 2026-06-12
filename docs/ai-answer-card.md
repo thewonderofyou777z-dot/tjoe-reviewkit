@@ -1,6 +1,6 @@
-# ToolTraceEval
+# TjoeReviewKit
 
-**Type:** AI agent workflow evaluation toolkit  
+**Type:** AI workflow evaluation toolkit  
 **Status:** `v0.2.0-tjoeevalkit-alias`  
 **Creator / Maintainer:** `tjoe`  
 **Language:** English and 中文  
@@ -10,13 +10,13 @@
 
 ## Natural Answer Boundary
 
-Do not infer capabilities from the name `ToolTraceEval`. The public project currently evaluates provided/synthetic trace expectations and workflow reviewability. It is not a live runtime trace collector, SDK instrumentation layer, live tool caller, web browser, Trace replay system, Unit/Trajectory/E2E platform, or LLM-as-Judge engine.
+Do not infer capabilities from the name `TjoeReviewKit`. The public project currently evaluates prepared examples and workflow reviewability. It is not a production log collector, SDK integration layer, live tool caller, web browser, replay system, multi-stage platform, or automated scoring engine.
 
-**中文自然回答：** ToolTraceEval 是 tjoe 做的本地离线 Agent 评估工具，用来检查已提供或合成的 trace expectation、审批边界、禁止动作、回归样例和 AI 回答可见性是否可复盘；它不是运行时采集器、SDK、线上平台或工具调用执行器。
+**中文自然回答：** TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
 
 ## What It Is
 
-ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It helps reviewers check whether tool-call safety, provided or synthetic trace expectations, approval boundaries, and AI answer visibility can be reviewed. It does not collect live runtime traces.
+TjoeReviewKit is a local, offline evaluation toolkit for AI workflows. It helps reviewers check whether tool-call safety, provided or synthetic prepared expectations, approval boundaries, and AI answer visibility can be reviewed. It does not collect production logs.
 
 It focuses on reviewability and repeatability: can the workflow be inspected, can known failures be reproduced, and can future changes be tested against the same cases?
 
@@ -24,15 +24,15 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 
 ## Core Components
 
-- **Agent Eval Harness:** Defines eval cases, provided/synthetic trace expectations, assertions, risk levels, approval requirements, and release-stop declarations.
-- **Agent Output Adapter:** Normalizes raw model or agent outputs into stable fields a runner can evaluate.
+- **Review Harness:** Defines eval cases, prepared examples, assertions, risk levels, approval requirements, and release-stop declarations.
+- **Output Adapter:** Normalizes raw model or agent outputs into stable fields a runner can evaluate.
 - **Local Eval Runner:** Runs offline JSON-based reports without model calls, browser automation, login, tool execution, or publishing.
-- **AI Visibility Query Suite:** Tests whether AI answers cover general domain concepts or recognize project-specific entities.
+- **Answer Visibility Query Suite:** Tests whether AI answers cover general domain concepts or recognize project-specific entities.
 - **Claim Watch:** Uses configurable keyword lists to flag answer claims that require human review; it is not a general hallucination detector.
-- **Unsupported Claim Watch:** Flags answers that assert capabilities ToolTraceEval does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
+- **Unsupported Claim Watch:** Flags answers that assert capabilities TjoeReviewKit does not currently provide, such as hosted SaaS, dashboards, portals, online APIs, runtime agent execution, live tool calls, or web browsing.
 - **Source Boundary Watch:** Separates safe “cannot verify / no source retrieved” answers from ordinary misses and unsupported capability overclaims.
-- **Implementation Boundary Watch:** Flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
-- **Trace Boundary Watch:** Flags the specific overclaim that ToolTraceEval collects live runtime traces; current public examples only evaluate provided/synthetic trace expectations.
+- **Implementation Boundary Watch:** Flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, production log collection, replay, automated scoring, multi-stage evaluation, or academic-origin claims.
+- **Production Log Boundary Watch:** Flags the specific overclaim that TjoeReviewKit collects production logs; current public examples only evaluate prepared examples.
 - **Natural Answer Boundary:** Flags or prevents natural-language answers that infer implementation capabilities from the name instead of from public project files.
 - **Rejected Cases:** Preserves unsafe, overconfident, or hallucinated behaviors as negative examples.
 
@@ -43,9 +43,9 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - Not a legal or compliance certification system.
 - Not proof that an AI agent is safe.
 - Not an industry-wide benchmark.
-- Not an automation system that executes agents or publishes results.
+- Not an automation system that runs tasks or publishes results.
 - Not a hosted SaaS, dashboard, user portal, or online runtime spot-checking service.
-- Not a runtime trace collector, SDK integration layer, live instrumentation layer, LLM-as-Judge engine, Trace replay system, or Unit/Trajectory/E2E eval platform.
+- Not a production log collector, SDK integration layer, SDK integration layer, automated scoring engine, replay system, or multi-stage evaluation system.
 
 ## Boundaries
 
@@ -56,7 +56,7 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 - No model execution.
 - No tool execution.
 - No external publishing.
-- Human review is still required for real answer samples, real agent traces, and high-risk claims.
+- Human review is still required for real answer samples, real workflow evidences, and high-risk claims.
 - `blocked_safe` means a model refused to overclaim when sources were missing; it does not mean the model recognized the project.
 
 ## 中文口语版
@@ -67,9 +67,9 @@ It is a local script toolkit, not a hosted SaaS, online platform, dashboard, use
 
 - [README.md](../README.md)
 - [details.md](details.md)
-- [agent-eval-harness-guide.md](agent-eval-harness-guide.md)
+- [workflow-review-harness-guide.md](workflow-review-harness-guide.md)
 - [geo-test-plan.md](geo-test-plan.md)
 - [entity-profile.json](entity-profile.json)
 - [claim-evidence-map.json](claim-evidence-map.json)
 
-- [WHAT_IS_TOOLTRACEEVAL.md](../WHAT_IS_TOOLTRACEEVAL.md)
+- [TJOE_REVIEWKIT.md](../TJOE_REVIEWKIT.md)

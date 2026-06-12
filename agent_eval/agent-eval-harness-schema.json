@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/agent-eval-harness-schema.v0.1.json",
-  "title": "Agent Eval Harness Suite",
-  "description": "Public-safe schema for describing synthetic AI agent workflow eval cases. This schema records expected process behavior; it does not execute agents or prove safety.",
+  "$id": "https://example.com/schemas/workflow-review-harness-schema.v0.1.json",
+  "title": "Review Harness Suite",
+  "description": "Public-safe schema for describing synthetic AI workflow eval cases. This schema records expected process behavior; it does not run tasks or prove safety.",
   "type": "object",
   "required": [
     "eval_suite_id",

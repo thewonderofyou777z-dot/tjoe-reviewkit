@@ -314,7 +314,7 @@
     "citation_rule": "Only public http(s) source_refs count toward citation_score.",
     "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
     "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
-    "common_unsupported_claim_rule": "Suite-level common_unsupported_claims are applied to every query so implementation and trace-boundary overclaims can be caught outside boundary-specific questions.",
+    "common_unsupported_claim_rule": "Suite-level common_unsupported_claims are applied to every query so implementation and evidence-boundary overclaims can be caught outside boundary-specific questions.",
     "source_boundary_rule": "Answers that explicitly say they cannot verify or cannot retrieve sources are graded blocked_safe when they avoid unsupported claims. This is a safe refusal signal, not evidence of project recognition."
   },
   "safety": {

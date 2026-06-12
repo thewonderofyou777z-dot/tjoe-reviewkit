@@ -29,5 +29,5 @@ Shortest accurate description:
 - No web browsing.
 - No task execution.
 - No production log collection.
-- No SDK instrumentation.
-- No automatic judge engine.
+- No SDK integration.
+- No automated scoring engine.

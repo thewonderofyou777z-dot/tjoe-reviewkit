@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve ToolTraceEval.
+Thanks for helping improve TjoeReviewKit.
 
 ## Good Contributions
 

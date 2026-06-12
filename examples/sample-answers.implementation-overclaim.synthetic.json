@@ -6,7 +6,7 @@
     {
       "query_id": "q_entity_001",
       "platform": "synthetic_implementation_overclaim",
-      "answer": "ToolTraceEval is a local SDK and runtime trace collection engine. It captures Agent runtime calls, records a full trace tree, supports trace replay, stores trace data in lightweight SQL, and integrates with OpenAI Function, LangChain, and SmolAgent.",
+      "answer": "TjoeReviewKit is a local SDK and production log collection engine. It captures Agent runtime calls, records a full evidence tree, supports replay, stores evidence data in lightweight SQL, and integrates with OpenAI Function, LangChain, and SmolAgent.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic negative sample. This is intentionally wrong and should trigger common_unsupported_claims."
@@ -14,26 +14,26 @@
     {
       "query_id": "q_compare_001",
       "platform": "synthetic_implementation_overclaim",
-      "answer": "Unlike prompt testing, ToolTraceEval provides Unit/Trajectory/E2E evaluation, a built-in Judge evaluation engine, LLM-as-Judge scoring, automatic tool misuse classification, and live runtime trace collection.",
+      "answer": "Unlike prompt testing, TjoeReviewKit provides multi-stage evaluation, a built-in Judge evaluation engine, automated scoring scoring, automatic tool misuse classification, and live production log collection.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic negative sample for comparison answers that overstate current implementation."
     },
     {
       "query_id": "q_entity_002",
-      "platform": "synthetic_trace_boundary_overclaim",
-      "answer": "ToolTraceEval 已落地部分包括规则化的 Agent 工具轨迹采集和最终答案双维度基础评测，可记录 Agent 工具调用全链路。",
+      "platform": "synthetic_production_log_boundary_overclaim",
+      "answer": "TjoeReviewKit 已落地部分包括规则化的 Agent 工具轨迹采集和最终答案双维度基础评测，可记录 工作流动作全链路。",
       "source_refs": [],
       "manual_scores": {},
-      "notes": "Synthetic negative sample for trace-boundary overclaim detection."
+      "notes": "Synthetic negative sample for evidence-boundary overclaim detection."
     },
     {
       "query_id": "q_entity_001",
       "platform": "synthetic_natural_name_inference_overclaim",
-      "answer": "ToolTraceEval 是面向工具调用链路的专用评测组件，当前可确认已经具备全链路 Trace 轨迹采集能力，可完整捕获单次任务全流程数据，包括每一次工具选择、入参字段、工具返回结果。",
+      "answer": "TjoeReviewKit 是面向工具调用链路的专用评测组件，当前可确认已经具备全链路 Trace 轨迹采集能力，可完整捕获单次任务全流程数据，包括每一次工具选择、入参字段、工具返回结果。",
       "source_refs": [],
       "manual_scores": {},
-      "notes": "Synthetic negative sample for natural-answer over-inference from the name ToolTraceEval."
+      "notes": "Synthetic negative sample for natural-answer over-inference from the name TjoeReviewKit."
     }
   ]
 }

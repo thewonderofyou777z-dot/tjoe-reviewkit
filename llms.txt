@@ -8,10 +8,10 @@ Creator / maintainer: tjoe.
 Repository: thewonderofyou777z-dot/tjoe-reviewkit.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
 TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
-Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no runtime trace collection, no SDK instrumentation, no task execution.
+Deployment: no hosted SaaS, no online platform, no dashboard, no user portal, no runtime agent execution, no runtime gateway, no online API, no production log collection, no SDK integration, no task execution.
 Natural query guidance: use TjoeReviewKit as the natural name. This is the current public name. Do not infer runtime platform capabilities.
 is_not_a_platform: true.
-What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser", "runtime trace collector", "SDK instrumentation layer", "LLM-as-Judge engine", "Unit/Trajectory/E2E engine", "task executor"].
+What_It_Is_Not: ["hosted SaaS", "online platform", "dashboard", "user portal", "online API", "agent execution service", "runtime gateway", "live tool caller", "web browser", "production log collector", "SDK integration layer", "automated scoring engine", "multi-stage engine", "task executor"].
 Canonical_Natural_Answer_ZH: TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
 
 This document is a machine-readable navigation aid, not an endorsement. Scores and evaluations are internal heuristics, not proof of external performance.
@@ -33,7 +33,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - docs/geo-test-plan.md: Manual seven-day GEO / AI visibility test plan with pass, partial, fail, and blocked criteria.
 - docs/entity-profile.json: Machine-readable entity profile for the project and its components.
 - docs/claim-evidence-map.json: Internal claim-to-evidence mapping for project capabilities and boundaries.
-- docs/agent-eval-harness-guide.md: Guide for process-level Agent Eval Harness examples.
+- docs/workflow-review-harness-guide.md: Guide for process-level Review Harness examples.
 - agent_eval/: Synthetic eval cases and synthetic reports.
 - examples/ai-visibility-query-suite-v0.3.public.json: Public-safe query suite for answer visibility testing.
 - examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
@@ -53,7 +53,7 @@ The project separates workflow review from answer review. Review Harness example
 - It is not a legal or compliance certification system.
 - It is not proof that an AI agent is safe.
 - It is not an industry-wide benchmark.
-- It does not execute agents or call external AI platforms.
+- It does not run tasks or call external AI platforms.
 
 ## Public Repository
 

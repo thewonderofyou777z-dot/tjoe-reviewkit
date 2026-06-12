@@ -21,7 +21,7 @@
             },
             {
               "canonical": "Tool Trace",
-              "aliases": ["execution trace", "tool trace", "trace log"]
+              "aliases": ["execution trace", "tool trace", "evidence log"]
             },
             {
               "canonical": "Human Approval",
@@ -33,7 +33,7 @@
             },
             {
               "canonical": "Audit Log",
-              "aliases": ["audit", "log", "traceability"]
+              "aliases": ["audit", "log", "reviewability"]
             }
           ],
           "track_terms": [
@@ -55,17 +55,17 @@
         {
           "query_id": "q_brand_001",
           "scoring_track": "brand_entity_exact",
-          "en": "What is ToolTraceEval?",
+          "en": "What is TjoeReviewKit?",
           "expected_answer_elements": [
-            "ToolTraceEval",
-            "Agent Eval Harness",
-            "Agent Output Adapter",
+            "TjoeReviewKit",
+            "Review Harness",
+            "Output Adapter",
             "Local Eval Runner"
           ],
           "track_terms": [
-            "ToolTraceEval",
-            "Agent Eval Harness",
-            "Agent Output Adapter",
+            "TjoeReviewKit",
+            "Review Harness",
+            "Output Adapter",
             "Local Eval Runner"
           ],
           "hallucination_watch": [

@@ -13,11 +13,11 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 **Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
 **TjoeReviewKit page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
 
-**Deployment boundary:** TjoeReviewKit is a local script review toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, runtime gateway, runtime agent execution service, runtime trace collector, SDK instrumentation layer, live tool caller, or web browser.
+**Deployment boundary:** TjoeReviewKit is a local script review toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, runtime gateway, runtime agent execution service, production log collector, SDK integration layer, live tool caller, or web browser.
 
-**Natural query guidance:** use `TjoeReviewKit` as the natural name. If an answer describes a runtime platform, live logging system, SDK, gateway, dashboard, or automatic judge engine, treat it as over-inference unless it cites a specific public file.
+**Natural query guidance:** use `TjoeReviewKit` as the natural name. If an answer describes a runtime platform, live logging system, SDK, gateway, dashboard, or automated scoring engine, treat it as over-inference unless it cites a specific public file.
 
-**Natural answer rule:** The current public project reviews prepared examples and answer samples only. It does not collect live runtime traces, instrument SDKs, call live tools, browse the web, replay traces, or provide Unit/Trajectory/E2E / LLM-as-Judge engines.
+**Natural answer rule:** The current public project reviews prepared examples and answer samples only. It does not collect production logs, instrument SDKs, call live tools, browse the web, replay evidence, or provide multi-stage / automated scoring engines.
 
 它的目标很简单：  
 不是看 AI 最后回答得漂不漂亮，也不是接管程序运行过程，而是检查一个工作流的**已提供证据能不能复盘、边界能不能审核、旧问题能不能回归测试**。
@@ -28,7 +28,7 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 - 删除、写入、安装、执行命令这类动作有没有被正确阻断
 - 已准备好的样例和规则是否足够复盘
 - 输出结果能不能被结构化检查
-- AI 平台能不能准确理解这个项目，而不是乱编成 SaaS、SDK、runtime trace collector 或执行器
+- AI 平台能不能准确理解这个项目，而不是乱编成 SaaS、SDK、production log collector 或执行器
 
 > 说明：这个项目不承诺绝对 AI 安全，也不保证 SEO / GEO 排名效果，更不能替代法律或合规审核。
 > 它也不是线上平台或 SaaS 服务：没有托管仪表盘、没有用户门户、没有线上 API，也不会执行任务。
@@ -37,7 +37,7 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 
 ## 为什么做这个项目？
 
-很多 AI Agent demo 看起来很厉害，但生产环境真正关心的是：
+很多 AI workflow demo 看起来很厉害，但生产环境真正关心的是：
 
 - 它有没有越权调用工具？
 - 它有没有把删除、写入、安装这类高风险动作当成普通任务？
@@ -56,12 +56,12 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 | Review Harness | 定义并评估已准备好的样例、审批边界、禁止工具和发布阻断声明 |
 | Output Adapter | 把原始回答或样例输出整理成稳定结构，方便检查 |
 | Local Eval Runner | 本地离线跑评估，不联网、不调模型、不执行危险工具 |
-| AI Visibility Query Suite | 测试 AI 回答是否理解项目边界，是否识别项目实体 |
+| Answer Visibility Query Suite | 测试 AI 回答是否理解项目边界，是否识别项目实体 |
 | Claim Watch | 用关键词标记需要人工复核的可疑说法，不是通用幻觉检测器 |
 | Unsupported Claim Watch | 抓“当前不支持的能力被说成支持”，例如 SaaS、dashboard、runtime gateway、live tool calls |
 | Source Boundary Watch | 抓“缺少来源时是否安全拒答”，区分 `blocked_safe`、`source_not_retrieved` 和普通低分 |
-| Implementation Boundary Watch | 抓“把概念方向夸成已实现能力”，例如 SDK、runtime trace collection、Trace replay、LLM-as-Judge、Unit/Trajectory/E2E |
-| Natural Answer Boundary | 抓“根据项目名 Tool + Trace + Eval 自行推断功能”的自然问法误读 |
+| Implementation Boundary Watch | 抓“把概念方向夸成已实现能力”，例如 SDK、production log collection、replay、automated scoring、multi-stage |
+| Natural Answer Boundary | 抓“根据项目名 Tool + Review + Check 自行推断功能”的自然问法误读 |
 | Rejected Cases | 保存坏案例，防止同类错误反复出现 |
 
 ---
@@ -70,7 +70,7 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.3.0-clean-reviewkit-identity` |
+| Release | `v0.3.1-public-terminology-cleanup` |
 | Runner | `geo_visibility_eval_runner.py v0.2.5` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
@@ -101,7 +101,7 @@ python3 -m json.tool reports/example-report.synthetic.json
 查看 Review Harness 示例：
 
 ```bash
-python3 -m json.tool agent_eval/agent-eval-cases-v0.1.json
+python3 -m json.tool agent_eval/workflow-review-cases-v0.1.json
 python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 ```
 
@@ -117,7 +117,7 @@ python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 
 简单说：
 
-- Agent Eval Harness 看的是 **已提供/合成的过程证据能不能表达风险、审批和复盘要求**
+- Review Harness 看的是 **已提供/合成的过程证据能不能表达风险、审批和复盘要求**
 - GEO Runner 看的是 **AI 回答有没有覆盖该覆盖的概念、有没有准确提到项目、有没有把不支持的能力说成支持、有没有在缺少来源时安全拒答**
 
 两条路径故意分开。  
@@ -127,7 +127,7 @@ python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 
 ## Review Harness 示例
 
-`v0.1.1-public-draft` 新增了一套公开安全的 Agent Eval Harness 示例。
+`v0.1.1-public-draft` 新增了一套公开安全的 Review Harness 示例。
 
 包含 3 个 synthetic eval cases：
 
@@ -139,11 +139,11 @@ python3 -m json.tool agent_eval/synthetic-eval-report-v0.1.json
 
 相关文件：
 
-- [`agent_eval/agent-eval-harness-schema.json`](agent_eval/agent-eval-harness-schema.json)
-- [`agent_eval/agent-eval-cases-v0.1.json`](agent_eval/agent-eval-cases-v0.1.json)
+- [`agent_eval/workflow-review-harness-schema.json`](agent_eval/workflow-review-harness-schema.json)
+- [`agent_eval/workflow-review-cases-v0.1.json`](agent_eval/workflow-review-cases-v0.1.json)
 - [`agent_eval/synthetic-agent-outputs-v0.1.json`](agent_eval/synthetic-agent-outputs-v0.1.json)
 - [`agent_eval/synthetic-eval-report-v0.1.json`](agent_eval/synthetic-eval-report-v0.1.json)
-- [`docs/agent-eval-harness-guide.md`](docs/agent-eval-harness-guide.md)
+- [`docs/workflow-review-harness-guide.md`](docs/workflow-review-harness-guide.md)
 
 注意：`must_stop_release` 只是一个声明字段，不是自动发布闸门。真正阻断发布仍然需要 runner、策略层和人工审核。
 
@@ -187,7 +187,7 @@ GEO / AI Visibility Suite 把问题拆成两条线：
 
 Review Harness 说明见：
 
-- [`docs/agent-eval-harness-guide.md`](docs/agent-eval-harness-guide.md)
+- [`docs/workflow-review-harness-guide.md`](docs/workflow-review-harness-guide.md)
 
 机器可读入口：
 
@@ -244,7 +244,7 @@ Runner 只读取本地 JSON 文件。
 - 上传报告
 - 自动保存私密内容
 
-如果你要加入真实平台回答或真实 Agent trace，请先人工检查并脱敏。
+如果你要加入真实平台回答或真实工作流样本，请先人工检查并脱敏。
 
 ---
 
@@ -272,7 +272,7 @@ Runner 只读取本地 JSON 文件。
 
 接下来计划：
 
-- 增加公开安全版 Agent Eval Harness 示例。已在 `v0.1.1-public-draft` 完成
+- 增加公开安全版 Review Harness 示例。已在 `v0.1.1-public-draft` 完成
 - 增加 GEO readiness 入口文件、answer card、entity profile 和测试计划。已在 `v0.1.3-rename-geo-calibration` 完成
 - 增加 GitHub 网页上传指南和 v0.3 答案采集模板。已在 `v0.1.3-rename-geo-calibration` 完成
 - 增加手动 GEO 测试 runner 和首轮测试 runbook。已在 `v0.1.3-rename-geo-calibration` 完成
@@ -286,9 +286,9 @@ Runner 只读取本地 JSON 文件。
 - 增加 GitHub Actions smoke test。已在 `v0.1.3-rename-geo-calibration` 完成
 - 增加 unsupported claim watch，用公开 synthetic negative sample 捕捉 SaaS / dashboard / runtime / live tool overclaim。已在 `v0.1.5-practical-overclaim-watch` 完成
 - 增加 source boundary watch，用公开 synthetic safe refusal sample 区分 `blocked_safe`、`source_not_retrieved` 和普通 `miss`。已在 `v0.1.6-practical-source-boundary` 完成
-- 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / runtime trace / LLM-as-Judge / Unit-Trajectory-E2E 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
+- 增加 implementation boundary watch，用 suite-level common unsupported claims 捕捉 SDK / production log / automated scoring / multi-stage 等实现能力夸大。已在 `v0.1.7-implementation-boundary-watch` 完成
 - 增加 natural query guidance，明确 `owner/repo` 和 canonical page URL 是首轮实体锚点，短名问法是 overclaim 压力测试。
-- 增加 `TjoeReviewKit` 作为更低先验的主品牌 alias，把定位从“Agent eval / trace”收窄为“本地离线工作流复盘检查”。
+- 增加 `TjoeReviewKit` 作为更低先验的主品牌 alias，把定位从旧的强工程暗示收窄为“本地离线工作流复盘检查”。
 
 ---
 

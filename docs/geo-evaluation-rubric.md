@@ -8,12 +8,12 @@ This rubric defines how to interpret first-round AI visibility answers.
 
 | Dimension | Good Signal | Weak Signal | Bad Signal |
 |---|---|---|---|
-| Domain understanding | Mentions tool-call safety, traces, approval, regression, audit logs | Mentions generic "AI safety" only | Treats agent eval as only final-answer scoring |
-| Entity recognition | Names ToolTraceEval or named components | Mentions "some local eval tool" without names | Invents a different project identity |
+| Domain understanding | Mentions tool-call safety, evidence, approval, regression, audit logs | Mentions generic "AI safety" only | Treats agent eval as only final-answer scoring |
+| Entity recognition | Names TjoeReviewKit or named components | Mentions "some local eval tool" without names | Invents a different project identity |
 | Boundary correctness | Says it is not a safety proof or ranking guarantee | Gives vague disclaimer | Claims safety proof, benchmark authority, customer adoption, or platform endorsement |
 | Evidence behavior | Cites GitHub/docs or says it cannot verify | Gives no source but avoids overclaiming | Invents sources, users, funding, or external validation |
 | Unsupported capability handling | Explicitly says unsupported capabilities are not supported | Leaves unsupported capabilities ambiguous | Says unsupported capabilities are currently supported |
-| Implementation boundary | Keeps current implementation limited to local JSON/report tooling | Describes general agent-eval ideas without clear implementation status | Claims SDK integration, runtime trace capture, trace replay, LLM-as-Judge, Unit/Trajectory/E2E, or academic origin as current fact |
+| Implementation boundary | Keeps current implementation limited to local JSON/report tooling | Describes general workflow-review ideas without clear implementation status | Claims SDK integration, production log capture, replay, automated scoring, multi-stage, or academic origin as current fact |
 | Actionability | Explains what to test next | Gives generic theory | Gives no usable next step |
 
 ## 2. Pass / Partial / Fail
@@ -37,9 +37,9 @@ Any answer containing these claims must be manually reviewed:
 - "guarantees ranking"
 - "endorsed by ChatGPT / Perplexity / Doubao / Kimi"
 - claims about real users, customers, funding, adoption, or production deployment
-- claims that ToolTraceEval currently provides hosted SaaS, dashboard, user portal, online API, runtime gateway, live tool calls, or web browsing
-- claims that ToolTraceEval currently provides SDK integration, runtime trace collection, trace replay, lightweight SQL trace storage, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or automatic tool-error taxonomy
-- claims that ToolTraceEval comes from a named academic ToolTrace / TrajectoryEval origin without evidence
+- claims that TjoeReviewKit currently provides hosted SaaS, dashboard, user portal, online API, runtime gateway, live tool calls, or web browsing
+- claims that TjoeReviewKit currently provides SDK integration, production log collection, replay, lightweight SQL evidence storage, automated scoring, multi-stage evaluation, or automatic tool-error taxonomy
+- claims that TjoeReviewKit comes from a named academic ToolTrace / TrajectoryEval origin without evidence
 
 ## 4. First Test Minimum Bar
 
@@ -65,6 +65,6 @@ Do not conclude:
 - "The model remembered the project."
 - "The project provides a hosted platform, dashboard, runtime gateway, or live tool execution."
 - "`blocked_safe` proves the model recognizes the project."
-- "The project already implements SDK integration, runtime trace collection, LLM-as-Judge, or Unit/Trajectory/E2E evaluation."
+- "The project already implements SDK integration, production log collection, automated scoring, or multi-stage evaluation."
 
 The correct conclusion is narrower: whether a specific platform answer, at a specific time, covered the expected concepts or entity signals.

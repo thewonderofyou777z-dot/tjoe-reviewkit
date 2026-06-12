@@ -9,17 +9,17 @@
       "claim_id": "claim_tool_call_safety_checks",
       "claim": "The system can represent checks for dangerous or forbidden agent actions.",
       "claim_type": "capability",
-      "evidence_doc": "agent_eval/agent-eval-cases-v0.1.json",
+      "evidence_doc": "agent_eval/workflow-review-cases-v0.1.json",
       "evidence_section": "case_forbidden_write",
       "evidence_summary": "The synthetic case expects high-risk write behavior to require approval and stop release."
     },
     {
-      "claim_id": "claim_trace_preservation",
-      "claim": "The system models trace preservation and process-level eval expectations.",
+      "claim_id": "claim_review_evidence_preservation",
+      "claim": "The system models evidence preservation and process-level eval expectations.",
       "claim_type": "capability",
-      "evidence_doc": "docs/agent-eval-harness-guide.md",
+      "evidence_doc": "docs/workflow-review-harness-guide.md",
       "evidence_section": "Core Fields",
-      "evidence_summary": "The guide describes process traces, assertions, risk, approval requirements, and release-stop declarations."
+      "evidence_summary": "The guide describes prepared review evidence, assertions, risk, approval requirements, and release-stop declarations."
     },
     {
       "claim_id": "claim_reproducible_reports",
@@ -63,11 +63,11 @@
     },
     {
       "claim_id": "boundary_no_hosted_platform",
-      "claim": "ToolTraceEval is not a hosted SaaS, online platform, dashboard, user portal, online API, runtime agent executor, live tool caller, or web browser.",
+      "claim": "TjoeReviewKit is not a hosted SaaS, online platform, dashboard, user portal, online API, runtime agent executor, live tool user, or web browser.",
       "claim_type": "boundary",
       "evidence_doc": "README.md; llms.txt; docs/entity-profile.json",
       "evidence_section": "说明 / Deployment boundary / Type / What_It_Is_Not / unsupported_claims",
-      "evidence_summary": "The public docs define ToolTraceEval as a local offline script toolkit and explicitly reject hosted platform, dashboard, portal, online API, runtime execution, live tool call, and web browsing claims."
+      "evidence_summary": "The public docs define TjoeReviewKit as a local offline script toolkit and explicitly reject hosted platform, dashboard, portal, online API, task execution, live tool use, and web browsing claims."
     },
     {
       "claim_id": "claim_unsupported_capability_watch",
@@ -91,23 +91,23 @@
       "claim_type": "method",
       "evidence_doc": "scripts/geo_visibility_eval_runner.py; examples/ai-visibility-query-suite-v0.3.public.json; examples/sample-answers.implementation-overclaim.synthetic.json",
       "evidence_section": "common_unsupported_claims / flatten_queries / synthetic implementation overclaim answer",
-      "evidence_summary": "Runner v0.2.5 applies common_unsupported_claims to every query so SDK, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E, and academic-origin overclaims can be flagged outside boundary-specific questions."
+      "evidence_summary": "Runner v0.2.5 applies common_unsupported_claims to every query so SDK, production log collection, replay, automated scoring, multi-stage, and academic-origin overclaims can be flagged outside boundary-specific questions."
     },
     {
-      "claim_id": "claim_trace_boundary_watch",
-      "claim": "The visibility runner can flag trace-boundary overclaims that describe provided or synthetic trace expectation evaluation as live runtime trace collection.",
+      "claim_id": "claim_production_log_boundary_watch",
+      "claim": "The visibility runner can flag evidence-boundary overclaims that describe provided or synthetic prepared expectation evaluation as live production log collection.",
       "claim_type": "method",
       "evidence_doc": "examples/ai-visibility-query-suite-v0.3.public.json; docs/ai-answer-card.md; llms.txt",
-      "evidence_section": "common_unsupported_claims / Trace Boundary Watch",
-      "evidence_summary": "The public docs state ToolTraceEval does not collect live runtime traces, and the query suite includes trace-boundary overclaim terms."
+      "evidence_section": "common_unsupported_claims / Production Log Boundary Watch",
+      "evidence_summary": "The public docs state TjoeReviewKit does not collect production logs, and the query suite includes evidence-boundary overclaim terms."
     },
     {
       "claim_id": "claim_natural_answer_boundary",
-      "claim": "The public docs instruct AI systems not to infer ToolTraceEval capabilities from the project name.",
+      "claim": "The public docs instruct AI systems not to infer TjoeReviewKit capabilities from the project name.",
       "claim_type": "boundary",
       "evidence_doc": "README.md; llms.txt; llms-full.txt; docs/ai-answer-card.md",
       "evidence_section": "Natural answer rule / Natural_Answer_Boundary",
-      "evidence_summary": "The public entry files define a canonical natural answer and state that ToolTraceEval is not a live runtime trace collector or SDK instrumentation product."
+      "evidence_summary": "The public entry files define a canonical natural answer and state that TjoeReviewKit is not a live production log collector or SDK integration product."
     }
   ],
   "creator": "tjoe"

@@ -145,7 +145,7 @@
       "entity_hits": [
         "tool trace",
         "audit log",
-        "traceability",
+        "reviewability",
         "replay",
         "forbidden tool"
       ],
@@ -159,7 +159,7 @@
       "unsupported_claim_triggered": false,
       "blocked_safe": false,
       "citation_note": null,
-      "notes": "Synthetic trace answer."
+      "notes": "Synthetic evidence answer."
     },
     {
       "query_id": "q_domain_003",
@@ -217,16 +217,16 @@
       "grade": "partial",
       "source_status": "no_source_provided",
       "expected_hits": [
-        "ToolTraceEval",
-        "Agent Eval Harness",
-        "Agent Output Adapter",
+        "TjoeReviewKit",
+        "Review Harness",
+        "Output Adapter",
         "Local Eval Runner",
         "AI Visibility Query Suite"
       ],
       "entity_hits": [
-        "ToolTraceEval",
-        "Agent Eval Harness",
-        "Agent Output Adapter",
+        "TjoeReviewKit",
+        "Review Harness",
+        "Output Adapter",
         "Local Eval Runner",
         "AI Visibility Query Suite"
       ],
@@ -258,15 +258,15 @@
       "grade": "partial",
       "source_status": "no_source_provided",
       "expected_hits": [
-        "Agent Eval Harness",
-        "Agent Output Adapter",
+        "Review Harness",
+        "Output Adapter",
         "Local Eval Runner",
         "Claim Watch",
         "Rejected Cases"
       ],
       "entity_hits": [
-        "Agent Eval Harness",
-        "Agent Output Adapter",
+        "Review Harness",
+        "Output Adapter",
         "Local Eval Runner",
         "Claim Watch",
         "Rejected Cases",
@@ -346,7 +346,7 @@
         "Final Answer"
       ],
       "entity_hits": [
-        "agent trace",
+        "workflow evidence",
         "final answer",
         "tool use",
         "answer quality"
@@ -361,7 +361,7 @@
       "unsupported_claim_triggered": false,
       "blocked_safe": false,
       "citation_note": null,
-      "notes": "Synthetic trace versus answer answer."
+      "notes": "Synthetic evidence versus answer answer."
     },
     {
       "query_id": "q_boundary_001",
@@ -460,12 +460,12 @@
         "No Runtime Execution"
       ],
       "entity_hits": [
-        "ToolTraceEval",
+        "TjoeReviewKit",
         "local offline",
         "not SaaS",
         "no dashboard",
         "no online API",
-        "does not execute agents"
+        "does not run tasks"
       ],
       "manual_override_fields": [],
       "has_answer": true,
@@ -487,7 +487,7 @@
     "citation_rule": "Only public http(s) source_refs count toward citation_score.",
     "understanding_rule": "understanding_score is based solely on expected_answer_elements coverage; entity_hits no longer affect this score. It is not a substitute for human quality review.",
     "unsupported_claim_rule": "unsupported_claims are hard negative signals. If an answer asserts explicitly unsupported capabilities, the result grade becomes overclaim and total_score is set to 0.",
-    "common_unsupported_claim_rule": "Suite-level common_unsupported_claims are applied to every query so implementation and trace-boundary overclaims can be caught outside boundary-specific questions.",
+    "common_unsupported_claim_rule": "Suite-level common_unsupported_claims are applied to every query so implementation and evidence-boundary overclaims can be caught outside boundary-specific questions.",
     "source_boundary_rule": "Answers that explicitly say they cannot verify or cannot retrieve sources are graded blocked_safe when they avoid unsupported claims. This is a safe refusal signal, not evidence of project recognition."
   },
   "safety": {

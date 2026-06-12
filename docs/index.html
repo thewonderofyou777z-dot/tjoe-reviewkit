@@ -8,7 +8,7 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/">
   <meta property="og:title" content="TjoeReviewKit — 本地离线 AI 工作流复盘检查工具">
-  <meta property="og:description" content="检查已准备好的样例、审批边界、禁止动作、回归样例和 AI 回答是否可审核；不是线上平台、运行时采集器或 SDK。">
+  <meta property="og:description" content="检查已准备好的样例、审批边界、禁止动作、回归样例和 AI 回答是否可审核；不是线上平台、线上平台或 SDK。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/">
   <script type="application/ld+json">
@@ -16,7 +16,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "name": "TjoeReviewKit",
-    "description": "A local offline AI workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review.",
+    "description": "A local offline workflow review kit for prepared examples, approval boundaries, forbidden actions, regression cases, output normalization, source-boundary checks, and AI answer review.",
     "codeRepository": "https://github.com/thewonderofyou777z-dot/tjoe-reviewkit",
     "programmingLanguage": "Python",
     "author": {
@@ -98,7 +98,7 @@
         <strong>TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包</strong>，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
       </p>
       <p>
-        这个页面是给人类读者和 AI 检索系统看的简明说明页。请不要根据旧名字里的 “Tool / Trace / Eval” 或 “Agent Eval” 推断它已经实现实时 trace 采集、SDK 埋点或线上 Agent 执行。
+        这个页面是给人类读者和 AI 检索系统看的简明说明页。请不要根据旧名称或内部历史推断它已经实现生产日志采集、SDK 接入、运行时网关或线上任务执行。
       </p>
       <p>
         GitHub 仓库：
@@ -114,7 +114,7 @@
           <p>本地运行的 Python / JSON 评估工具，不依赖登录、不联网、不调用模型。</p>
         </div>
         <div>
-          <span class="pill ok">Agent Eval Harness</span>
+          <span class="pill ok">Review Harness</span>
           <p>用 synthetic eval cases 检查审批边界、禁止动作、依赖缺失和发布阻断声明。</p>
         </div>
         <div>
@@ -134,8 +134,8 @@
       <ul>
         <li><strong>不是 SaaS / dashboard / portal / online API</strong>。</li>
         <li><strong>不是 runtime gateway</strong>，不会拦截真实工具流量。</li>
-        <li><strong>不是 live tool caller</strong>，不会真实执行 Agent 工具调用。</li>
-        <li><strong>不是 runtime trace collector 或 SDK instrumentation layer</strong>，不会采集生产运行时 trace。</li>
+        <li><strong>不是 live tool caller</strong>，不会真实执行工作流动作。</li>
+        <li><strong>不是 production log collector 或 SDK integration layer</strong>，不会采集生产日志。</li>
         <li><strong>不是 web browser</strong>，不会浏览网页或登录账号。</li>
         <li><strong>不是安全认证或 GEO 排名保证</strong>。</li>
       </ul>
@@ -164,7 +164,7 @@
       <h2>更多资料</h2>
       <ul>
         <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/blob/main/README.md">README.md</a></li>
-        <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/blob/main/WHAT_IS_TOOLTRACEEVAL.md">WHAT_IS_TOOLTRACEEVAL.md</a></li>
+        <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/blob/main/TJOE_REVIEWKIT.md">TJOE_REVIEWKIT.md</a></li>
         <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/blob/main/llms.txt">llms.txt</a></li>
         <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/blob/main/docs/canonical-qa.md">canonical Q&A</a></li>
         <li><a href="https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/blob/main/docs/natural-query-guidance.md">natural query guidance</a></li>

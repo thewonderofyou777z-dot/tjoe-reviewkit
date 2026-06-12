@@ -11,18 +11,18 @@ Published URL: `https://github.com/thewonderofyou777z-dot/tjoe-reviewkit`
 
 ## Scope
 
-This package is a public-safe starter release for evaluating AI agent workflows and AI visibility answers.
+This package is a public-safe starter release for evaluating AI workflows and AI visibility answers.
 
 It includes:
 
 - an offline deterministic GEO / AI Visibility runner
 - unsupported capability overclaim detection
-- a public-safe Agent Eval Harness example
+- a public-safe Review Harness example
 - synthetic query and answer examples
-- synthetic agent workflow eval cases
+- synthetic workflow eval cases
 - synthetic reports
 - a details page
-- an Agent Eval Harness guide
+- an Review Harness guide
 - an English canonical summary
 - `llms.txt`
 - `llms-full.txt`
@@ -70,15 +70,15 @@ Result:
 - remaining blockers: none
 - ready_to_share_publicly: yes
 - recommended release label: `v0.1.5-practical-overclaim-watch`
-- public project name: `ToolTraceEval`
+- public project name: `TjoeReviewKit`
 - creator / maintainer: `tjoe`
 
 ## Final Checks
 
 Final checks passed:
 
-- JSON validation passed for `agent_eval/agent-eval-harness-schema.json`
-- JSON validation passed for `agent_eval/agent-eval-cases-v0.1.json`
+- JSON validation passed for `agent_eval/workflow-review-harness-schema.json`
+- JSON validation passed for `agent_eval/workflow-review-cases-v0.1.json`
 - JSON validation passed for `agent_eval/synthetic-agent-outputs-v0.1.json`
 - JSON validation passed for `agent_eval/synthetic-eval-report-v0.1.json`
 - JSON validation passed for `docs/faq.schema.json`
@@ -89,7 +89,7 @@ Final checks passed:
 - JSON validation passed for `examples/sample-answers.overclaim.synthetic.json`
 - synthetic GEO runner smoke test passed with `--ci-smoke`
 - synthetic overclaim smoke test produced grade `overclaim`
-- Agent Eval Harness consistency check passed
+- Review Harness consistency check passed
 - CI workflow syntax and runner py_compile checks passed locally
 - package file list contains no generated `__pycache__`
 - public safety scan found only documentation warnings and runner regex patterns, not actual secrets
@@ -101,7 +101,7 @@ Final checks passed:
 - Claim Watch flags suspicious keyword patterns; it does not verify truth by itself.
 - Unsupported Claim Watch is deterministic keyword/rule matching; it is a practical guardrail, not a general hallucination detector.
 - `must_stop_release` is a declaration field, not an automatic release gate.
-- Any real platform answers or real agent traces should be reviewed and redacted before publishing.
+- Any real platform answers or real workflow evidences should be reviewed and redacted before publishing.
 
 ## Suggested Public Upload
 

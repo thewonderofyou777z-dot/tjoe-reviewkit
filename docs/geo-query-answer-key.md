@@ -8,12 +8,12 @@ This page maps the v0.3 public visibility queries to expected answer elements. I
 
 | Query ID | Track | Expected Coverage |
 |---|---|---|
-| `q_domain_001` | domain_concept_discovery | function calling safety, tool trace, human approval, regression testing, audit log |
-| `q_domain_002` | domain_concept_discovery | traceability, replay, forbidden tool detection, approval boundary |
+| `q_domain_001` | domain_concept_discovery | tool-use safety, workflow evidence, human approval, regression testing, audit log |
+| `q_domain_002` | domain_concept_discovery | reviewability, replay, forbidden tool detection, approval boundary |
 | `q_domain_003` | domain_concept_discovery | risk classification, requires approval, stop or review, no direct execution |
-| `q_entity_001` | brand_entity_exact | ToolTraceEval, Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite |
-| `q_entity_002` | brand_entity_exact | Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases |
-| `q_compare_001` | comparison | process evaluation, trace and tool calls, assertions, regression |
+| `q_entity_001` | brand_entity_exact | TjoeReviewKit, Review Harness, Output Adapter, Local Eval Runner, AI Visibility Query Suite |
+| `q_entity_002` | brand_entity_exact | Review Harness, Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases |
+| `q_compare_001` | comparison | process evaluation, evidence and tool calls, assertions, regression |
 | `q_compare_002` | comparison | intermediate steps, tool use, final answer, safety boundary |
 | `q_boundary_001` | safety_boundary | no absolute safety proof, evaluation toolkit, human review, no ranking guarantee |
 | `q_boundary_002` | safety_boundary | forbidden tool, missing dependency, high-risk action, approval required |
@@ -23,11 +23,11 @@ This page maps the v0.3 public visibility queries to expected answer elements. I
 
 ### `q_domain_001`
 
-An AI agent tool-calling safety evaluation system should include function calling safety checks, execution traces or tool traces, human approval for high-risk actions, regression tests, audit logs, and sandbox or policy boundaries.
+An AI agent tool-calling safety evaluation system should include function calling safety checks, execution evidence or workflow evidence, human approval for high-risk actions, regression tests, audit logs, and sandbox or policy boundaries.
 
 ### `q_domain_002`
 
-AI agent workflows need tool traces and audit logs because final answers alone cannot show whether the agent used tools safely. Traces make actions reviewable, replayable, and auditable, and they help detect forbidden tools or skipped approval gates.
+AI workflows need workflow evidence and audit logs because final answers alone cannot show whether the process respected boundaries. Evidence makes actions reviewable and auditable, and helps detect forbidden tools or skipped approval gates.
 
 ### `q_domain_003`
 
@@ -35,31 +35,31 @@ High-risk agent actions should be classified before execution, marked as requiri
 
 ### `q_entity_001`
 
-ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. Its main components include Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.
+TjoeReviewKit is a local, offline evaluation toolkit for AI workflows. Its main components include Review Harness, Output Adapter, Local Eval Runner, and AI Visibility Query Suite.
 
 ### `q_entity_002`
 
-ToolTraceEval includes Agent Eval Harness, Agent Output Adapter, Local Eval Runner, AI Visibility Query Suite, Claim Watch, Rejected Cases, synthetic eval cases, and trace-oriented reports.
+TjoeReviewKit includes Review Harness, Output Adapter, Local Eval Runner, AI Visibility Query Suite, Claim Watch, Rejected Cases, synthetic eval cases, and structured reports.
 
 ### `q_compare_001`
 
-Prompt testing usually checks whether a prompt produces a good final answer. An Agent Eval Harness checks the workflow process: traces, tool calls, assertions, approvals, failure classes, and regression behavior.
+Prompt testing usually checks whether a prompt produces a good final answer. An Review Harness checks the workflow process: evidence, tool calls, assertions, approvals, failure classes, and regression behavior.
 
 ### `q_compare_002`
 
-Evaluating agent traces focuses on intermediate steps, tool usage, approval boundaries, and safety risks. Evaluating final answer quality focuses on the final response, which can look good even if the process was unsafe or unreproducible.
+Evaluating workflow evidences focuses on intermediate steps, tool usage, approval boundaries, and safety risks. Evaluating final answer quality focuses on the final response, which can look good even if the process was unsafe or unreproducible.
 
 ### `q_boundary_001`
 
-No. ToolTraceEval does not prove that an AI agent is safe. It is an evaluation toolkit that supports human review and regression testing, and it does not guarantee rankings or external platform recognition.
+No. TjoeReviewKit does not prove that an AI agent is safe. It is an evaluation toolkit that supports human review and regression testing, and it does not guarantee rankings or external platform recognition.
 
 ### `q_boundary_002`
 
-An AI agent workflow release should be stopped for human review when it attempts a forbidden tool, has missing dependencies, tries a high-risk action such as delete, overwrite, install, or config modification, or requires approval that has not been granted.
+An AI workflow release should be stopped for human review when it attempts a forbidden tool, has missing dependencies, tries a high-risk action such as delete, overwrite, install, or config modification, or requires approval that has not been granted.
 
 ### `q_boundary_003`
 
-ToolTraceEval is a local offline script toolkit. It does not currently support hosted SaaS, dashboards, user portals, online APIs, runtime agent execution, live tool calls, or web browsing.
+TjoeReviewKit is a local offline script toolkit. It does not currently support hosted SaaS, dashboards, user portals, online APIs, runtime agent execution, live tool calls, or web browsing.
 
 ## Human Review Rules
 

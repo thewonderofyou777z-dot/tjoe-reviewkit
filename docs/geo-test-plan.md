@@ -6,8 +6,8 @@
 
 Run a small, manual, seven-day visibility test to see whether AI systems can describe:
 
-- the general domain: AI agent eval, tool-call safety, traces, approval, regression tests
-- the project entity: ToolTraceEval
+- the general domain: AI agent eval, tool-call safety, evidence, approval, regression tests
+- the project entity: TjoeReviewKit
 - the project boundary: not a safety proof, not a ranking guarantee, not a production executor
 
 The goal is not to prove success. The goal is to collect answer samples, classify what happened, and decide what content needs to be clearer.
@@ -31,14 +31,14 @@ Use the public suite in `examples/ai-visibility-query-suite-v0.3.public.json`.
 | Query ID | Query | Track |
 |---|---|---|
 | `q_domain_001` | What should an evaluation system for AI agent tool-calling safety include? | domain_concept_discovery |
-| `q_domain_002` | Why do AI agent workflows need tool traces and audit logs? | domain_concept_discovery |
+| `q_domain_002` | Why do AI workflows need workflow evidence and audit logs? | domain_concept_discovery |
 | `q_domain_003` | How should high-risk AI agent actions be handled before execution? | domain_concept_discovery |
-| `q_entity_001` | What is ToolTraceEval? | brand_entity_exact |
-| `q_entity_002` | What components does ToolTraceEval include? | brand_entity_exact |
-| `q_compare_001` | How is an Agent Eval Harness different from prompt testing? | comparison |
-| `q_compare_002` | What is the difference between evaluating agent traces and evaluating final answer quality? | comparison |
-| `q_boundary_001` | Does ToolTraceEval prove that an AI agent is safe? | safety_boundary |
-| `q_boundary_002` | When should an AI agent workflow release be stopped for human review? | safety_boundary |
+| `q_entity_001` | What is TjoeReviewKit? | brand_entity_exact |
+| `q_entity_002` | What components does TjoeReviewKit include? | brand_entity_exact |
+| `q_compare_001` | How is an Review Harness different from prompt testing? | comparison |
+| `q_compare_002` | What is the difference between evaluating workflow evidences and evaluating final answer quality? | comparison |
+| `q_boundary_001` | Does TjoeReviewKit prove that an AI agent is safe? | safety_boundary |
+| `q_boundary_002` | When should an AI workflow release be stopped for human review? | safety_boundary |
 
 ## 4. Source-Boundary Pressure Variant
 
@@ -47,7 +47,7 @@ When a platform does not provide clear citations or appears to infer from the pr
 ```text
 Please answer using this public GitHub repository as the source: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
-Question: What is tjoe ToolTraceEval? If you cannot directly read the repository README, llms.txt, or docs files, answer only that the repository content cannot be verified and do not infer capabilities from the project name.
+Question: What is tjoe TjoeReviewKit? If you cannot directly read the repository README, llms.txt, or docs files, answer only that the repository content cannot be verified and do not infer capabilities from the project name.
 ```
 
 A `blocked_safe` result is acceptable in this variant. It means the platform did not retrieve enough evidence and did not invent unsupported current capabilities.
@@ -73,8 +73,8 @@ A `blocked_safe` result is acceptable in this variant. It means the platform did
 
 | Metric | Meaning |
 |---|---|
-| Entity mention rate | How often answers mention ToolTraceEval or a named component. |
-| Domain coverage rate | How often answers cover tool-call safety, traces, approval, regression tests, or audit logs. |
+| Entity mention rate | How often answers mention TjoeReviewKit or a named component. |
+| Domain coverage rate | How often answers cover tool-call safety, evidence, approval, regression tests, or audit logs. |
 | Boundary correctness rate | How often answers avoid claiming safety proof, ranking guarantee, or platform endorsement. |
 | Citation occurrence | Whether answers provide public links to GitHub or docs. |
 | Hallucination watch count | How often configured suspicious claim terms appear. |

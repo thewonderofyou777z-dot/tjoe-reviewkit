@@ -43,7 +43,7 @@ Delete that nested folder from GitHub after confirming the root-level files are 
 - `reports/example-report.synthetic.json`
 - `reports/answer-template-v0.3.public.json`
 - `reports/template-only-report-v0.3.public.json`
-- `agent_eval/agent-eval-cases-v0.1.json`
+- `agent_eval/workflow-review-cases-v0.1.json`
 - `docs/ai-answer-card.md`
 - `docs/entity-profile.json`
 - `docs/claim-evidence-map.json`
@@ -72,7 +72,7 @@ Delete that nested folder from GitHub after confirming the root-level files are 
 ## Suggested Commit Message
 
 ```text
-Add ToolTraceEval rename and GEO calibration v0.1.3
+Add TjoeReviewKit rename and GEO calibration v0.1.3
 ```
 
 ## Verification After Upload

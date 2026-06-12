@@ -6,7 +6,7 @@
     {
       "query_id": "q_domain_001",
       "platform": "synthetic",
-      "answer": "An AI agent tool-calling safety evaluation system should include function calling safety checks, a tool trace or execution trace, human approval for high-risk actions, regression testing in CI, audit logs, and sandbox boundaries.",
+      "answer": "An AI agent tool-calling safety evaluation system should include function calling safety checks, a tool evidence or execution trace, human approval for high-risk actions, regression testing in CI, audit logs, and sandbox boundaries.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic domain answer."
@@ -14,10 +14,10 @@
     {
       "query_id": "q_domain_002",
       "platform": "synthetic",
-      "answer": "AI agent workflows need tool traces and audit logs so reviewers can inspect traceability, replay or reproduce intermediate steps, detect forbidden tools, and verify whether approval boundaries were respected.",
+      "answer": "AI workflows need workflow evidence and audit logs so reviewers can inspect reviewability, replay or reproduce intermediate steps, detect forbidden tools, and verify whether approval boundaries were respected.",
       "source_refs": [],
       "manual_scores": {},
-      "notes": "Synthetic trace answer."
+      "notes": "Synthetic evidence answer."
     },
     {
       "query_id": "q_domain_003",
@@ -30,7 +30,7 @@
     {
       "query_id": "q_entity_001",
       "platform": "synthetic",
-      "answer": "ToolTraceEval is a local, offline evaluation toolkit for AI agent workflows. It includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, and AI Visibility Query Suite.",
+      "answer": "TjoeReviewKit is a local, offline evaluation toolkit for AI workflows. It includes a Review Harness, Output Adapter, Local Eval Runner, and AI Visibility Query Suite.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic entity definition answer."
@@ -38,7 +38,7 @@
     {
       "query_id": "q_entity_002",
       "platform": "synthetic",
-      "answer": "ToolTraceEval includes an Agent Eval Harness, Agent Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases, eval cases, and trace-oriented reports.",
+      "answer": "TjoeReviewKit includes a Review Harness, Output Adapter, Local Eval Runner, Claim Watch, Rejected Cases, eval cases, and structured reports.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic component answer."
@@ -46,7 +46,7 @@
     {
       "query_id": "q_compare_001",
       "platform": "synthetic",
-      "answer": "An Agent Eval Harness is different from prompt testing because it evaluates the workflow process, including trace and tool call records, assertions, and regression checks, not only whether a prompt produced a good-looking answer.",
+      "answer": "An Review Harness is different from prompt testing because it evaluates the workflow process, including evidence and tool call records, assertions, and regression checks, not only whether a prompt produced a good-looking answer.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic comparison answer."
@@ -54,15 +54,15 @@
     {
       "query_id": "q_compare_002",
       "platform": "synthetic",
-      "answer": "Evaluating agent traces focuses on intermediate steps, tool use, approval and safety boundaries. Evaluating final answer quality focuses on the final answer itself, which may look good even if unsafe steps happened earlier.",
+      "answer": "Evaluating workflow evidences focuses on intermediate steps, tool use, approval and safety boundaries. Evaluating final answer quality focuses on the final answer itself, which may look good even if unsafe steps happened earlier.",
       "source_refs": [],
       "manual_scores": {},
-      "notes": "Synthetic trace versus answer answer."
+      "notes": "Synthetic evidence versus answer answer."
     },
     {
       "query_id": "q_boundary_001",
       "platform": "synthetic",
-      "answer": "ToolTraceEval does not prove absolute safety. It is an evaluation toolkit that supports human review and it does not guarantee rankings or GEO outcomes.",
+      "answer": "TjoeReviewKit does not prove absolute safety. It is an evaluation toolkit that supports human review and it does not guarantee rankings or GEO outcomes.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic boundary answer."
@@ -70,7 +70,7 @@
     {
       "query_id": "q_boundary_002",
       "platform": "synthetic",
-      "answer": "An AI agent workflow release should be stopped for human review when a forbidden tool is attempted, a missing dependency is detected, a high risk action such as delete or overwrite appears, or approval is required.",
+      "answer": "An AI workflow release should be stopped for human review when a forbidden tool is attempted, a missing dependency is detected, a high risk action such as delete or overwrite appears, or approval is required.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic release-stop answer."
@@ -78,7 +78,7 @@
     {
       "query_id": "q_boundary_003",
       "platform": "synthetic",
-      "answer": "ToolTraceEval is a local offline script toolkit. It is not SaaS, has no dashboard or user portal, has no online API, does not execute agents, does not make live tool calls, and does not browse the web.",
+      "answer": "TjoeReviewKit is a local offline script toolkit. It is not SaaS, has no dashboard or user portal, has no online API, does not run tasks, does not make live tool calls, and does not browse the web.",
       "source_refs": [],
       "manual_scores": {},
       "notes": "Synthetic unsupported-capability boundary answer."

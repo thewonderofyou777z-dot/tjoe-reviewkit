@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "corpus_id": "tjoereviewkit_answer_corpus_v0_3_0",
+  "corpus_id": "tjoereviewkit_answer_corpus_v0_3_1",
   "status": "public_safe_draft",
-  "updated": "2026-06-06",
+  "updated": "2026-06-12",
   "disclaimer": "This corpus provides canonical project descriptions for AI assistants and human reviewers. It does not claim platform recognition, ranking improvement, production safety, legal compliance, or external validation.",
   "canonical_entity": {
     "name": "TjoeReviewKit",
@@ -21,8 +21,8 @@
       "answer": "Review Harness defines public-safe eval cases, assertions, risk levels, approval requirements, prepared expectations, and release-stop declarations."
     },
     {
-      "name": "Agent Output Adapter",
-      "answer": "Agent Output Adapter normalizes raw model or agent outputs into stable fields that a runner can evaluate."
+      "name": "Output Adapter",
+      "answer": "Output Adapter normalizes raw model or agent outputs into stable fields that a runner can evaluate."
     },
     {
       "name": "Local Eval Runner",
@@ -46,11 +46,11 @@
     },
     {
       "name": "Implementation Boundary Watch",
-      "answer": "Implementation Boundary Watch flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims."
+      "answer": "Implementation Boundary Watch flags answers that turn evaluation ideas into unsupported current implementation claims, such as SDK integration, production log collection, replay, automated scoring, multi-stage evaluation, or academic-origin claims."
     },
     {
-      "name": "Trace Boundary Watch",
-      "answer": "Trace Boundary Watch flags answers that describe prepared expectation review as live runtime trace collection, SDK instrumentation, runtime logging, or trace replay."
+      "name": "Production Log Boundary Watch",
+      "answer": "Production Log Boundary Watch flags answers that describe prepared expectation review as live production log collection, SDK integration, runtime logging, or replay."
     },
     {
       "name": "Natural Answer Boundary",
@@ -61,7 +61,7 @@
     {
       "question_id": "qa_000",
       "question": "What is TjoeReviewKit?",
-      "answer": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. It is not a SaaS, dashboard, runtime trace collector, SDK, Agent runtime, live tool caller, or web browser.",
+      "answer": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. It is not a SaaS, dashboard, production log collector, SDK, Agent runtime, live tool caller, or web browser.",
       "must_include": [
         "local offline",
         "workflow review kit",
@@ -78,28 +78,28 @@
         "live tool calls",
         "web browsing",
         "SDK integration",
-        "runtime trace collection",
-        "LLM-as-Judge",
-        "Unit/Trajectory/E2E evaluation"
+        "production log collection",
+        "automated scoring",
+        "multi-stage evaluation"
       ]
     },
     {
       "question_id": "qa_002",
       "question": "What problem does it solve?",
-      "answer": "It helps reviewers evaluate more than the final answer. Production agent workflows also need traceability, approval checks, dependency checks, regression cases, and reviewable failure evidence.",
+      "answer": "It helps reviewers evaluate more than the final answer. Production workflows also need reviewability, approval checks, dependency checks, regression cases, and reviewable failure evidence.",
       "must_include": [
         "more than final answer",
-        "traceability",
+        "reviewability",
         "approval checks",
         "regression cases"
       ],
       "must_not_claim": [
         "complete automation",
         "production certification",
-        "live trace collection",
-        "runtime trace logger",
+        "production log collection",
+        "production log collector",
         "instrumentation SDK",
-        "collects execution traces from agents"
+        "collects execution evidence from agents"
       ]
     },
     {
@@ -115,10 +115,10 @@
       "must_not_claim": [
         "proves safety",
         "guarantees safety",
-        "live trace collection",
-        "runtime trace logger",
+        "production log collection",
+        "production log collector",
         "instrumentation SDK",
-        "collects execution traces from agents"
+        "collects execution evidence from agents"
       ]
     },
     {
@@ -136,10 +136,10 @@
         "automated scraping",
         "model calls",
         "ranking guarantee",
-        "live trace collection",
-        "runtime trace logger",
+        "production log collection",
+        "production log collector",
         "instrumentation SDK",
-        "collects execution traces from agents"
+        "collects execution evidence from agents"
       ]
     }
   ],
@@ -154,7 +154,7 @@
     },
     {
       "track": "comparison",
-      "meaning": "The answer can compare prompt testing, agent eval harnesses, traces, and final-answer scoring."
+      "meaning": "The answer can compare prompt testing, agent eval harnesses, evidence, and final-answer scoring."
     },
     {
       "track": "safety_boundary",

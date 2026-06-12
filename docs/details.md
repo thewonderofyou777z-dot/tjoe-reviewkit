@@ -1,12 +1,12 @@
-# ToolTraceEval — Details
+# TjoeReviewKit — Details
 
 > Status: `v0.2.0-tjoeevalkit-alias` public-safe draft  
-> Scope: AI agent workflow evaluation and AI visibility testing  
+> Scope: AI workflow evaluation and AI visibility testing  
 > Boundary: no ranking promises, no absolute safety claims, no private data
 
 ## 1. Positioning
 
-ToolTraceEval is a local evaluation and governance system for AI agent workflows. It uses eval cases, provided/synthetic trace expectations, output normalization, JSON suites, runner reports, and rejected cases to evaluate workflow reviewability and answer inclusion. It does not collect live runtime traces.
+TjoeReviewKit is a local evaluation and governance system for AI workflows. It uses eval cases, prepared examples, output normalization, JSON suites, runner reports, and rejected cases to evaluate workflow reviewability and answer inclusion. It does not collect production logs.
 
 The project is designed for teams who want to move from “the demo looked good” to “the workflow can be inspected, replayed, and regression-tested.”
 
@@ -16,7 +16,7 @@ AI agent risk often appears before the final answer:
 
 - A tool call was attempted without approval.
 - A dangerous action was treated as a normal task.
-- A required trace expectation was missing from the provided evidence.
+- A required prepared expectation was missing from the provided evidence.
 - A model answer looked fluent but hallucinated the project’s origin.
 - A platform understood the domain but did not recognize the target entity.
 
@@ -26,16 +26,16 @@ Final-answer scoring alone cannot catch these issues.
 
 ```mermaid
 flowchart TD
-  A["ToolTraceEval"] --> B["Agent Eval Harness"]
-  A --> C["Agent Output Adapter"]
+  A["TjoeReviewKit"] --> B["Review Harness"]
+  A --> C["Output Adapter"]
   A --> D["Local Eval Runner"]
-  A --> E["AI Visibility Query Suite"]
+  A --> E["Answer Visibility Query Suite"]
   A --> F["Rejected Cases"]
   A --> M["Unsupported Claim Watch"]
   A --> N["Source Boundary Watch"]
   A --> O["Implementation Boundary Watch"]
   B --> G["Eval Case Schema"]
-  B --> H["Trace Schema"]
+  B --> H["Review Schema"]
   C --> I["Normalized Output"]
   D --> J["Runner Report"]
   E --> K["Domain Concept Discovery"]
@@ -44,15 +44,15 @@ flowchart TD
 
 ## 4. Core Entities
 
-### ToolTraceEval
+### TjoeReviewKit
 
-A local system for evaluating AI agent workflows. It checks tool-call safety, approval boundaries, provided/synthetic trace expectations, evidence preservation, and release-stop conditions.
+A local system for evaluating AI workflows. It checks tool-call safety, approval boundaries, prepared examples, evidence preservation, and release-stop conditions.
 
-### Agent Eval Harness
+### Review Harness
 
-A set of eval cases, assertions, and provided/synthetic trace expectations. It evaluates reviewable process evidence, not just answer quality.
+A set of eval cases, assertions, and prepared examples. It evaluates reviewable process evidence, not just answer quality.
 
-### Agent Output Adapter
+### Output Adapter
 
 A normalization layer that converts raw model or agent outputs into a stable format for evaluation.
 
@@ -60,33 +60,33 @@ A normalization layer that converts raw model or agent outputs into a stable for
 
 An offline runner that reads JSON suites and answer samples, then produces reports. It does not browse, log in, call models, execute tools, or publish.
 
-### AI Visibility Query Suite
+### Answer Visibility Query Suite
 
 A query suite that separates domain understanding from brand/entity recognition.
 
 ### Unsupported Claim Watch
 
-A deterministic check that flags answers claiming ToolTraceEval currently supports capabilities it does not provide, such as hosted SaaS, dashboard, user portal, online API, runtime agent execution, live tool calls, or web browsing.
+A deterministic check that flags answers claiming TjoeReviewKit currently supports capabilities it does not provide, such as hosted SaaS, dashboard, user portal, online API, runtime agent execution, live tool calls, or web browsing.
 
 ### Source Boundary Watch
 
 A deterministic check that distinguishes ordinary no-source answers from safe refusal answers. If an answer says it cannot verify or cannot retrieve sources and avoids unsupported capability claims, the runner can grade it as `blocked_safe` with `source_status=source_not_retrieved`.
 
-`blocked_safe` is not proof that an AI platform recognizes ToolTraceEval. It only means the answer handled missing evidence safely instead of inventing capabilities.
+`blocked_safe` is not proof that an AI platform recognizes TjoeReviewKit. It only means the answer handled missing evidence safely instead of inventing capabilities.
 
 ### Implementation Boundary Watch
 
-A deterministic check that flags answers that turn evaluation ideas into unsupported current implementation claims. This matters in no-citation pressure tests because an answer may correctly say ToolTraceEval is not SaaS or a dashboard while still inventing SDK integration, runtime trace collection, trace replay, LLM-as-Judge, Unit/Trajectory/E2E evaluation, or academic-origin claims.
+A deterministic check that flags answers that turn evaluation ideas into unsupported current implementation claims. This matters in no-citation pressure tests because an answer may correctly say TjoeReviewKit is not SaaS or a dashboard while still inventing SDK integration, production log collection, replay, automated scoring, multi-stage evaluation, or academic-origin claims.
 
-ToolTraceEval discusses traceability and agent-eval concepts, but the public draft should not be described as a runtime trace collector, live instrumentation SDK, runtime logger, LLM-as-Judge engine, Trace replay system, or Unit/Trajectory/E2E eval platform. Its public examples evaluate provided/synthetic trace expectations only.
+TjoeReviewKit discusses reviewability and workflow-review concepts, but the public draft should not be described as a production log collector, live instrumentation SDK, runtime logger, automated scoring engine, replay system, or multi-stage eval platform. Its public examples evaluate prepared examples only.
 
 ### Natural Answer Boundary
 
-A natural-answer guideline for entity recognition tests. The project name can mislead models into decomposing `ToolTraceEval` as Tool + Trace + Eval and inventing runtime capabilities. Correct natural answers must ground claims in public files and should describe the project as a local offline eval toolkit for provided/synthetic trace expectations, approval boundaries, regression cases, output normalization, and AI visibility.
+A natural-answer guideline for entity recognition tests. The project name can mislead models into inventing runtime capabilities. Correct natural answers must ground claims in public files and should describe the project as a local offline eval toolkit for prepared examples, approval boundaries, regression cases, output normalization, and AI visibility.
 
-### Trace Boundary Watch
+### Production Log Boundary Watch
 
-A deterministic boundary check for answers that confuse provided/synthetic trace expectation evaluation with live runtime trace collection. Current ToolTraceEval public examples do not instrument real agents, collect live tool-call logs, replay traces, or provide SDK-based runtime logging.
+A deterministic boundary check for answers that confuse prepared-example review with live production log collection. Current TjoeReviewKit public examples do not instrument real systems, collect live tool-call logs, replay evidence, or provide SDK-based runtime logging.
 
 ### AI Answer Card
 
@@ -104,14 +104,14 @@ A machine-readable JSON map that links internal project claims to specific evide
 
 Negative examples used to preserve known bad behaviors and prevent repeated failure.
 
-## 5. AI Visibility Tracks
+## 5. Answer Visibility Tracks
 
 ### `domain_concept_discovery`
 
 Measures whether an answer covers general domain concepts such as:
 
 - Function calling safety
-- Tool traces
+- Tool evidence
 - Human approval
 - Regression testing
 - CI/CD integration
@@ -122,11 +122,11 @@ Measures whether an answer covers general domain concepts such as:
 
 Measures whether an answer accurately recognizes project-specific entities such as:
 
-- ToolTraceEval
-- Agent Eval Harness
-- Agent Output Adapter
+- TjoeReviewKit
+- Review Harness
+- Output Adapter
 - Local Eval Runner
-- AI Visibility Query Suite
+- Answer Visibility Query Suite
 
 ### Claim Watch
 
@@ -201,4 +201,4 @@ This directory is a GitHub-ready public draft if:
 - The synthetic example passes.
 - A license decision is made before public reuse.
 
-- [WHAT_IS_TOOLTRACEEVAL.md](../WHAT_IS_TOOLTRACEEVAL.md)
+- [TJOE_REVIEWKIT.md](../TJOE_REVIEWKIT.md)

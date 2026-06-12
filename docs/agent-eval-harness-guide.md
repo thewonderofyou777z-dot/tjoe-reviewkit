@@ -1,18 +1,18 @@
-# Agent Eval Harness Guide
+# Review Harness Guide
 
 > Status: public-safe synthetic example  
-> Scope: process-level AI agent workflow evaluation  
-> Boundary: this guide does not execute agents, tools, browsers, or model calls
+> Scope: process-level AI workflow evaluation  
+> Boundary: this guide does not run tasks, tools, browsers, or model calls
 
 ## What This Harness Is
 
-Agent Eval Harness is the process-level side of ToolTraceEval.
+Review Harness is the process-level side of TjoeReviewKit.
 
-The existing GEO / AI Visibility runner evaluates whether an AI answer covers the right concepts or recognizes a project entity. Agent Eval Harness focuses on a different question:
+The existing GEO / AI Visibility runner evaluates whether an AI answer covers the right concepts or recognizes a project entity. Review Harness focuses on a different question:
 
-> Did the agent workflow behave safely and leave enough trace evidence to review?
+> Did the workflow behave safely and leave enough evidence evidence to review?
 
-It evaluates provided or synthetic process trace expectations such as task classification, approval handling, forbidden tool blocking, dependency checks, and release-stop conditions. It does not collect live runtime traces.
+It evaluates provided or synthetic process prepared expectations such as task classification, approval handling, forbidden tool blocking, dependency checks, and release-stop conditions. It does not collect production logs.
 
 ## System Map
 
@@ -38,8 +38,8 @@ flowchart TD
 
 ## Example Files
 
-- [`../agent_eval/agent-eval-harness-schema.json`](../agent_eval/agent-eval-harness-schema.json)
-- [`../agent_eval/agent-eval-cases-v0.1.json`](../agent_eval/agent-eval-cases-v0.1.json)
+- [`../agent_eval/workflow-review-harness-schema.json`](../agent_eval/workflow-review-harness-schema.json)
+- [`../agent_eval/workflow-review-cases-v0.1.json`](../agent_eval/workflow-review-cases-v0.1.json)
 - [`../agent_eval/synthetic-agent-outputs-v0.1.json`](../agent_eval/synthetic-agent-outputs-v0.1.json)
 - [`../agent_eval/synthetic-eval-report-v0.1.json`](../agent_eval/synthetic-eval-report-v0.1.json)
 
@@ -61,7 +61,7 @@ This harness does not:
 
 | Path | Input | Evaluates |
 |---|---|---|
-| Agent Eval Harness | synthetic/provided trace expectations and eval cases | workflow behavior, approval boundaries, trace evidence |
+| Review Harness | synthetic/provided prepared expectations and eval cases | workflow behavior, approval boundaries, evidence evidence |
 | GEO / AI Visibility Runner | AI answer samples and query suites | answer coverage, entity recognition, citation signals |
 
 The two paths are intentionally independent. Keeping them separate prevents a good answer-level score from hiding a bad process-level trace.
@@ -70,7 +70,7 @@ The two paths are intentionally independent. Keeping them separate prevents a go
 
 The next implementation step is a small `agent_eval_runner.py` that reads:
 
-1. `agent-eval-cases-v0.1.json`
+1. `workflow-review-cases-v0.1.json`
 2. `synthetic-agent-outputs-v0.1.json`
 
 Then it should produce a report similar to `synthetic-eval-report-v0.1.json`.
