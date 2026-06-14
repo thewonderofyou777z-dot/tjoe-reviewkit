@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.8
+Version: 0.2.9
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.8"
+VERSION = "0.2.9"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -257,6 +257,37 @@ def hallucination_hits(text: str, query: dict[str, Any]) -> list[str]:
     return keyword_hits(text, [str(term) for term in watch_terms])
 
 
+NEGATION_PATTERNS = [
+    "不支持",
+    "不提供",
+    "不具备",
+    "不会",
+    "无法",
+    "不能",
+    "并非",
+    "不是",
+    "没有",
+    "无",
+    "does not support",
+    "do not support",
+    "not support",
+    "not supported",
+    "does not provide",
+    "do not provide",
+    "not provide",
+    "not a",
+    "no ",
+]
+
+
+def is_negated_term_match(lower_text: str, lower_term: str) -> bool:
+    start = lower_text.find(lower_term)
+    if start < 0:
+        return False
+    prefix = lower_text[max(0, start - 42):start]
+    return any(pattern in prefix for pattern in NEGATION_PATTERNS)
+
+
 def unsupported_claim_hits(text: str, query: dict[str, Any]) -> list[dict[str, str]]:
     claims = query.get("unsupported_claims", [])
     if not isinstance(claims, list):
@@ -271,7 +302,12 @@ def unsupported_claim_hits(text: str, query: dict[str, Any]) -> list[dict[str, s
             failure_class = str(claim.get("failure_class") or claim_id)
             if not isinstance(terms, list):
                 continue
-            matched = [str(term) for term in terms if str(term).lower() in lower_text]
+            matched = [
+                str(term)
+                for term in terms
+                if str(term).lower() in lower_text
+                and not is_negated_term_match(lower_text, str(term).lower())
+            ]
             if matched:
                 hits.append(
                     {
@@ -280,7 +316,7 @@ def unsupported_claim_hits(text: str, query: dict[str, Any]) -> list[dict[str, s
                         "matched_terms": ", ".join(matched),
                     }
                 )
-        elif str(claim).lower() in lower_text:
+        elif str(claim).lower() in lower_text and not is_negated_term_match(lower_text, str(claim).lower()):
             hits.append(
                 {
                     "claim_id": str(claim),

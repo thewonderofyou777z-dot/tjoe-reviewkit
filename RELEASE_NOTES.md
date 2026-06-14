@@ -1,5 +1,26 @@
 # Release Notes
 
+## v0.3.9-negated-overclaim-handling
+
+Focus: reduce false positives when an answer correctly says an unsupported capability is not supported.
+
+Changes:
+
+- Runner version updated to `0.2.9`.
+- Unsupported-claim detection now ignores matched terms when they appear in a nearby negation context such as `not supported`, `does not provide`, `不支持`, `不提供`, `不是`, or `没有`.
+- This prevents answers like `不支持实时工具调用` and `不提供 OpenTelemetry、Jira` from being incorrectly graded as overclaims.
+
+Validation:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/no-index-query-suite-v0.1.public.json \
+  --answers /tmp/tjoereviewkit-round3-single-answer.json \
+  --output /tmp/tjoereviewkit-round3-single-report.json \
+  --markdown-output /tmp/tjoereviewkit-round3-single-report.md \
+  --overwrite --ci-smoke
+```
+
 ## v0.3.8-index-entrypoint-enhancement
 
 Focus: improve public indexing and AI-readable entry points without changing product capability claims.

@@ -75,7 +75,7 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 | 项目 | 内容 |
 |---|---|
 | Release | `v0.3.8-index-entrypoint-enhancement` |
-| Runner | `geo_visibility_eval_runner.py v0.2.8` |
+| Runner | `geo_visibility_eval_runner.py v0.2.9` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
 | 是否调用模型 | 不调用 |
