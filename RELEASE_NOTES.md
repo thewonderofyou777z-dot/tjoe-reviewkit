@@ -1,5 +1,26 @@
 # Release Notes
 
+## v0.3.10-same-clause-negation
+
+Focus: reduce false positives for long Chinese unsupported-capability lists.
+
+Changes:
+
+- Runner version updated to `0.2.10`.
+- Unsupported-claim detection now treats same-clause negation as a safe denial, not an overclaim.
+- This handles answers such as `不支持运行时 Agent 执行、运行时网关、实时工具调用` and `不支持 SDK 集成、生产日志采集、OpenTelemetry、Jira 或 PDF 报告工作台`.
+
+Validation:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/no-index-query-suite-v0.1.public.json \
+  --answers /tmp/tjoereviewkit-round3-latest-answer.json \
+  --output /tmp/tjoereviewkit-round3-latest-report.json \
+  --markdown-output /tmp/tjoereviewkit-round3-latest-report.md \
+  --overwrite --ci-smoke
+```
+
 ## v0.3.9-negated-overclaim-handling
 
 Focus: reduce false positives when an answer correctly says an unsupported capability is not supported.

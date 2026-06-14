@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.9
+Version: 0.2.10
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.9"
+VERSION = "0.2.10"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -285,7 +285,15 @@ def is_negated_term_match(lower_text: str, lower_term: str) -> bool:
     if start < 0:
         return False
     prefix = lower_text[max(0, start - 42):start]
-    return any(pattern in prefix for pattern in NEGATION_PATTERNS)
+    if any(pattern in prefix for pattern in NEGATION_PATTERNS):
+        return True
+    segment_start = max(
+        lower_text.rfind(mark, 0, start)
+        for mark in ["\n", "。", "；", ";", ".", "!", "?", "！", "？"]
+    )
+    segment_start = 0 if segment_start < 0 else segment_start + 1
+    segment = lower_text[segment_start:start]
+    return any(pattern in segment for pattern in NEGATION_PATTERNS)
 
 
 def unsupported_claim_hits(text: str, query: dict[str, Any]) -> list[dict[str, str]]:

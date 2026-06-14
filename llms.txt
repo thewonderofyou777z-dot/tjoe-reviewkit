@@ -41,7 +41,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
 - examples/sample-answers.overclaim.synthetic.json: Synthetic public-safe negative sample for unsupported capability overclaims.
 - examples/sample-answers.blocked-safe.synthetic.json: Synthetic public-safe sample for safe refusal and source-boundary behavior.
-- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.9 flags configured unsupported capability overclaims, suite-level implementation overclaims, source-boundary signals, and multi-platform no-index answer samples. It ignores unsupported terms when they appear in a nearby negation context such as "not supported" or "不支持".
+- scripts/geo_visibility_eval_runner.py: Offline deterministic runner; it does not browse, log in, call models, execute tools, or publish. Runner v0.2.10 flags configured unsupported capability overclaims, suite-level implementation overclaims, source-boundary signals, and multi-platform no-index answer samples. It ignores unsupported terms when they appear in nearby or same-clause negation context such as "not supported" or "不支持".
 - scripts/geo_manual_test_runner.py: Offline helper for pasted platform answers and Markdown reports.
 
 ## Purpose
