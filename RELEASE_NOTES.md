@@ -1,5 +1,27 @@
 # Release Notes
 
+## v0.3.5-markdown-report-output
+
+Focus: make the core visibility runner produce a human-readable Markdown report directly, so a reviewer can inspect results without a separate conversion script.
+
+Changes:
+
+- Runner version updated to `0.2.6`.
+- Added `--markdown-output` to `scripts/geo_visibility_eval_runner.py`.
+- The Markdown report includes summary metrics, track-level scores, per-query results, source status, unsupported claim flags, and hallucination watch flags.
+- No scoring logic changed in this release.
+
+Validation:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers examples/sample-answers.synthetic.json \
+  --output /tmp/tjoereviewkit-v035-synthetic.json \
+  --markdown-output /tmp/tjoereviewkit-v035-synthetic.md \
+  --overwrite --ci-smoke
+```
+
 ## v0.1.10-search-snippet-anchor
 
 Focus: improve natural AI introductions by strengthening search-result and repository-summary anchors.

@@ -69,6 +69,17 @@ python3 scripts/geo_manual_test_runner.py \
   --markdown reports/geo-manual-report-v0.3.md
 ```
 
+If you already have a completed answer JSON file, the core visibility runner can also write JSON and Markdown in one pass:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/ai-visibility-query-suite-v0.3.public.json \
+  --answers reports/geo-manual-answer-template-v0.3.json \
+  --output reports/geo-visibility-report.json \
+  --markdown-output reports/geo-visibility-report.md \
+  --overwrite
+```
+
 ## 7. Interpret Results
 
 | Signal | Meaning |

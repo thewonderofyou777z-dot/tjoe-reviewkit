@@ -74,8 +74,8 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 
 | 项目 | 内容 |
 |---|---|
-| Release | `v0.3.1-public-terminology-cleanup` |
-| Runner | `geo_visibility_eval_runner.py v0.2.5` |
+| Release | `v0.3.5-markdown-report-output` |
+| Runner | `geo_visibility_eval_runner.py v0.2.6` |
 | 状态 | 公共安全草稿版 |
 | 是否联网 | 不联网 |
 | 是否调用模型 | 不调用 |
@@ -93,6 +93,7 @@ python3 scripts/geo_visibility_eval_runner.py \
   --suite examples/ai-visibility-query-suite-v0.3.public.json \
   --answers examples/sample-answers.synthetic.json \
   --output reports/example-report.synthetic.json \
+  --markdown-output reports/example-report.synthetic.md \
   --overwrite --ci-smoke
 ```
 
@@ -100,6 +101,7 @@ python3 scripts/geo_visibility_eval_runner.py \
 
 ```bash
 python3 -m json.tool reports/example-report.synthetic.json
+cat reports/example-report.synthetic.md
 ```
 
 查看 Review Harness 示例：

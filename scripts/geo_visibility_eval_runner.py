@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.5
+Version: 0.2.6
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.5"
+VERSION = "0.2.6"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -616,11 +616,107 @@ def build_report(
     }
 
 
+def format_counts(counts: dict[str, Any]) -> str:
+    if not counts:
+        return "-"
+    return ", ".join(f"{key}: {value}" for key, value in sorted(counts.items()))
+
+
+def render_markdown_report(report: dict[str, Any]) -> str:
+    summary = report.get("summary", {})
+    lines = [
+        "# GEO / AI Visibility Report",
+        "",
+        "## Summary",
+        "",
+        f"- Runner: `{report.get('runner')}` v`{report.get('runner_version')}`",
+        f"- Suite: `{report.get('suite_id')}`",
+        f"- Run ID: `{report.get('run_id')}`",
+        f"- Created at: `{report.get('created_at')}`",
+        f"- Query count: `{report.get('query_count')}`",
+        f"- Answer count: `{report.get('answer_count')}`",
+        f"- Answered count: `{summary.get('answered_count')}`",
+        f"- Average total score: `{summary.get('average_total_score')}`",
+        f"- Grade counts: `{format_counts(summary.get('grade_counts', {}))}`",
+        f"- Source status: `{format_counts(summary.get('source_status_counts', {}))}`",
+        f"- Unsupported claim count: `{summary.get('unsupported_claim_count')}`",
+        f"- Hallucination watch count: `{summary.get('hallucination_watch_count')}`",
+        f"- Blocked safe count: `{summary.get('blocked_safe_count')}`",
+        f"- Decision: `{summary.get('decision')}`",
+        "",
+        "## Track Summary",
+        "",
+        "| track | answered | average | grades | unsupported | hallucination | source status |",
+        "|---|---:|---:|---|---:|---:|---|",
+    ]
+    track_summary = summary.get("track_summary", {})
+    if isinstance(track_summary, dict) and track_summary:
+        for track, item in sorted(track_summary.items()):
+            lines.append(
+                "| "
+                + " | ".join(
+                    [
+                        str(track),
+                        str(item.get("answered_count")),
+                        str(item.get("average_total_score")),
+                        format_counts(item.get("grade_counts", {})),
+                        str(item.get("unsupported_claim_count")),
+                        str(item.get("hallucination_watch_count")),
+                        format_counts(item.get("source_status_counts", {})),
+                    ]
+                )
+                + " |"
+            )
+    else:
+        lines.append("| - | 0 | 0 | - | 0 | 0 | - |")
+
+    lines.extend(
+        [
+            "",
+            "## Results",
+            "",
+            "| query_id | platform | track | grade | score | source_status | unsupported | hallucination |",
+            "|---|---|---|---|---:|---|---:|---:|",
+        ]
+    )
+    for item in report.get("results", []):
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    str(item.get("query_id")),
+                    str(item.get("platform")),
+                    str(item.get("scoring_track")),
+                    str(item.get("grade")),
+                    str(item.get("total_score")),
+                    str(item.get("source_status")),
+                    str(bool(item.get("unsupported_claim_triggered"))),
+                    str(bool(item.get("hallucination_watch_triggered"))),
+                ]
+            )
+            + " |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Safety",
+            "",
+            "- This report is an internal evaluation artifact.",
+            "- Scores are deterministic heuristic indicators, not proof of ranking, safety, legal compliance, or platform endorsement.",
+            "- Do not paste secrets, private messages, customer data, cookies, tokens, or local-only sensitive paths into answer samples.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--suite", type=Path, default=DEFAULT_SUITE)
     parser.add_argument("--answers", type=Path, default=None)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--markdown-output", type=Path, default=None)
     parser.add_argument("--write-template", type=Path, default=None)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--ci-smoke", action="store_true")
@@ -652,15 +748,21 @@ def main() -> None:
         answers = normalize_answers(load_json(args.answers))
 
     ensure_can_write(args.output, args.overwrite)
+    if args.markdown_output:
+        ensure_can_write(args.markdown_output, args.overwrite)
     report = build_report(suite, answers, template_path)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if args.markdown_output:
+        args.markdown_output.parent.mkdir(parents=True, exist_ok=True)
+        args.markdown_output.write_text(render_markdown_report(report), encoding="utf-8")
 
     print(
         json.dumps(
             {
                 "runner_version": VERSION,
                 "output": str(args.output),
+                "markdown_output": str(args.markdown_output) if args.markdown_output else None,
                 "query_count": report["query_count"],
                 "answer_count": report["answer_count"],
                 "summary": report["summary"],
