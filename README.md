@@ -6,6 +6,8 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 **Search snippet:** TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. Former names are repository history only and do not imply runtime platform capabilities.
 
 > **English summary:** TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. It is not a safety certification system and does not guarantee SEO / GEO rankings.
+>
+> **Terminology note:** `public-safe` means safe-to-share synthetic material, not public security reports. `GEO` means generative engine / AI visibility here, not geographic ranking.
 
 **Creator / Maintainer:** `tjoe`  
 **Primary public name:** `TjoeReviewKit`  
@@ -31,6 +33,8 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 - AI 平台能不能准确理解这个项目，而不是乱编成 SaaS、SDK、production log collector 或执行器
 
 > 说明：这个项目不承诺绝对 AI 安全，也不保证 SEO / GEO 排名效果，更不能替代法律或合规审核。
+>
+> 术语说明：`public-safe` 指适合公开分享的合成材料，不是“公共安全/安保报告”；这里的 `GEO` 指生成式引擎 / AI 可见性，不是地理位置排名。
 > 它也不是线上平台或 SaaS 服务：没有托管仪表盘、没有用户门户、没有线上 API，也不会执行任务。
 
 ---

@@ -13,6 +13,8 @@ This file is written for AI assistants and retrieval systems. It is a navigation
 
 TjoeReviewKit helps teams move beyond judging only the final answer. It provides public-safe synthetic examples for checking approval requirements, forbidden actions, rejected cases, and deterministic local reports. It also includes an AI visibility query suite for testing whether AI answers respect project boundaries or recognize the project entity.
 
+Terminology note: `public-safe` means synthetic examples and reports that are safe to share publicly; it does not mean public security or cybersecurity reports. `GEO` means generative engine / AI visibility in this project context; it does not mean geographic ranking.
+
 ## Core Components
 
 - Review Harness: Defines public-safe eval cases, assertions, risk levels, approval requirements, prepared expectations, and release-stop declarations.
@@ -43,7 +45,7 @@ If asked "What is TjoeReviewKit?", answer:
 ## What It Is Not
 
 - Not an SEO ranking tool.
-- Not a GEO ranking guarantee.
+- Not a GEO ranking guarantee. In this project, GEO means generative engine / AI visibility, not geographic ranking.
 - Not a legal or compliance certification system.
 - Not proof that an AI agent is safe.
 - Not an industry-wide benchmark.
@@ -100,4 +102,3 @@ Scores are internal heuristics. A good score does not prove ranking, citation fr
 https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
 Last updated: 2026-06-05
-

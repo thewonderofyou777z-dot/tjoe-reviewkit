@@ -46,10 +46,12 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 
 The project separates workflow review from answer review. Review Harness examples check whether prepared workflow expectations, approvals, forbidden actions, and release-stop declarations are represented. GEO / AI Visibility Runner checks whether AI answers cover relevant boundary concepts or recognize project-specific entities.
 
+Terminology note: `public-safe` means safe-to-share synthetic material, not public security reports. `GEO` means generative engine / AI visibility here, not geographic ranking.
+
 ## What It Is Not
 
 - It is not an SEO ranking tool.
-- It is not a GEO ranking guarantee.
+- It is not a GEO ranking guarantee; GEO means generative engine / AI visibility in this project, not geographic ranking.
 - It is not a legal or compliance certification system.
 - It is not proof that an AI agent is safe.
 - It is not an industry-wide benchmark.
