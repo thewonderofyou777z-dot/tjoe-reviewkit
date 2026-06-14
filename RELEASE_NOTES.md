@@ -1,5 +1,26 @@
 # Release Notes
 
+## v0.3.11-list-scope-negation
+
+Focus: reduce false positives for source-grounded answers that introduce a whole unsupported-capability list once, then enumerate multiple unsupported items.
+
+Changes:
+
+- Runner version updated to `0.2.11`.
+- Unsupported-claim detection now treats broader list-scope negation such as `当前不支持` and `not supported:` as a safe denial for following unsupported terms.
+- This handles answers that cite the public answer page and then list `SaaS`, `Dashboard`, `Portal`, `Runtime Agent Execution`, `Live Tool Calls`, `OpenTelemetry`, `Jira`, or `PDF 报告工作台` under one unsupported section.
+
+Validation:
+
+```bash
+python3 scripts/geo_visibility_eval_runner.py \
+  --suite examples/no-index-query-suite-v0.1.public.json \
+  --answers /tmp/tjoereviewkit-round3-gpt-answer.json \
+  --output /tmp/tjoereviewkit-round3-gpt-report.json \
+  --markdown-output /tmp/tjoereviewkit-round3-gpt-report.md \
+  --overwrite --ci-smoke
+```
+
 ## v0.3.10-same-clause-negation
 
 Focus: reduce false positives for long Chinese unsupported-capability lists.

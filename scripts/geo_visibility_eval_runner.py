@@ -7,7 +7,7 @@ This runner is intentionally safe by default:
 - scores answer inclusion with deterministic heuristics or manual scores
 - never logs in, never browses, never calls models, never publishes
 
-Version: 0.2.10
+Version: 0.2.11
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SUITE = REPO_ROOT / "examples" / "ai-visibility-query-suite-v0.3.public.json"
 DEFAULT_OUTPUT = REPO_ROOT / "reports" / "example-report.synthetic.json"
 DEFAULT_TEMPLATE = REPO_ROOT / "reports" / "answer-template.json"
-VERSION = "0.2.10"
+VERSION = "0.2.11"
 SCORE_FIELDS = [
     "mention_score",
     "understanding_score",
@@ -286,6 +286,22 @@ def is_negated_term_match(lower_text: str, lower_term: str) -> bool:
         return False
     prefix = lower_text[max(0, start - 42):start]
     if any(pattern in prefix for pattern in NEGATION_PATTERNS):
+        return True
+    broader_prefix = lower_text[max(0, start - 360):start]
+    if any(
+        pattern in broader_prefix
+        for pattern in [
+            "当前不支持",
+            "不支持项",
+            "不支持：",
+            "不支持:",
+            "明确不支持",
+            "current unsupported",
+            "currently unsupported",
+            "not supported:",
+            "does not support:",
+        ]
+    ):
         return True
     segment_start = max(
         lower_text.rfind(mark, 0, start)
