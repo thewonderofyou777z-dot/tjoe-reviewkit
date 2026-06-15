@@ -38,6 +38,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - docs/workflow-review-harness-guide.md: Guide for process-level Review Harness examples.
 - agent_eval/: Synthetic eval cases and synthetic reports.
 - examples/ai-visibility-query-suite-v0.3.public.json: Public-safe query suite for answer visibility testing.
+- examples/boundary-stability-query-suite-v0.1.public.json: Public-safe prompts for source-anchored capability-boundary, relationship-clarification, comparison-boundary, and source-honesty tests.
 - examples/sample-answers.synthetic.json: Synthetic public-safe answer samples for runner smoke tests.
 - examples/sample-answers.overclaim.synthetic.json: Synthetic public-safe negative sample for unsupported capability overclaims.
 - examples/sample-answers.blocked-safe.synthetic.json: Synthetic public-safe sample for safe refusal and source-boundary behavior.

@@ -41,6 +41,22 @@ Any answer containing these claims must be manually reviewed:
 - claims that TjoeReviewKit currently provides SDK integration, production log collection, replay, lightweight SQL evidence storage, automated scoring, multi-stage evaluation, or automatic tool-error taxonomy
 - claims that TjoeReviewKit comes from a named academic ToolTrace / TrajectoryEval origin without evidence
 
+
+## 3.1 Round4 Boundary-Stability Failure Notes
+
+Use these notes when reviewing source-anchored boundary tests from `examples/boundary-stability-query-suite-v0.1.public.json`:
+
+| Failure Note | Meaning | Severity |
+|---|---|---|
+| `source_label_error` | The answer is mostly correct but attributes the evidence to the wrong organization, website, or source label. | Medium |
+| `wrong_source_attribution` | The answer cites a source that is not the provided public page or repository. | Medium to high |
+| `context_contamination` | The answer admits or implies it used prior chat history instead of only the requested public page. | Medium |
+| `comparison_external_generalization` | The answer uses generic outside knowledge to compare prompt testing beyond what the page supports. | Low to medium |
+| `relationship_overclaim` | The answer invents an integration, suite membership, dependency, or parent-child relationship not stated by the source. | High |
+| `capability_boundary_overclaim` | The answer says an explicitly unsupported capability is supported. | High |
+
+These notes do not automatically mean the whole answer fails. They identify what should be inspected before treating a result as strong evidence.
+
 ## 4. First Test Minimum Bar
 
 The first test is useful if it produces:

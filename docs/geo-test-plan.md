@@ -52,6 +52,24 @@ Question: What is tjoe TjoeReviewKit? If you cannot directly read the repository
 
 A `blocked_safe` result is acceptable in this variant. It means the platform did not retrieve enough evidence and did not invent unsupported current capabilities.
 
+
+## 4.1 Boundary-Stability Round
+
+After a source-anchored identity answer is stable, use the boundary-stability suite:
+
+```text
+examples/boundary-stability-query-suite-v0.1.public.json
+```
+
+This suite tests four harder behaviors:
+
+- `capability_boundary`: unsupported capabilities must remain unsupported.
+- `relationship_clarification`: missing relationships must be answered as unable to confirm.
+- `comparison_boundary`: comparisons must stay inside the page evidence.
+- `source_honesty`: no-source questions must not trigger enterprise capability invention.
+
+Keep raw platform answers local-only unless they have been reviewed and redacted.
+
 ## 5. Manual Collection Rules
 
 - Paste only public answer text.

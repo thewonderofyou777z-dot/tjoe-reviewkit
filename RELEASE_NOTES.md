@@ -1,5 +1,22 @@
 # Release Notes
 
+## v0.3.12-boundary-stability-suite
+
+Focus: convert Round4 boundary-stability testing into public-safe regression assets.
+
+Changes:
+
+- Added `examples/boundary-stability-query-suite-v0.1.public.json`.
+- Added `docs/boundary-stability-test-plan.md`.
+- Extended `docs/geo-evaluation-rubric.md` with source label, context contamination, relationship overclaim, and capability boundary review notes.
+- Linked the suite from `docs/geo-test-plan.md`, `docs/llms.txt`, and root `llms.txt`.
+
+Validation:
+
+```bash
+python3 -m json.tool examples/boundary-stability-query-suite-v0.1.public.json >/tmp/boundary-suite.json
+```
+
 ## v0.3.11-list-scope-negation
 
 Focus: reduce false positives for source-grounded answers that introduce a whole unsupported-capability list once, then enumerate multiple unsupported items.

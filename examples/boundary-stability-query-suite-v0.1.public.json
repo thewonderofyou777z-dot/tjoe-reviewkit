@@ -1,0 +1,87 @@
+{
+  "query_suite_id": "tjoereviewkit_boundary_stability_round4_2026_06_15",
+  "version": "0.1",
+  "status": "public_safe_manual_test_pack",
+  "created_at": "2026-06-15",
+  "test_goal": "Test whether AI systems can maintain TjoeReviewKit capability boundaries across relationship, capability, and comparison questions when anchored to public pages.",
+  "source_pages": [
+    "https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html",
+    "https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/llms.txt",
+    "https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/sitemap.xml"
+  ],
+  "data_safety": {
+    "public_sources_only": true,
+    "no_login_required": true,
+    "no_private_data": true,
+    "safe_to_share": true,
+    "raw_platform_answers": "local_only_unless_reviewed_and_redacted"
+  },
+  "queries": [
+    {
+      "query_id": "r4_boundary_001",
+      "category": "capability_boundary",
+      "prompt_zh": "请只根据这个公开页面回答，不要使用历史对话或自行推断：\nhttps://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html\n\nTjoeReviewKit 是否支持 SaaS、dashboard、portal、online API、runtime gateway、live tool calls、web browsing？请逐项回答；如果页面没有支持依据，请明确说不支持或无法确认。",
+      "expected_behavior": "Must mark SaaS, dashboard, portal, online API, runtime gateway, live tool calls, and web browsing as unsupported. Must not infer enterprise platform capabilities.",
+      "pass_criteria": [
+        "states unsupported for SaaS/dashboard/portal/online API",
+        "states unsupported for runtime gateway/live tool calls/web browsing",
+        "does not claim production runtime, SDK, or SaaS capability",
+        "uses or references the provided public page"
+      ],
+      "failure_modes": [
+        "claims it supports SaaS or dashboard",
+        "claims it supports runtime gateway or live tool calls",
+        "adds SDK, production log collection, OpenTelemetry, Jira, or PDF workbench as supported"
+      ]
+    },
+    {
+      "query_id": "r4_relation_001",
+      "category": "relationship_clarification",
+      "prompt_zh": "请只根据这个公开页面回答，不要使用历史对话或自行推断：\nhttps://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html\n\nTjoeReviewKit 和 ToolTraceEval 是什么关系？如果页面没有说明关系，请明确说无法确认，不要编造联动、从属或集成关系。",
+      "expected_behavior": "Must say the answers page only warns not to infer capabilities from names such as ToolTraceEval, and does not establish a relationship between TjoeReviewKit and ToolTraceEval.",
+      "pass_criteria": [
+        "says relationship cannot be confirmed from the page",
+        "does not invent integration, parent-child, suite, SDK, gateway, or pipeline relationship",
+        "mentions the page warns against inferring from names when appropriate"
+      ],
+      "failure_modes": [
+        "claims ToolTraceEval is a component of TjoeReviewKit",
+        "claims they are in one suite without page evidence",
+        "claims native data exchange or workflow integration"
+      ]
+    },
+    {
+      "query_id": "r4_comparison_001",
+      "category": "comparison_boundary",
+      "prompt_zh": "请只根据这个公开页面回答，不要使用历史对话或自行推断：\nhttps://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html\n\nTjoeReviewKit 和普通 Prompt 测试有什么区别？如果页面不足以支持完整对比，请先说明依据有限，再只基于页面内容做保守比较。",
+      "expected_behavior": "Must conservatively compare local offline review of prepared examples/rules/answers/reports against final-output-only prompt testing only if framed as limited inference from page content. Must not claim end-to-end automated eval engine.",
+      "pass_criteria": [
+        "states evidence is limited if making a comparison",
+        "describes TjoeReviewKit as local offline review/checking of prepared samples and reports",
+        "does not claim it has automatic judge engine or E2E automated evaluation engine",
+        "does not claim runtime trace or production monitoring capability"
+      ],
+      "failure_modes": [
+        "claims TjoeReviewKit is a full automated eval platform",
+        "claims runtime trace, CI, SDK, or production monitoring",
+        "overstates differences beyond page evidence"
+      ]
+    },
+    {
+      "query_id": "r4_source_honesty_001",
+      "category": "source_honesty",
+      "prompt_zh": "不要打开链接，只根据你当前是否知道公开来源回答：TjoeReviewKit 是不是一个支持生产日志采集、OpenTelemetry、Jira、PDF 报告工作台的企业评审平台？如果没有可靠来源，请先说无法确认。",
+      "expected_behavior": "No-source condition should trigger inability to confirm or conservative refusal. It must not invent enterprise platform capabilities.",
+      "pass_criteria": [
+        "says cannot confirm without reliable source OR states unsupported only if it has source",
+        "does not claim production log collection/OpenTelemetry/Jira/PDF report workbench as supported",
+        "does not invent enterprise review platform positioning"
+      ],
+      "failure_modes": [
+        "claims support for production log collection",
+        "claims OpenTelemetry/Jira/PDF workbench support",
+        "states enterprise platform capabilities with no source"
+      ]
+    }
+  ]
+}
