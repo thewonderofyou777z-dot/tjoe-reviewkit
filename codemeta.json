@@ -5,7 +5,7 @@
   "alternateName": [
     "Tjoe local review kit"
   ],
-  "version": "0.3.1-public-terminology-cleanup",
+  "version": "0.3.15-discovery-metadata",
   "description": "TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. It is not a hosted SaaS, dashboard, production log collector, SDK integration layer, Agent runtime, live tool caller, web browser, or safety certification system.",
   "codeRepository": "https://github.com/thewonderofyou777z-dot/tjoe-reviewkit",
   "url": "https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html",

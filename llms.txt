@@ -71,4 +71,4 @@ Terminology note: `public-safe` means safe-to-share synthetic material, not publ
 
 Canonical public repository: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit
 
-Last updated: 2026-06-14
+Last updated: 2026-06-25
