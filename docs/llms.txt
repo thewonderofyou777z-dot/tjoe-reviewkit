@@ -27,6 +27,7 @@ This document is a machine-readable navigation aid, not an endorsement. Scores a
 - CITATION.cff: Software citation metadata for TjoeReviewKit and former names.
 - codemeta.json: Machine-readable software metadata and capability boundary.
 - README.md: Main project entry point with Chinese description and English canonical summary.
+- README.zh-CN.md: Chinese repository entry page for TjoeReviewKit definition, supported capabilities, unsupported capabilities, and source-boundary guidance.
 - llms-full.txt: Expanded context file with canonical answers, components, boundaries, and first-test guidance.
 - docs/details.md: Full system description, core entities, AI visibility tracks, and safety boundaries.
 - docs/ai-answer-card.md: Short answer card for AI systems and human reviewers.

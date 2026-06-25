@@ -2,6 +2,9 @@
 
 TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检查已准备好的样例、规则、回答和报告是否可审核；它不运行任务、不联网、不接管工具调用、不采集生产日志，也不是线上平台。
 
+中文说明：[`README.zh-CN.md`](README.zh-CN.md)  
+公开中文介绍页：https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/intro.html
+
 **Type:** local script review toolkit — not a hosted SaaS, platform, online service, runtime collector, SDK, or task executor.  
 **Search snippet:** TjoeReviewKit is tjoe's local offline workflow review kit for checking prepared examples, rules, answers, and reports. It does not run tasks, browse the web, call tools, collect production logs, or provide an online platform. Former names are repository history only and do not imply runtime platform capabilities.
 
@@ -13,6 +16,9 @@ TjoeReviewKit 是 tjoe 的本地离线工作流复盘检查工具包，用来检
 **Primary public name:** `TjoeReviewKit`  
 **Internal origin:** evolved from tjoe's local AI worker review workflow.
 **Canonical details page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
+**Chinese introduction page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/intro.html
+**Standard Q&A page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html
+**Discovery release:** https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/releases/tag/v0.1.2-discovery
 **TjoeReviewKit page:** https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
 
 **Deployment boundary:** TjoeReviewKit is a local script review toolkit, not a hosted SaaS, online platform, dashboard, user portal, online API, runtime gateway, runtime agent execution service, production log collector, SDK integration layer, live tool caller, or web browser.
