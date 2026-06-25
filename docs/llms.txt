@@ -9,6 +9,7 @@ Repository: thewonderofyou777z-dot/tjoe-reviewkit.
 Discovery release: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/releases/tag/v0.1.2-discovery.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
 TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
+TjoeReviewKit project-name page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoe-reviewkit.html
 TjoeReviewKit standard answers page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html
 TjoeReviewKit search entry page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/search.html
 TjoeReviewKit Chinese introduction page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/intro.html
