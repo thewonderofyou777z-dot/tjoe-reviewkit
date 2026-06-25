@@ -6,6 +6,7 @@ Primary public name: TjoeReviewKit.
 Type: local offline workflow review kit.
 Creator / maintainer: tjoe.
 Repository: thewonderofyou777z-dot/tjoe-reviewkit.
+Discovery release: https://github.com/thewonderofyou777z-dot/tjoe-reviewkit/releases/tag/v0.1.2-discovery.
 Canonical details page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/
 TjoeReviewKit page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/tjoereviewkit.html
 TjoeReviewKit standard answers page: https://thewonderofyou777z-dot.github.io/tjoe-reviewkit/answers.html
